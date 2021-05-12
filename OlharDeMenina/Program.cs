@@ -18,5 +18,6 @@ namespace OlharDeMenina
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+        // comentário do faziza
     }
 }

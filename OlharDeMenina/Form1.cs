@@ -133,5 +133,10 @@ namespace OlharDeMenina
         {
             FadeOut(this, 20);
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
