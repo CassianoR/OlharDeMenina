@@ -21,5 +21,3 @@ namespace OlharDeMenina
         
     }
 }
-
-// Novo comentário aleatório
