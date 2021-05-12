@@ -76,6 +76,7 @@ namespace OlharDeMenina
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
+            // Comentário teste
             pnlNav.Height = btnConfig.Height;
             pnlNav.Top = btnConfig.Top;
             btnConfig.BackColor = Color.FromArgb(46, 51, 73);
