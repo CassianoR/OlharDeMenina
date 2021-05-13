@@ -63,6 +63,16 @@ namespace OlharDeMenina.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnuser {
+            get {
+                object obj = ResourceManager.GetObject("btnuser", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_icon_png_18 {
             get {
                 object obj = ResourceManager.GetObject("close-icon-png-18", resourceCulture);
@@ -76,6 +86,16 @@ namespace OlharDeMenina.Properties {
         internal static System.Drawing.Bitmap close_icon_png_181 {
             get {
                 object obj = ResourceManager.GetObject("close-icon-png-181", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap closebtn {
+            get {
+                object obj = ResourceManager.GetObject("closebtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,16 @@ namespace OlharDeMenina.Properties {
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap userbtn {
+            get {
+                object obj = ResourceManager.GetObject("userbtn", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
