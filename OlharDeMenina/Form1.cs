@@ -50,7 +50,7 @@ namespace OlharDeMenina
             pnlNav.Height = btnVisao.Height;
             pnlNav.Top = btnVisao.Top;
             pnlNav.Left = btnVisao.Left;
-            btnVisao.BackColor = Color.FromArgb(46, 51, 73);
+            btnVisao.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace OlharDeMenina
             pnlNav.Show();
             pnlNav.Height = btnEstoque.Height;
             pnlNav.Top = btnEstoque.Top;
-            btnEstoque.BackColor = Color.FromArgb(46, 51, 73);
+            btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnPedidos_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace OlharDeMenina
             pnlNav.Show();
             pnlNav.Height = btnPedidos.Height;
             pnlNav.Top = btnPedidos.Top;
-            btnPedidos.BackColor = Color.FromArgb(46, 51, 73);
+            btnPedidos.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnHist_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace OlharDeMenina
             pnlNav.Show();
             pnlNav.Height = btnHist.Height;
             pnlNav.Top = btnHist.Top;
-            btnHist.BackColor = Color.FromArgb(46, 51, 73);
+            btnHist.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnConfig_Click(object sender, EventArgs e)
@@ -82,32 +82,32 @@ namespace OlharDeMenina
             pnlNav.Show();
             pnlNav.Height = btnConfig.Height;
             pnlNav.Top = btnConfig.Top;
-            btnConfig.BackColor = Color.FromArgb(46, 51, 73);
+            btnConfig.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnVisao_Leave(object sender, EventArgs e)
         {
-            btnVisao.BackColor = Color.FromArgb(24, 30, 54);
+            btnVisao.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnEstoque_Leave(object sender, EventArgs e)
         {
-            btnEstoque.BackColor = Color.FromArgb(24, 30, 54);
+            btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnPedidos_Leave(object sender, EventArgs e)
         {
-            btnPedidos.BackColor = Color.FromArgb(24, 30, 54);
+            btnPedidos.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnHist_Leave(object sender, EventArgs e)
         {
-            btnHist.BackColor = Color.FromArgb(24, 30, 54);
+            btnHist.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnConfig_Leave(object sender, EventArgs e)
         {
-            btnConfig.BackColor = Color.FromArgb(24, 30, 54);
+            btnConfig.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private async void FadeIn(Form o, int interval = 80)
