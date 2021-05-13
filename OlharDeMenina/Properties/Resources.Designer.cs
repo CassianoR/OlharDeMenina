@@ -63,6 +63,26 @@ namespace OlharDeMenina.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_icon_png_18 {
+            get {
+                object obj = ResourceManager.GetObject("close-icon-png-18", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap close_icon_png_181 {
+            get {
+                object obj = ResourceManager.GetObject("close-icon-png-181", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap download__1_ {
             get {
                 object obj = ResourceManager.GetObject("download (1)", resourceCulture);

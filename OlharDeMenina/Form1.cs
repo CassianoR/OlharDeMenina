@@ -32,7 +32,6 @@ namespace OlharDeMenina
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
-            fecharToolStripMenuItem.BackColor = Color.FromArgb(46, 51, 73);
         }
 
         private void visãoGeralToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,11 +41,12 @@ namespace OlharDeMenina
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            pnlNav.Hide();
         }
 
         private void btnVisao_Click(object sender, EventArgs e)
         {
+            pnlNav.Show();
             pnlNav.Height = btnVisao.Height;
             pnlNav.Top = btnVisao.Top;
             pnlNav.Left = btnVisao.Left;
@@ -55,6 +55,7 @@ namespace OlharDeMenina
 
         private void btnEstoque_Click(object sender, EventArgs e)
         {
+            pnlNav.Show();
             pnlNav.Height = btnEstoque.Height;
             pnlNav.Top = btnEstoque.Top;
             btnEstoque.BackColor = Color.FromArgb(46, 51, 73);
@@ -62,6 +63,7 @@ namespace OlharDeMenina
 
         private void btnPedidos_Click(object sender, EventArgs e)
         {
+            pnlNav.Show();
             pnlNav.Height = btnPedidos.Height;
             pnlNav.Top = btnPedidos.Top;
             btnPedidos.BackColor = Color.FromArgb(46, 51, 73);
@@ -69,6 +71,7 @@ namespace OlharDeMenina
 
         private void btnHist_Click(object sender, EventArgs e)
         {
+            pnlNav.Show();
             pnlNav.Height = btnHist.Height;
             pnlNav.Top = btnHist.Top;
             btnHist.BackColor = Color.FromArgb(46, 51, 73);
@@ -76,6 +79,7 @@ namespace OlharDeMenina
 
         private void btnConfig_Click(object sender, EventArgs e)
         {
+            pnlNav.Show();
             pnlNav.Height = btnConfig.Height;
             pnlNav.Top = btnConfig.Top;
             btnConfig.BackColor = Color.FromArgb(46, 51, 73);
@@ -129,14 +133,15 @@ namespace OlharDeMenina
             Environment.Exit(-1);
             this.Close();
         }
-        private void fecharToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FadeOut(this, 20);
-        }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            FadeOut(this, 20);
         }
     }
 }
