@@ -53,6 +53,7 @@ namespace OlharDeMenina
             this.panel5 = new System.Windows.Forms.Panel();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnCon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -64,6 +65,7 @@ namespace OlharDeMenina
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(138)))), ((int)(((byte)(237)))));
+            this.panel1.Controls.Add(this.btnCon);
             this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnConfig);
             this.panel1.Controls.Add(this.btnHist);
@@ -376,6 +378,16 @@ namespace OlharDeMenina
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnCon
+            // 
+            this.btnCon.Location = new System.Drawing.Point(48, 412);
+            this.btnCon.Name = "btnCon";
+            this.btnCon.Size = new System.Drawing.Size(75, 23);
+            this.btnCon.TabIndex = 4;
+            this.btnCon.Text = "Conectar";
+            this.btnCon.UseVisualStyleBackColor = true;
+            this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -434,6 +446,7 @@ namespace OlharDeMenina
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnCon;
     }
 }
 
