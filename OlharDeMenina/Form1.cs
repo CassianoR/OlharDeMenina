@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using MySql.Data.MySqlClient;
 using System.Runtime.InteropServices;
 
     
@@ -144,6 +144,21 @@ namespace OlharDeMenina
         private void btnClose_Click(object sender, EventArgs e)
         {
             FadeOut(this, 20);
+        }
+
+        private void btnCon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MySqlConnection objCon = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw");
+                objCon.Open();
+                MessageBox.Show("Conectado com sucesso!");
+                objCon.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível conectar :(");
+            }
         }
     }
 }
