@@ -30,6 +30,7 @@ namespace OlharDeMenina
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCon = new System.Windows.Forms.Button();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnConfig = new System.Windows.Forms.Button();
             this.btnHist = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@ namespace OlharDeMenina
             this.panel5 = new System.Windows.Forms.Panel();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnCon = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -79,6 +79,16 @@ namespace OlharDeMenina
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(186, 538);
             this.panel1.TabIndex = 0;
+            // 
+            // btnCon
+            // 
+            this.btnCon.Location = new System.Drawing.Point(48, 412);
+            this.btnCon.Name = "btnCon";
+            this.btnCon.Size = new System.Drawing.Size(75, 23);
+            this.btnCon.TabIndex = 4;
+            this.btnCon.Text = "Conectar";
+            this.btnCon.UseVisualStyleBackColor = true;
+            this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
             // 
             // pnlNav
             // 
@@ -377,16 +387,6 @@ namespace OlharDeMenina
             this.btnClose.TabIndex = 6;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnCon
-            // 
-            this.btnCon.Location = new System.Drawing.Point(48, 412);
-            this.btnCon.Name = "btnCon";
-            this.btnCon.Size = new System.Drawing.Size(75, 23);
-            this.btnCon.TabIndex = 4;
-            this.btnCon.Text = "Conectar";
-            this.btnCon.UseVisualStyleBackColor = true;
-            this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
             // 
             // Form1
             // 
