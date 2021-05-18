@@ -137,13 +137,13 @@ namespace OlharDeMenina
             // 
             this.txtB_senha2.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtB_senha2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtB_senha2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtB_senha2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtB_senha2.ForeColor = System.Drawing.Color.PaleVioletRed;
             this.txtB_senha2.HideSelection = false;
             this.txtB_senha2.Location = new System.Drawing.Point(68, 107);
             this.txtB_senha2.Name = "txtB_senha2";
             this.txtB_senha2.PasswordChar = '*';
-            this.txtB_senha2.Size = new System.Drawing.Size(201, 19);
+            this.txtB_senha2.Size = new System.Drawing.Size(201, 17);
             this.txtB_senha2.TabIndex = 5;
             this.txtB_senha2.TabStop = false;
             this.txtB_senha2.Text = "Senha";
@@ -154,7 +154,7 @@ namespace OlharDeMenina
             this.btn_login_entrar.BackColor = System.Drawing.Color.PaleVioletRed;
             this.btn_login_entrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_login_entrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_login_entrar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_login_entrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login_entrar.ForeColor = System.Drawing.Color.LavenderBlush;
             this.btn_login_entrar.Location = new System.Drawing.Point(89, 196);
             this.btn_login_entrar.Name = "btn_login_entrar";
@@ -162,27 +162,28 @@ namespace OlharDeMenina
             this.btn_login_entrar.TabIndex = 2;
             this.btn_login_entrar.Text = "Login";
             this.btn_login_entrar.UseVisualStyleBackColor = false;
+            this.btn_login_entrar.Click += new System.EventHandler(this.btn_login_entrar_Click);
             // 
             // txtB_senha1
             // 
             this.txtB_senha1.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtB_senha1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtB_senha1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtB_senha1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtB_senha1.Location = new System.Drawing.Point(68, 107);
             this.txtB_senha1.Name = "txtB_senha1";
-            this.txtB_senha1.Size = new System.Drawing.Size(201, 19);
+            this.txtB_senha1.Size = new System.Drawing.Size(201, 17);
             this.txtB_senha1.TabIndex = 1;
             // 
             // txtB_nome
             // 
             this.txtB_nome.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtB_nome.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtB_nome.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtB_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtB_nome.ForeColor = System.Drawing.Color.PaleVioletRed;
             this.txtB_nome.HideSelection = false;
             this.txtB_nome.Location = new System.Drawing.Point(68, 56);
             this.txtB_nome.Name = "txtB_nome";
-            this.txtB_nome.Size = new System.Drawing.Size(201, 19);
+            this.txtB_nome.Size = new System.Drawing.Size(201, 17);
             this.txtB_nome.TabIndex = 0;
             this.txtB_nome.TabStop = false;
             this.txtB_nome.Text = "Nome";
@@ -204,7 +205,7 @@ namespace OlharDeMenina
             this.btn_close.BackColor = System.Drawing.Color.Transparent;
             this.btn_close.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_close.ForeColor = System.Drawing.SystemColors.Window;
             this.btn_close.Location = new System.Drawing.Point(375, 1);
             this.btn_close.Name = "btn_close";

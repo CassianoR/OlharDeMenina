@@ -1,24 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using System.Runtime.InteropServices;
-
-    
-
 
 namespace OlharDeMenina
 {
     public partial class Form1 : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-
         private static extern IntPtr CreateRoundRectRgn
         (
             int nLeftRect,
@@ -28,6 +18,7 @@ namespace OlharDeMenina
             int nWidthEllipse,
             int nHeightEllipse
         );
+
         public Form1()
         {
             InitializeComponent();
@@ -36,7 +27,6 @@ namespace OlharDeMenina
 
         private void visãoGeralToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -120,7 +110,7 @@ namespace OlharDeMenina
                 await Task.Delay(interval);
                 o.Opacity += 0.05;
             }
-            o.Opacity = 1; //make fully visible    
+            o.Opacity = 1; //make fully visible
         }
 
         private async void FadeOut(Form o, int interval = 80)
@@ -131,14 +121,13 @@ namespace OlharDeMenina
                 await Task.Delay(interval);
                 o.Opacity -= 0.05;
             }
-            o.Opacity = 0; //make fully invisible  
+            o.Opacity = 0; //make fully invisible
             Environment.Exit(-1);
             this.Close();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -150,10 +139,9 @@ namespace OlharDeMenina
         {
             try
             {
-                MySqlConnection objCon = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw");
+                //MySqlConnection objCon = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw");
+                Conexao objCon = new Conexao();
                 objCon.Open();
-                MessageBox.Show("Conectado com sucesso!");
-                objCon.Close();
             }
             catch
             {
