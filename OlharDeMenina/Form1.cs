@@ -41,8 +41,6 @@ namespace OlharDeMenina
             pnlNav.Top = btnVisao.Top;
             pnlNav.Left = btnVisao.Left;
             btnVisao.BackColor = Color.FromArgb(249, 138, 237);
-            var form_log = new Login();
-            form_log.Show();
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
