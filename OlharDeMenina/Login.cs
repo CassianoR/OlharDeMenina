@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Windows.Forms;
+
+
 
 namespace OlharDeMenina
 {
     public partial class Login : Form
     {
+        string username, password;
+
         public Login()
         {
             InitializeComponent();
@@ -51,6 +49,48 @@ namespace OlharDeMenina
         private void btn_close_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_login_entrar_Click(object sender, EventArgs e)
+        {
+            Conexao objCon = new Conexao();
+            try
+            {
+                objCon.Open();
+                
+            
+                if (txtB_nome.Text != "" && txtB_senha2.Text != "")
+                {
+                    objCon.Open();
+                    string query = "select Nome,Senha from funcionarios WHERE Nome ='" + txtB_nome.Text + "' AND Senha ='" + txtB_senha2.Text + "'";
+                    MySqlDataReader row;
+                    row = objCon.ExecuteReader(query);
+                    if (row.HasRows)
+                    {
+                        while (row.Read())
+                        {
+                            username = row["Nome"].ToString();
+                            password = row["Senha"].ToString();
+                            MessageBox.Show("Usuário: " + username + " conectado com sucesso");
+                            this.Hide();
+                            Form1 f1 = new Form1();
+                            f1.ShowDialog();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuário ou senha incorretos.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Erro: Campos de texto não podem estar vazios.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Erro de conexão");
+            }
         }
     }
 }
