@@ -32,7 +32,6 @@ namespace OlharDeMenina.Visao
             this.components = new System.ComponentModel.Container();
             this.pnlMenu = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.btnHist = new System.Windows.Forms.Button();
             this.btnVendas = new System.Windows.Forms.Button();
             this.btnEstoque = new System.Windows.Forms.Button();
             this.btnVisaoGeral = new System.Windows.Forms.Button();
@@ -48,6 +47,7 @@ namespace OlharDeMenina.Visao
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.minimizarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnHist = new System.Windows.Forms.Button();
             this.pnlMenu.SuspendLayout();
             this.pnlInicial.SuspendLayout();
             this.pblavisos.SuspendLayout();
@@ -78,18 +78,6 @@ namespace OlharDeMenina.Visao
             this.btnClientes.TabIndex = 4;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = true;
-            // 
-            // btnHist
-            // 
-            this.btnHist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHist.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHist.Location = new System.Drawing.Point(-1, 242);
-            this.btnHist.Name = "btnHist";
-            this.btnHist.Size = new System.Drawing.Size(174, 82);
-            this.btnHist.TabIndex = 3;
-            this.btnHist.Text = "Histórico";
-            this.btnHist.UseVisualStyleBackColor = true;
             // 
             // btnVendas
             // 
@@ -247,6 +235,18 @@ namespace OlharDeMenina.Visao
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(68, 30);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
+            // btnHist
+            // 
+            this.btnHist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHist.Font = new System.Drawing.Font("Franklin Gothic Medium", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHist.Location = new System.Drawing.Point(-1, 242);
+            this.btnHist.Name = "btnHist";
+            this.btnHist.Size = new System.Drawing.Size(174, 82);
+            this.btnHist.TabIndex = 3;
+            this.btnHist.Text = "Histórico";
+            this.btnHist.UseVisualStyleBackColor = true;
+            // 
             // Form_menuADM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,7 +276,6 @@ namespace OlharDeMenina.Visao
 
         private System.Windows.Forms.Panel pnlMenu;
         private System.Windows.Forms.Button btnClientes;
-        private System.Windows.Forms.Button btnHist;
         private System.Windows.Forms.Button btnVendas;
         private System.Windows.Forms.Button btnEstoque;
         private System.Windows.Forms.Button btnVisaoGeral;
@@ -292,5 +291,6 @@ namespace OlharDeMenina.Visao
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ToolStripMenuItem minimizarToolStripMenuItem1;
+        private System.Windows.Forms.Button btnHist;
     }
 }

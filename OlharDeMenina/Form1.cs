@@ -51,14 +51,6 @@ namespace OlharDeMenina
             btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
         }
 
-        private void btnPedidos_Click(object sender, EventArgs e)
-        {
-            pnlNav.Show();
-            pnlNav.Height = btnPedidos.Height;
-            pnlNav.Top = btnPedidos.Top;
-            btnPedidos.BackColor = Color.FromArgb(249, 138, 237);
-        }
-
         private void btnHist_Click(object sender, EventArgs e)
         {
             pnlNav.Show();
@@ -66,13 +58,12 @@ namespace OlharDeMenina
             pnlNav.Top = btnHist.Top;
             btnHist.BackColor = Color.FromArgb(249, 138, 237);
         }
-
-        private void btnConfig_Click(object sender, EventArgs e)
+        private void btnVendas_Click(object sender, EventArgs e)
         {
             pnlNav.Show();
-            pnlNav.Height = btnConfig.Height;
-            pnlNav.Top = btnConfig.Top;
-            btnConfig.BackColor = Color.FromArgb(249, 138, 237);
+            pnlNav.Height = btnVendas.Height;
+            pnlNav.Top = btnVendas.Top;
+            btnVendas.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnVisao_Leave(object sender, EventArgs e)
@@ -84,21 +75,20 @@ namespace OlharDeMenina
         {
             btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
         }
-
-        private void btnPedidos_Leave(object sender, EventArgs e)
+        private void btnVendas_Leave(object sender, EventArgs e)
         {
-            btnPedidos.BackColor = Color.FromArgb(249, 138, 237);
+            btnVendas.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnHist_Leave(object sender, EventArgs e)
         {
             btnHist.BackColor = Color.FromArgb(249, 138, 237);
         }
-
-        private void btnConfig_Leave(object sender, EventArgs e)
+        private void btnClientes_Leave(object sender, EventArgs e)
         {
-            btnConfig.BackColor = Color.FromArgb(249, 138, 237);
+            btnClientes.BackColor = Color.FromArgb(249, 138, 237);
         }
+
 
         private async void FadeIn(Form o, int interval = 80)
         {
