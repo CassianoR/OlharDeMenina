@@ -83,6 +83,16 @@ namespace OlharDeMenina.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_tela_2021_05_15_110046_removebg_preview__3_ {
+            get {
+                object obj = ResourceManager.GetObject("Captura_de_tela_2021-05-15_110046-removebg-preview (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_icon_png_18 {
             get {
                 object obj = ResourceManager.GetObject("close-icon-png-18", resourceCulture);
@@ -116,6 +126,16 @@ namespace OlharDeMenina.Properties {
         internal static System.Drawing.Bitmap download__1_ {
             get {
                 object obj = ResourceManager.GetObject("download (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fundo_login {
+            get {
+                object obj = ResourceManager.GetObject("fundo_login", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +186,16 @@ namespace OlharDeMenina.Properties {
         internal static System.Drawing.Bitmap userbtn {
             get {
                 object obj = ResourceManager.GetObject("userbtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_05_15_at_16_11_36 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-05-15 at 16.11.36", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
