@@ -2,13 +2,11 @@
 using System;
 using System.Windows.Forms;
 
-
-
 namespace OlharDeMenina
 {
     public partial class Login : Form
     {
-        string username, password;
+        private string username, password;
 
         public Login()
         {
@@ -21,9 +19,11 @@ namespace OlharDeMenina
         }
 
         // Mover janela
-        int mov;
-        int movX;
-        int movY;
+        private int mov;
+
+        private int movX;
+        private int movY;
+
         private void pnl_superior_MouseDown(object sender, MouseEventArgs e)
         {
             mov = 1;
@@ -43,6 +43,7 @@ namespace OlharDeMenina
         {
             mov = 0;
         }
+
         //
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -82,8 +83,7 @@ namespace OlharDeMenina
             try
             {
                 objCon.Open();
-                
-            
+
                 if (txtB_nome.Text != "" && txtB_senha2.Text != "")
                 {
                     objCon.Open();

@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OlharDeMenina.Modelo
+﻿namespace OlharDeMenina.Modelo
 {
-    class Funcionarios
+    internal class Funcionarios
     {
         public int ID { get; set; }
         public string Cargo { get; set; }
@@ -16,9 +10,8 @@ namespace OlharDeMenina.Modelo
         public string Telefone { get; set; }
         public string Endereço { get; set; }
 
-        public Funcionarios(string Cargo, string Nome, string CPF, string Senha, string Telefone, string Endereço)
+        public Funcionarios(string Nome, string CPF, string Senha, string Telefone, string Endereço)
         {
-            this.Cargo = Cargo;
             this.Nome = Nome;
             this.CPF = CPF;
             this.Senha = Senha;

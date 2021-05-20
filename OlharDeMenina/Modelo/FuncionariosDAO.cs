@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using MySql.Data.MySqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MySql.Data.MySqlClient;
+using System;
 
 namespace OlharDeMenina.Modelo
 {
-    class FuncionariosDAO
+    internal class FuncionariosDAO
     {
         public string Mensagem { get; private set; }
-        SqlCommand cmd = new SqlCommand();
-        Conexao con = new Conexao();
-        SqlDataReader dr;
+        private MySqlCommand cmd = new MySqlCommand();
+        private Conexao con = new Conexao();
+
+        private MySqlDataReader dr;
 
         public string Adicionar(Funcionarios funcAdd)
         {
-            cmd.CommandText = "insert into Funcionarios (Id, Cargo, Nome, CPF, Senha, Telefone, Endereço) values (@id, @cargo, @nome, @cpf, @senha, @telefone, @endereco)";
+            cmd.CommandText = "insert into Funcionarios (Nome, CPF, Senha, Telefone, Endereço) values (@nome, @cpf, @senha, @telefone, @endereco)";
 
-            cmd.Parameters.AddWithValue("id", funcAdd.ID);
-            cmd.Parameters.AddWithValue("cargo", funcAdd.Cargo);
             cmd.Parameters.AddWithValue("nome", funcAdd.Nome);
             cmd.Parameters.AddWithValue("cpf", funcAdd.CPF);
             cmd.Parameters.AddWithValue("senha", funcAdd.Senha);
@@ -28,62 +22,64 @@ namespace OlharDeMenina.Modelo
             cmd.Parameters.AddWithValue("endereco", funcAdd.Endereço);
             try
             {
-                Conexao objCon = new Conexao();
-                objCon.Open();
+                cmd.Connection = con.Conectar();
                 cmd.ExecuteNonQuery();
                 Mensagem = "Cadastrado com sucesso!!!";
             }
-            catch (SqlException ex)
+            catch (MySqlException ex)
             {
                 Mensagem = ex.Message;
             }
+            System.Windows.Forms.MessageBox.Show(Mensagem);
             return Mensagem;
         }
 
-        public SqlDataReader DadosFuncionarios()
+        public MySqlCommand RetornaFuncionarios()
         {
             cmd.CommandText = "select * from Funcionarios";
 
-
             try
             {
-                //cmd.Connection = con.Conectar();
+                cmd.Connection = con.Conectar();
                 dr = cmd.ExecuteReader();
-
-                if (dr.HasRows)
-                {
-                    return dr;
-                }
+                //if (dr.HasRows)
+                //{
+                //bool v = dr;
+                //  return v;
+                // }
             }
-            catch (SqlException)
+            catch (MySqlException)
             {
-                Console.WriteLine("Ocorreu algum erro, então fecha o programa e abre de novo. :)");
+                //Não é a mensagem mais apropriada!
+                Console.WriteLine("Algo errado não está certo!");
             }
-            //con.Desconectar();
+            con.Desconectar();
             return null;
         }
 
-        public SqlDataReader DadosFuncionario(int IdAlun)
+        public string Deletar(int indice)
         {
-            cmd.CommandText = "select * from Funcionarios where ID = @idfunf";
-
-
+            //Comandos para inserir novo usuário no banco.
+            //Comando SQL
+            cmd.CommandText = "delete from Funcionarios where ID = @id";
+            //parametros
+            cmd.Parameters.AddWithValue("id", indice);
+            //conectar com banco
             try
             {
-                //cmd.Connection = con.Conectar();
-                dr = cmd.ExecuteReader();
-
-                if (dr.HasRows)
-                {
-                    return dr;
-                }
+                //Receber o endereço de onde vou me conectar.
+                cmd.Connection = con.Conectar();
+                //Executar comando.
+                cmd.ExecuteNonQuery();
+                //Exibe mensagem;
+                Mensagem = "Deletado com sucesso!!!";
             }
-            catch (SqlException)
+            catch (MySqlException ex)
             {
-                Console.WriteLine("Ocorreu algum erro, então fecha o programa e abre de novo. :)");
+                //Captura a mensagem de erro gerada.
+                Mensagem = ex.Message;
             }
-            //con.Desconectar();
-            return null;
+            return Mensagem;
         }
     }
 }

@@ -19,7 +19,6 @@ namespace OlharDeMenina
             int nHeightEllipse
         );
 
-        
         public Form_menuFunc()
         {
             InitializeComponent();
@@ -32,9 +31,11 @@ namespace OlharDeMenina
         }
 
         // Mover janela
-        int mov;
-        int movX;
-        int movY;
+        private int mov;
+
+        private int movX;
+        private int movY;
+
         private void pnlSuperior_MouseDown(object sender, MouseEventArgs e)
         {
             mov = 1;
@@ -54,6 +55,7 @@ namespace OlharDeMenina
         {
             mov = 0;
         }
+
         //
 
         private void btnVisao_Click(object sender, EventArgs e)
@@ -80,6 +82,7 @@ namespace OlharDeMenina
             pnlNav.Top = btnHist.Top;
             btnHist.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnVendas_Click(object sender, EventArgs e)
         {
             pnlNav.Show();
@@ -87,6 +90,7 @@ namespace OlharDeMenina
             pnlNav.Top = btnVendas.Top;
             btnVendas.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnFunc_Click(object sender, EventArgs e)
         {
             pnlNav.Show();
@@ -94,6 +98,7 @@ namespace OlharDeMenina
             pnlNav.Top = btnFunc.Top;
             btnFunc.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnClientes_Click(object sender, EventArgs e)
         {
             pnlNav.Show();
@@ -101,6 +106,7 @@ namespace OlharDeMenina
             pnlNav.Top = btnClientes.Top;
             btnClientes.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnVisao_Leave(object sender, EventArgs e)
         {
             btnVisao.BackColor = Color.FromArgb(249, 138, 237);
@@ -110,6 +116,7 @@ namespace OlharDeMenina
         {
             btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnVendas_Leave(object sender, EventArgs e)
         {
             btnVendas.BackColor = Color.FromArgb(249, 138, 237);
@@ -119,10 +126,12 @@ namespace OlharDeMenina
         {
             btnHist.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnClientes_Leave(object sender, EventArgs e)
         {
             btnClientes.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnFunc_Leave(object sender, EventArgs e)
         {
             btnClientes.BackColor = Color.FromArgb(249, 138, 237);
@@ -174,7 +183,5 @@ namespace OlharDeMenina
                 MessageBox.Show("Não foi possível conectar :(");
             }
         }
-
-       
     }
 }
