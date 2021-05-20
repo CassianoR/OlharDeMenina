@@ -33,9 +33,6 @@ namespace OlharDeMenina
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.pnlSuperior = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,8 +48,6 @@ namespace OlharDeMenina
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.pnlSuperior.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -105,15 +100,8 @@ namespace OlharDeMenina
             this.listBox2.Size = new System.Drawing.Size(227, 158);
             this.listBox2.TabIndex = 2;
             // 
-            // panel3
+            // pnl_principal
             // 
-            this.panel3.BackColor = System.Drawing.Color.GhostWhite;
-            this.panel3.Controls.Add(this.monthCalendar1);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Location = new System.Drawing.Point(184, 82);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(750, 456);
-            this.panel3.TabIndex = 7;
             // 
             // monthCalendar1
             // 
@@ -132,6 +120,15 @@ namespace OlharDeMenina
             this.pnlSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseDown);
             this.pnlSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseMove);
             this.pnlSuperior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseUp);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
+            this.panel6.Controls.Add(this.lblTitulo);
+            this.panel6.Location = new System.Drawing.Point(184, 38);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(250, 45);
+            this.panel6.TabIndex = 9;
             // 
             // btnClose
             // 
@@ -211,6 +208,7 @@ namespace OlharDeMenina
             this.btnCon.TabIndex = 4;
             this.btnCon.Text = "Conectar";
             this.btnCon.UseVisualStyleBackColor = true;
+            this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
             // 
             // btnClientes
             // 
@@ -348,8 +346,6 @@ namespace OlharDeMenina
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(935, 538);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.pnlSuperior);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -358,8 +354,6 @@ namespace OlharDeMenina
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.pnlSuperior.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -387,7 +381,7 @@ namespace OlharDeMenina
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnCon;
         private System.Windows.Forms.Button btnFunc;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnl_principal;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pnlSuperior;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
