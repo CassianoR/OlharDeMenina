@@ -4,9 +4,9 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OlharDeMenina
+namespace OlharDeMenina.Visao
 {
-    public partial class Form1 : Form
+    public partial class Form_menuADM : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -19,13 +19,38 @@ namespace OlharDeMenina
             int nHeightEllipse
         );
 
-        public Form1()
+        public Form_menuADM()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+
+        private async void FadeIn(Form o, int interval = 80)
+        {
+            //Object is not fully invisible. Fade it in
+            while (o.Opacity < 1.0)
+            {
+                await Task.Delay(interval);
+                o.Opacity += 0.05;
+            }
+            o.Opacity = 1; //make fully visible    
+        }
+
+        private async void FadeOut(Form o, int interval = 80)
+        {
+            //Object is fully visible. Fade it out
+            while (o.Opacity > 0.0)
+            {
+                await Task.Delay(interval);
+                o.Opacity -= 0.05;
+            }
+            o.Opacity = 0; //make fully invisible  
+            Environment.Exit(-1);
+            this.Close();
+        }
+
+        private void Form_menuADM_Load(object sender, EventArgs e)
         {
             pnlNav.Hide();
         }
@@ -47,13 +72,6 @@ namespace OlharDeMenina
             btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
         }
 
-        private void btnHist_Click(object sender, EventArgs e)
-        {
-            pnlNav.Show();
-            pnlNav.Height = btnHist.Height;
-            pnlNav.Top = btnHist.Top;
-            btnHist.BackColor = Color.FromArgb(249, 138, 237);
-        }
         private void btnVendas_Click(object sender, EventArgs e)
         {
             pnlNav.Show();
@@ -61,13 +79,7 @@ namespace OlharDeMenina
             pnlNav.Top = btnVendas.Top;
             btnVendas.BackColor = Color.FromArgb(249, 138, 237);
         }
-        private void btnFunc_Click(object sender, EventArgs e)
-        {
-            pnlNav.Show();
-            pnlNav.Height = btnFunc.Height;
-            pnlNav.Top = btnFunc.Top;
-            btnFunc.BackColor = Color.FromArgb(249, 138, 237);
-        }
+
         private void btnClientes_Click(object sender, EventArgs e)
         {
             pnlNav.Show();
@@ -75,6 +87,7 @@ namespace OlharDeMenina
             pnlNav.Top = btnClientes.Top;
             btnClientes.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnVisao_Leave(object sender, EventArgs e)
         {
             btnVisao.BackColor = Color.FromArgb(249, 138, 237);
@@ -84,50 +97,15 @@ namespace OlharDeMenina
         {
             btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnVendas_Leave(object sender, EventArgs e)
         {
             btnVendas.BackColor = Color.FromArgb(249, 138, 237);
         }
 
-        private void btnHist_Leave(object sender, EventArgs e)
-        {
-            btnHist.BackColor = Color.FromArgb(249, 138, 237);
-        }
         private void btnClientes_Leave(object sender, EventArgs e)
         {
             btnClientes.BackColor = Color.FromArgb(249, 138, 237);
-        }
-        private void btnFunc_Leave(object sender, EventArgs e)
-        {
-            btnClientes.BackColor = Color.FromArgb(249, 138, 237);
-        }
-
-        private async void FadeIn(Form o, int interval = 80)
-        {
-            //Object is not fully invisible. Fade it in
-            while (o.Opacity < 1.0)
-            {
-                await Task.Delay(interval);
-                o.Opacity += 0.05;
-            }
-            o.Opacity = 1; //make fully visible
-        }
-
-        private async void FadeOut(Form o, int interval = 80)
-        {
-            //Object is fully visible. Fade it out
-            while (o.Opacity > 0.0)
-            {
-                await Task.Delay(interval);
-                o.Opacity -= 0.05;
-            }
-            o.Opacity = 0; //make fully invisible
-            Environment.Exit(-1);
-            this.Close();
-        }
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -148,7 +126,5 @@ namespace OlharDeMenina
                 MessageBox.Show("Não foi possível conectar :(");
             }
         }
-
-
     }
 }
