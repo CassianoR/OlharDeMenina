@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace OlharDeMenina
 {
-    public partial class Form1 : Form
+    public partial class Form_menuFunc : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -19,7 +19,8 @@ namespace OlharDeMenina
             int nHeightEllipse
         );
 
-        public Form1()
+        
+        public Form_menuFunc()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
@@ -29,6 +30,31 @@ namespace OlharDeMenina
         {
             pnlNav.Hide();
         }
+
+        // Mover janela
+        int mov;
+        int movX;
+        int movY;
+        private void pnlSuperior_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void pnlSuperior_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
+
+        private void pnlSuperior_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
+        //
 
         private void btnVisao_Click(object sender, EventArgs e)
         {
@@ -149,6 +175,6 @@ namespace OlharDeMenina
             }
         }
 
-
+       
     }
 }
