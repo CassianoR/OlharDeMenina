@@ -1,7 +1,7 @@
 ﻿
 namespace OlharDeMenina
 {
-    partial class Form1
+    partial class Form_menuFunc
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -33,15 +33,12 @@ namespace OlharDeMenina
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.listBox2 = new System.Windows.Forms.ListBox();
-            this.pnl_principal = new System.Windows.Forms.Panel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlNav = new System.Windows.Forms.Panel();
             this.btnFunc = new System.Windows.Forms.Button();
             this.btnCon = new System.Windows.Forms.Button();
-            this.pnlNav = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnHist = new System.Windows.Forms.Button();
             this.btnVendas = new System.Windows.Forms.Button();
@@ -51,8 +48,6 @@ namespace OlharDeMenina
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel5.SuspendLayout();
-            this.pnl_principal.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -65,7 +60,7 @@ namespace OlharDeMenina
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(36, 9);
+            this.lblTitulo.Location = new System.Drawing.Point(36, 7);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(175, 32);
             this.lblTitulo.TabIndex = 1;
@@ -107,13 +102,6 @@ namespace OlharDeMenina
             // 
             // pnl_principal
             // 
-            this.pnl_principal.BackColor = System.Drawing.Color.GhostWhite;
-            this.pnl_principal.Controls.Add(this.monthCalendar1);
-            this.pnl_principal.Controls.Add(this.panel5);
-            this.pnl_principal.Location = new System.Drawing.Point(184, 82);
-            this.pnl_principal.Name = "pnl_principal";
-            this.pnl_principal.Size = new System.Drawing.Size(753, 456);
-            this.pnl_principal.TabIndex = 7;
             // 
             // monthCalendar1
             // 
@@ -121,14 +109,17 @@ namespace OlharDeMenina
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 5;
             // 
-            // panel4
+            // pnlSuperior
             // 
-            this.panel4.BackColor = System.Drawing.Color.Turquoise;
-            this.panel4.Controls.Add(this.btnClose);
-            this.panel4.Location = new System.Drawing.Point(0, -2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(934, 41);
-            this.panel4.TabIndex = 8;
+            this.pnlSuperior.BackColor = System.Drawing.Color.Turquoise;
+            this.pnlSuperior.Controls.Add(this.btnClose);
+            this.pnlSuperior.Location = new System.Drawing.Point(0, -2);
+            this.pnlSuperior.Name = "pnlSuperior";
+            this.pnlSuperior.Size = new System.Drawing.Size(934, 41);
+            this.pnlSuperior.TabIndex = 8;
+            this.pnlSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseDown);
+            this.pnlSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseMove);
+            this.pnlSuperior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseUp);
             // 
             // panel6
             // 
@@ -153,14 +144,23 @@ namespace OlharDeMenina
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
+            this.panel6.Controls.Add(this.lblTitulo);
+            this.panel6.Location = new System.Drawing.Point(184, 38);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(250, 45);
+            this.panel6.TabIndex = 9;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(138)))), ((int)(((byte)(237)))));
             this.panel1.BackgroundImage = global::OlharDeMenina.Properties.Resources.fundo_login;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnFunc);
             this.panel1.Controls.Add(this.btnCon);
-            this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnClientes);
             this.panel1.Controls.Add(this.btnHist);
             this.panel1.Controls.Add(this.btnVendas);
@@ -172,6 +172,14 @@ namespace OlharDeMenina
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(186, 538);
             this.panel1.TabIndex = 0;
+            // 
+            // pnlNav
+            // 
+            this.pnlNav.BackColor = System.Drawing.Color.White;
+            this.pnlNav.Location = new System.Drawing.Point(0, 152);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(3, 318);
+            this.pnlNav.TabIndex = 3;
             // 
             // btnFunc
             // 
@@ -189,6 +197,8 @@ namespace OlharDeMenina
             this.btnFunc.TabIndex = 5;
             this.btnFunc.Text = "Funcionários";
             this.btnFunc.UseVisualStyleBackColor = false;
+            this.btnFunc.Click += new System.EventHandler(this.btnFunc_Click);
+            this.btnFunc.Leave += new System.EventHandler(this.btnFunc_Leave);
             // 
             // btnCon
             // 
@@ -199,14 +209,6 @@ namespace OlharDeMenina
             this.btnCon.Text = "Conectar";
             this.btnCon.UseVisualStyleBackColor = true;
             this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
-            // 
-            // pnlNav
-            // 
-            this.pnlNav.BackColor = System.Drawing.Color.White;
-            this.pnlNav.Location = new System.Drawing.Point(0, 193);
-            this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(3, 100);
-            this.pnlNav.TabIndex = 3;
             // 
             // btnClientes
             // 
@@ -224,6 +226,7 @@ namespace OlharDeMenina
             this.btnClientes.TabIndex = 2;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             this.btnClientes.Leave += new System.EventHandler(this.btnClientes_Leave);
             // 
             // btnHist
@@ -343,8 +346,6 @@ namespace OlharDeMenina
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(935, 538);
             this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.pnl_principal);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -353,8 +354,6 @@ namespace OlharDeMenina
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.pnl_principal.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -384,7 +383,7 @@ namespace OlharDeMenina
         private System.Windows.Forms.Button btnFunc;
         private System.Windows.Forms.Panel pnl_principal;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnlSuperior;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel6;
