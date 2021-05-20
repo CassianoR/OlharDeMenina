@@ -16,7 +16,7 @@ namespace OlharDeMenina
             {
                 conn = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw");
                 conn.Open();
-                //MessageBox.Show("Conectado com sucesso!");
+                MessageBox.Show("Conectado com sucesso!");
                 return true;
             }
             catch (Exception er)
