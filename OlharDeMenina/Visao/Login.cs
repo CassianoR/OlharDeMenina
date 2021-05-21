@@ -2,11 +2,13 @@
 using System;
 using System.Windows.Forms;
 
+
+
 namespace OlharDeMenina
 {
     public partial class Login : Form
     {
-        private string username, password;
+        string username, password;
 
         public Login()
         {
@@ -19,11 +21,9 @@ namespace OlharDeMenina
         }
 
         // Mover janela
-        private int mov;
-
-        private int movX;
-        private int movY;
-
+        int mov;
+        int movX;
+        int movY;
         private void pnl_superior_MouseDown(object sender, MouseEventArgs e)
         {
             mov = 1;
@@ -43,7 +43,6 @@ namespace OlharDeMenina
         {
             mov = 0;
         }
-
         //
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -83,7 +82,8 @@ namespace OlharDeMenina
             try
             {
                 objCon.Open();
-
+                
+            
                 if (txtB_nome.Text != "" && txtB_senha2.Text != "")
                 {
                     objCon.Open();
@@ -98,7 +98,7 @@ namespace OlharDeMenina
                             password = row["Senha"].ToString();
                             MessageBox.Show("Usuário: " + username + " conectado com sucesso");
                             this.Hide();
-                            Form_menuFunc f1 = new Form_menuFunc();
+                            Form1 f1 = new Form1();
                             f1.ShowDialog();
                         }
                     }

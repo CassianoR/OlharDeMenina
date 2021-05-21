@@ -1,30 +1,30 @@
-﻿using OlharDeMenina.Controle;
-using OlharDeMenina.Modelo;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace OlharDeMenina
 {
-    public partial class FormFuncionario : Form
+    public partial class FormCliente : Form
     {
-        public FormFuncionario()
+        public FormCliente()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void limparTextBoxes(Control.ControlCollection controles)
         {
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
+            //Faz um laço para todos os controles passados no parâmetro
+            foreach (Control ctrl in controles)
+            {
+                //Se o contorle for um TextBox...
+                if (ctrl is TextBox)
+                {
+                    ((TextBox)(ctrl)).Text = String.Empty;
+                }
+            }
         }
 
         private void btn_AdicionarF_Click(object sender, EventArgs e)
         {
-            ControleFuncionario cf = new ControleFuncionario();
-            Funcionarios funcionario = new Funcionarios(tbox_nome.Text, tbox_cpf.Text, "1234", tbox_telefone.Text, tbox_endereco.Text);
-            cf.AdicionarFuncionarios(funcionario);
         }
 
         private void btn_ExcluirF_Click(object sender, EventArgs e)
@@ -51,10 +51,6 @@ namespace OlharDeMenina
             {
                 MessageBox.Show("Não foi possível conectar :(");
             }
-        }
-
-        private void FormFuncionario_Load(object sender, EventArgs e)
-        {
         }
     }
 }

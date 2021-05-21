@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace OlharDeMenina.Visao
 {
-    public partial class Form_menuADM : Form
+    public partial class Form_menuFunc : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -19,7 +19,7 @@ namespace OlharDeMenina.Visao
             int nHeightEllipse
         );
 
-        public Form_menuADM()
+        public Form_menuFunc()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));

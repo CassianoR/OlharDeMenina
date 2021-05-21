@@ -1,4 +1,5 @@
-﻿using OlharDeMenina.Modelo;
+﻿using MySql.Data.MySqlClient;
+using OlharDeMenina.Modelo;
 
 namespace OlharDeMenina.Controle
 {
@@ -11,16 +12,16 @@ namespace OlharDeMenina.Controle
             return mensagem;
         }
 
-        // public MySqlDataReader RetornarFuncionarios()
-        // {
-        //     FuncionariosDAO funf = new FuncionariosDAO();
-        //return funf.DadosFuncionarios();
-        // }
+        public MySqlDataReader RetornarFuncionarios()
+        {
+            FuncionariosDAO funf = new FuncionariosDAO();
+            return funf.RetornaFuncionarios();
+        }
 
-        //  public MySqlDataReader RetornarFuncionario(int IdFunf)
-        // {
-        //    FuncionariosDAO funf = new FuncionariosDAO();
-        //return funf.DadosFuncionario(IdFunf);
-        // }
+        public string DeletarFuncionario(int idFunc)
+        {
+            FuncionariosDAO funf = new FuncionariosDAO();
+            return funf.DeletarFuncionarios(idFunc);
+        }
     }
 }

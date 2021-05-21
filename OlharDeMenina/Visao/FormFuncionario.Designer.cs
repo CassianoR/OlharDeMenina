@@ -49,6 +49,7 @@ namespace OlharDeMenina
             this.tbox_telefone = new System.Windows.Forms.TextBox();
             this.lbl_telefone = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.ch_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pbl_titulo.SuspendLayout();
             this.pnl_cadastro.SuspendLayout();
             this.SuspendLayout();
@@ -57,14 +58,16 @@ namespace OlharDeMenina
             // 
             this.listView_funf.BackColor = System.Drawing.Color.LightPink;
             this.listView_funf.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ch_id,
             this.ch_nome,
-            this.ch_cpf,
             this.ch_telefone,
+            this.ch_cpf,
             this.ch_endereco});
+            this.listView_funf.FullRowSelect = true;
             this.listView_funf.HideSelection = false;
-            this.listView_funf.Location = new System.Drawing.Point(12, 253);
+            this.listView_funf.Location = new System.Drawing.Point(12, 259);
             this.listView_funf.Name = "listView_funf";
-            this.listView_funf.Size = new System.Drawing.Size(776, 185);
+            this.listView_funf.Size = new System.Drawing.Size(726, 185);
             this.listView_funf.TabIndex = 0;
             this.listView_funf.UseCompatibleStateImageBehavior = false;
             this.listView_funf.View = System.Windows.Forms.View.Details;
@@ -72,19 +75,17 @@ namespace OlharDeMenina
             // ch_nome
             // 
             this.ch_nome.Text = "Nome";
-            this.ch_nome.Width = 222;
+            this.ch_nome.Width = 247;
             // 
             // ch_cpf
             // 
-            this.ch_cpf.DisplayIndex = 2;
             this.ch_cpf.Text = "CPF";
-            this.ch_cpf.Width = 153;
+            this.ch_cpf.Width = 140;
             // 
             // ch_telefone
             // 
-            this.ch_telefone.DisplayIndex = 1;
             this.ch_telefone.Text = "Telefone";
-            this.ch_telefone.Width = 152;
+            this.ch_telefone.Width = 114;
             // 
             // ch_endereco
             // 
@@ -226,7 +227,7 @@ namespace OlharDeMenina
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(687, 70);
+            this.button1.Location = new System.Drawing.Point(663, 70);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 21;
@@ -234,12 +235,16 @@ namespace OlharDeMenina
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // ch_id
+            // 
+            this.ch_id.Text = "ID";
+            // 
             // FormFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(750, 456);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.listView_funf);
             this.Controls.Add(this.pbl_titulo);
@@ -278,5 +283,6 @@ namespace OlharDeMenina
         private System.Windows.Forms.TextBox tbox_cpf;
         private System.Windows.Forms.TextBox tbox_telefone;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ColumnHeader ch_id;
     }
 }

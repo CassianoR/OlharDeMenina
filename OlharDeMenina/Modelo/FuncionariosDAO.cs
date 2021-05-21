@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
 
 namespace OlharDeMenina.Modelo
 {
@@ -34,49 +33,47 @@ namespace OlharDeMenina.Modelo
             return Mensagem;
         }
 
-        public MySqlCommand RetornaFuncionarios()
+        public MySqlDataReader RetornaFuncionarios()
         {
-            cmd.CommandText = "select * from Funcionarios";
-
+            string query = "SELECT * FROM Funcionarios";
+            MySqlCommand cmd = new MySqlCommand(query, con.Conectar());
+            MySqlDataReader dataReader = cmd.ExecuteReader();
             try
             {
-                cmd.Connection = con.Conectar();
-                dr = cmd.ExecuteReader();
-                //if (dr.HasRows)
-                //{
-                //bool v = dr;
-                //  return v;
-                // }
+                dataReader.Read();
+
+                if (dataReader.HasRows)
+                {
+                    Mensagem = "Dados atualizados com sucesso!";
+                    System.Windows.Forms.MessageBox.Show(Mensagem);
+                }
+                else
+                {
+                    Mensagem = "Não há dados na tabela.";
+                    System.Windows.Forms.MessageBox.Show(Mensagem);
+                }
+                return dataReader;
             }
-            catch (MySqlException)
+            catch (MySqlException ex)
             {
-                //Não é a mensagem mais apropriada!
-                Console.WriteLine("Algo errado não está certo!");
+                Mensagem = ex.Message;
+                System.Windows.Forms.MessageBox.Show(Mensagem);
+                return dataReader;
             }
-            con.Desconectar();
-            return null;
         }
 
-        public string Deletar(int indice)
+        public string DeletarFuncionarios(int idFunc)
         {
-            //Comandos para inserir novo usuário no banco.
-            //Comando SQL
             cmd.CommandText = "delete from Funcionarios where ID = @id";
-            //parametros
-            cmd.Parameters.AddWithValue("id", indice);
-            //conectar com banco
+            cmd.Parameters.AddWithValue("id", idFunc);
             try
             {
-                //Receber o endereço de onde vou me conectar.
                 cmd.Connection = con.Conectar();
-                //Executar comando.
                 cmd.ExecuteNonQuery();
-                //Exibe mensagem;
                 Mensagem = "Deletado com sucesso!!!";
             }
             catch (MySqlException ex)
             {
-                //Captura a mensagem de erro gerada.
                 Mensagem = ex.Message;
             }
             return Mensagem;
