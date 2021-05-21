@@ -7,16 +7,36 @@ namespace OlharDeMenina
 {
     internal class Conexao
     {
-        private MySql.Data.MySqlClient.MySqlConnection conn;
-        private string myConnectionString;
+        private MySqlConnection conn;
+        private MySqlConnection con = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw");
 
+        public MySqlConnection Conectar()
+        {
+            //Verifica se o estado da conexão é igual a fechado, então posso abrir.
+            if (con.State == System.Data.ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            return con;
+        }
+
+        public void Desconectar()
+        {
+            //Verifica se o estado da conexão é aberto, então fecho.
+            if (con.State == System.Data.ConnectionState.Open)
+            {
+                con.Close();
+            }
+        }
+
+        ///
         public bool Open()
         {
             try
             {
                 conn = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw");
                 conn.Open();
-                //MessageBox.Show("Conectado com sucesso!");
+                MessageBox.Show("Conectado com sucesso!");
                 return true;
             }
             catch (Exception er)

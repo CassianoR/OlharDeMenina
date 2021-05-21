@@ -98,7 +98,7 @@ namespace OlharDeMenina
                             password = row["Senha"].ToString();
                             MessageBox.Show("Usuário: " + username + " conectado com sucesso");
                             this.Hide();
-                            Form_menuFunc f1 = new Form_menuFunc();
+                            Form1 f1 = new Form1();
                             f1.ShowDialog();
                         }
                     }

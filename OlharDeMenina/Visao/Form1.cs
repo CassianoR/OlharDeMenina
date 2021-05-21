@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OlharDeMenina
 {
-    public partial class Form_menuFunc : Form
+    public partial class Form1 : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -19,8 +20,7 @@ namespace OlharDeMenina
             int nHeightEllipse
         );
 
-        
-        public Form_menuFunc()
+        public Form1()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
@@ -32,9 +32,11 @@ namespace OlharDeMenina
         }
 
         // Mover janela
-        int mov;
-        int movX;
-        int movY;
+        private int mov;
+
+        private int movX;
+        private int movY;
+
         private void pnlSuperior_MouseDown(object sender, MouseEventArgs e)
         {
             mov = 1;
@@ -54,6 +56,7 @@ namespace OlharDeMenina
         {
             mov = 0;
         }
+
         //
 
         private void btnVisao_Click(object sender, EventArgs e)
@@ -80,6 +83,7 @@ namespace OlharDeMenina
             pnlNav.Top = btnHist.Top;
             btnHist.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnVendas_Click(object sender, EventArgs e)
         {
             pnlNav.Show();
@@ -87,13 +91,18 @@ namespace OlharDeMenina
             pnlNav.Top = btnVendas.Top;
             btnVendas.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnFunc_Click(object sender, EventArgs e)
         {
             pnlNav.Show();
             pnlNav.Height = btnFunc.Height;
             pnlNav.Top = btnFunc.Top;
             btnFunc.BackColor = Color.FromArgb(249, 138, 237);
+
+            AbrirFormNoPanel<FormFuncionario>();
+            lblTitulo.Text = "Funcionários";
         }
+
         private void btnClientes_Click(object sender, EventArgs e)
         {
             pnlNav.Show();
@@ -101,31 +110,35 @@ namespace OlharDeMenina
             pnlNav.Top = btnClientes.Top;
             btnClientes.BackColor = Color.FromArgb(249, 138, 237);
         }
+
         private void btnVisao_Leave(object sender, EventArgs e)
         {
-            btnVisao.BackColor = Color.FromArgb(249, 138, 237);
+            btnVisao.BackColor = Color.FromArgb(250, 88, 130);
         }
 
         private void btnEstoque_Leave(object sender, EventArgs e)
         {
-            btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
+            btnEstoque.BackColor = Color.FromArgb(250, 88, 130);
         }
+
         private void btnVendas_Leave(object sender, EventArgs e)
         {
-            btnVendas.BackColor = Color.FromArgb(249, 138, 237);
+            btnVendas.BackColor = Color.FromArgb(250, 88, 130);
         }
 
         private void btnHist_Leave(object sender, EventArgs e)
         {
-            btnHist.BackColor = Color.FromArgb(249, 138, 237);
+            btnHist.BackColor = Color.FromArgb(250, 88, 130);
         }
+
         private void btnClientes_Leave(object sender, EventArgs e)
         {
-            btnClientes.BackColor = Color.FromArgb(249, 138, 237);
+            btnClientes.BackColor = Color.FromArgb(250, 88, 130);
         }
+
         private void btnFunc_Leave(object sender, EventArgs e)
         {
-            btnClientes.BackColor = Color.FromArgb(249, 138, 237);
+            btnClientes.BackColor = Color.FromArgb(250, 88, 130);
         }
 
         private async void FadeIn(Form o, int interval = 80)
@@ -161,20 +174,43 @@ namespace OlharDeMenina
             FadeOut(this, 20);
         }
 
-        private void btnCon_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            try
-            {
-                //MySqlConnection objCon = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw");
-                Conexao objCon = new Conexao();
-                objCon.Open();
-            }
-            catch
-            {
-                MessageBox.Show("Não foi possível conectar :(");
-            }
+            this.label1.Text = DateTime.Now.ToString("hh:mm");
         }
 
-       
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void btnCon_Click_1(object sender, EventArgs e)
+        {
+            Conexao objCon = new Conexao();
+            objCon.Open();
+        }
+
+        private void AbrirFormNoPanel<Forms>() where Forms : Form, new()
+        {
+            Form formulario;
+            formulario = panel3.Controls.OfType<Forms>().FirstOrDefault();
+
+            if (formulario == null)
+            {
+                formulario = new Forms();
+                formulario.TopLevel = false;
+                //formulario.FormBorderStyle = FormBorderStyle.None;
+                //formulario.Dock = DockStyle.Fill;
+                panel3.Controls.Add(formulario);
+                panel3.Tag = formulario;
+                formulario.Show();
+                formulario.BringToFront();
+            }
+            else
+            {
+                if (formulario.WindowState == FormWindowState.Minimized)
+                    formulario.WindowState = FormWindowState.Normal;
+                formulario.BringToFront();
+            }
+        }
     }
 }
