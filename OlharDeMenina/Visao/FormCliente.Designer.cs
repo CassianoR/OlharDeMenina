@@ -35,6 +35,8 @@ namespace OlharDeMenina
             this.ch_telefone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_endereco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_cadastro = new System.Windows.Forms.Panel();
+            this.tbox_datadenascimento = new System.Windows.Forms.TextBox();
+            this.lbl_datadenascimento = new System.Windows.Forms.Label();
             this.tbox_cpf = new System.Windows.Forms.TextBox();
             this.tbox_telefone = new System.Windows.Forms.TextBox();
             this.lbl_telefone = new System.Windows.Forms.Label();
@@ -46,14 +48,13 @@ namespace OlharDeMenina
             this.lbl_nome = new System.Windows.Forms.Label();
             this.tbox_nome = new System.Windows.Forms.TextBox();
             this.lbl_cpf = new System.Windows.Forms.Label();
-            this.lbl_datadenascimento = new System.Windows.Forms.Label();
-            this.tbox_datadenascimento = new System.Windows.Forms.TextBox();
             this.pnl_cadastro.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView_funf
             // 
             this.listView_funf.BackColor = System.Drawing.Color.LightPink;
+            this.listView_funf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView_funf.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ch_nome,
             this.ch_cpf,
@@ -108,6 +109,22 @@ namespace OlharDeMenina
             this.pnl_cadastro.Name = "pnl_cadastro";
             this.pnl_cadastro.Size = new System.Drawing.Size(723, 120);
             this.pnl_cadastro.TabIndex = 19;
+            // 
+            // tbox_datadenascimento
+            // 
+            this.tbox_datadenascimento.Location = new System.Drawing.Point(320, 87);
+            this.tbox_datadenascimento.Name = "tbox_datadenascimento";
+            this.tbox_datadenascimento.Size = new System.Drawing.Size(205, 20);
+            this.tbox_datadenascimento.TabIndex = 23;
+            // 
+            // lbl_datadenascimento
+            // 
+            this.lbl_datadenascimento.AutoSize = true;
+            this.lbl_datadenascimento.Location = new System.Drawing.Point(317, 70);
+            this.lbl_datadenascimento.Name = "lbl_datadenascimento";
+            this.lbl_datadenascimento.Size = new System.Drawing.Size(104, 13);
+            this.lbl_datadenascimento.TabIndex = 22;
+            this.lbl_datadenascimento.Text = "Data de Nascimento";
             // 
             // tbox_cpf
             // 
@@ -164,7 +181,7 @@ namespace OlharDeMenina
             // 
             this.btn_AdicionarC.BackgroundImage = global::OlharDeMenina.Properties.Resources.adicionar_usuario;
             this.btn_AdicionarC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_AdicionarC.Location = new System.Drawing.Point(655, 70);
+            this.btn_AdicionarC.Location = new System.Drawing.Point(655, 15);
             this.btn_AdicionarC.Name = "btn_AdicionarC";
             this.btn_AdicionarC.Size = new System.Drawing.Size(51, 43);
             this.btn_AdicionarC.TabIndex = 13;
@@ -175,7 +192,7 @@ namespace OlharDeMenina
             // 
             this.btn_ExcluirC.BackgroundImage = global::OlharDeMenina.Properties.Resources.excluir_usuario;
             this.btn_ExcluirC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_ExcluirC.Location = new System.Drawing.Point(655, 15);
+            this.btn_ExcluirC.Location = new System.Drawing.Point(655, 64);
             this.btn_ExcluirC.Name = "btn_ExcluirC";
             this.btn_ExcluirC.Size = new System.Drawing.Size(51, 43);
             this.btn_ExcluirC.TabIndex = 14;

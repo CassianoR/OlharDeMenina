@@ -23,16 +23,6 @@ namespace OlharDeMenina
         {
         }
 
-        private void btn_AdicionarF_Click(object sender, EventArgs e)
-        {
-            ControleFuncionario cf = new ControleFuncionario();
-            Funcionarios funcionario = new Funcionarios(tbox_nome.Text, tbox_cpf.Text, "1234", tbox_telefone.Text, tbox_endereco.Text);
-            cf.AdicionarFuncionarios(funcionario);
-
-            PreencherListView();
-            LimparCampos();
-        }
-
         private void btn_ExcluirF_Click(object sender, EventArgs e)
         {
             idFunc = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
@@ -40,11 +30,6 @@ namespace OlharDeMenina
             cf.DeletarFuncionario(idFunc);
             LimparCampos();
             PreencherListView();
-        }
-
-        private void btn_limpar_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -93,6 +78,21 @@ namespace OlharDeMenina
                     listView_funf.Items.Add(lv);
                 }
             }
+        }
+
+        private void btn_limparF_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void btn_AdicionarF_Click(object sender, EventArgs e)
+        {
+            ControleFuncionario cf = new ControleFuncionario();
+            Funcionarios funcionario = new Funcionarios(tbox_nome.Text, tbox_cpf.Text, "1234", tbox_telefone.Text, tbox_endereco.Text);
+            cf.AdicionarFuncionarios(funcionario);
+
+            PreencherListView();
+            LimparCampos();
         }
 
     }
