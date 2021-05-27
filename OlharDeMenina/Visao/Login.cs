@@ -43,7 +43,6 @@ namespace OlharDeMenina
         {
             mov = 0;
         }
-        //
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -96,7 +95,7 @@ namespace OlharDeMenina
                         {
                             username = row["Nome"].ToString();
                             password = row["Senha"].ToString();
-                             //MessageBox.Show("Usuário: " + username + " conectado com sucesso");
+                            MessageBox.Show("Usuário: " + username + " conectado com sucesso");
                             this.Hide();
                             Form1 f1 = new Form1();
                             f1.ShowDialog();
