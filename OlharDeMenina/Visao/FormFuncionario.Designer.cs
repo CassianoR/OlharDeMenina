@@ -46,6 +46,7 @@ namespace OlharDeMenina
             this.tbox_cpf = new System.Windows.Forms.TextBox();
             this.tbox_telefone = new System.Windows.Forms.TextBox();
             this.lbl_telefone = new System.Windows.Forms.Label();
+            this.btn_AdicionarF = new System.Windows.Forms.Button();
             this.pnl_cadastro.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -164,14 +165,6 @@ namespace OlharDeMenina
             this.btn_limparF.Click += new System.EventHandler(this.btn_limparF_Click);
 
 
-            this.btn_limpar.Location = new System.Drawing.Point(377, 129);
-            this.btn_limpar.Name = "btn_limpar";
-            this.btn_limpar.Size = new System.Drawing.Size(75, 23);
-            this.btn_limpar.TabIndex = 15;
-            this.btn_limpar.Text = "Limpar";
-            this.btn_limpar.UseVisualStyleBackColor = true;
-            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
-
 
             // 
             // pnl_cadastro
@@ -229,13 +222,6 @@ namespace OlharDeMenina
 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(663, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormFuncionario
             // 

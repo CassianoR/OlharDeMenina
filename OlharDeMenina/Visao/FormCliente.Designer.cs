@@ -162,13 +162,10 @@ namespace OlharDeMenina
             // 
             // btn_limparC
             // 
-            this.btn_limpar.Location = new System.Drawing.Point(459, 129);
-            this.btn_limpar.Name = "btn_limpar";
-            this.btn_limpar.Size = new System.Drawing.Size(75, 23);
-            this.btn_limpar.TabIndex = 15;
-            this.btn_limpar.Text = "Limpar";
-            this.btn_limpar.UseVisualStyleBackColor = true;
-            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
+            this.btn_limparC.Location = new System.Drawing.Point(0, 0);
+            this.btn_limparC.Name = "btn_limparC";
+            this.btn_limparC.Size = new System.Drawing.Size(75, 23);
+            this.btn_limparC.TabIndex = 24;
             // 
             // tbox_endereco
             // 
@@ -224,19 +221,12 @@ namespace OlharDeMenina
             this.lbl_cpf.TabIndex = 11;
             this.lbl_cpf.Text = "CPF";
             // 
-            // button1
-            // 
-            this.tbox_datadenascimento.Location = new System.Drawing.Point(320, 87);
-            this.tbox_datadenascimento.Name = "tbox_datadenascimento";
-            this.tbox_datadenascimento.Size = new System.Drawing.Size(205, 20);
-            this.tbox_datadenascimento.TabIndex = 23;
-            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
-            this.ClientSize = new System.Drawing.Size(759, 468);
+            this.ClientSize = new System.Drawing.Size(748, 456);
             this.Controls.Add(this.listView_funf);
             this.Controls.Add(this.pnl_cadastro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
