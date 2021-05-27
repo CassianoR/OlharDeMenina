@@ -37,8 +37,11 @@ namespace OlharDeMenina
             this.panel3 = new System.Windows.Forms.Panel();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.pnlSuperior = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btmin = new System.Windows.Forms.Button();
+            this.btnmax = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnFunc = new System.Windows.Forms.Button();
@@ -50,7 +53,6 @@ namespace OlharDeMenina
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
@@ -125,6 +127,8 @@ namespace OlharDeMenina
             // pnlSuperior
             // 
             this.pnlSuperior.BackColor = System.Drawing.Color.Turquoise;
+            this.pnlSuperior.Controls.Add(this.btmin);
+            this.pnlSuperior.Controls.Add(this.btnmax);
             this.pnlSuperior.Controls.Add(this.btnClose);
             this.pnlSuperior.Location = new System.Drawing.Point(0, -2);
             this.pnlSuperior.Name = "pnlSuperior";
@@ -134,20 +138,6 @@ namespace OlharDeMenina
             this.pnlSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseMove);
             this.pnlSuperior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseUp);
             // 
-            // btnClose
-            // 
-            this.btnClose.BackgroundImage = global::OlharDeMenina.Properties.Resources.closebtn;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(899, 9);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(24, 24);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
@@ -156,6 +146,53 @@ namespace OlharDeMenina
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(250, 45);
             this.panel6.TabIndex = 9;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btmin
+            // 
+            this.btmin.BackColor = System.Drawing.Color.Transparent;
+            this.btmin.BackgroundImage = global::OlharDeMenina.Properties.Resources.minbtn;
+            this.btmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmin.Location = new System.Drawing.Point(826, 9);
+            this.btmin.Name = "btmin";
+            this.btmin.Size = new System.Drawing.Size(28, 23);
+            this.btmin.TabIndex = 8;
+            this.btmin.UseVisualStyleBackColor = false;
+            this.btmin.Click += new System.EventHandler(this.btmin_Click);
+            // 
+            // btnmax
+            // 
+            this.btnmax.BackColor = System.Drawing.Color.Transparent;
+            this.btnmax.BackgroundImage = global::OlharDeMenina.Properties.Resources.Maxbtn;
+            this.btnmax.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnmax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmax.Location = new System.Drawing.Point(860, 9);
+            this.btnmax.Name = "btnmax";
+            this.btnmax.Size = new System.Drawing.Size(24, 23);
+            this.btnmax.TabIndex = 7;
+            this.btnmax.UseVisualStyleBackColor = false;
+            this.btnmax.Click += new System.EventHandler(this.btnmax_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::OlharDeMenina.Properties.Resources.closebtnn;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(890, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(33, 30);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel1
             // 
@@ -332,12 +369,6 @@ namespace OlharDeMenina
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,6 +421,8 @@ namespace OlharDeMenina
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btmin;
+        private System.Windows.Forms.Button btnmax;
     }
 }
 

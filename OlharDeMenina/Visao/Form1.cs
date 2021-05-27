@@ -231,5 +231,17 @@ namespace OlharDeMenina
                 formulario.BringToFront();
             }
         }
+
+        private void btnmax_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btmin_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            //btnRestaurar.Visible = false;
+            //btnMaximizar.Visible = true;
+        }
     }
 }
