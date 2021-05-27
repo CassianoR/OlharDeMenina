@@ -42,7 +42,6 @@ namespace OlharDeMenina
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlNav = new System.Windows.Forms.Panel();
             this.btnFunc = new System.Windows.Forms.Button();
-            this.btnCon = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnHist = new System.Windows.Forms.Button();
             this.btnVendas = new System.Windows.Forms.Button();
@@ -165,7 +164,6 @@ namespace OlharDeMenina
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnFunc);
-            this.panel1.Controls.Add(this.btnCon);
             this.panel1.Controls.Add(this.btnClientes);
             this.panel1.Controls.Add(this.btnHist);
             this.panel1.Controls.Add(this.btnVendas);
@@ -204,16 +202,6 @@ namespace OlharDeMenina
             this.btnFunc.UseVisualStyleBackColor = false;
             this.btnFunc.Click += new System.EventHandler(this.btnFunc_Click);
             this.btnFunc.Leave += new System.EventHandler(this.btnFunc_Leave);
-            // 
-            // btnCon
-            // 
-            this.btnCon.Location = new System.Drawing.Point(59, 494);
-            this.btnCon.Name = "btnCon";
-            this.btnCon.Size = new System.Drawing.Size(75, 23);
-            this.btnCon.TabIndex = 4;
-            this.btnCon.Text = "Conectar";
-            this.btnCon.UseVisualStyleBackColor = true;
-            this.btnCon.Click += new System.EventHandler(this.btnCon_Click_1);
             // 
             // btnClientes
             // 
@@ -394,7 +382,6 @@ namespace OlharDeMenina
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnCon;
         private System.Windows.Forms.Button btnFunc;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;

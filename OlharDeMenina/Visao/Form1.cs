@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -69,6 +69,7 @@ namespace OlharDeMenina
             // AbrirFormNoPanel<Form1>();
             //lblTitulo.Text = "Visão Geral";
             //Corrigir o nome e descomentar quando for corrigido o form1/ precisamos ver isso ainda. Problema de duplicar a janela toda no panel 
+            panel3.Hide();
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
@@ -124,6 +125,8 @@ namespace OlharDeMenina
             // AbrirFormNoPanel<FormClientes>();
             //lblTitulo.Text = "Clientes";
             //Corrigir o nome e descomentar quando for adicionado o formClientes. 
+            AbrirFormNoPanel<FormCliente>();
+            lblTitulo.Text = "Clientes";
         }
 
         private void btnVisao_Leave(object sender, EventArgs e)
@@ -206,6 +209,7 @@ namespace OlharDeMenina
 
         private void AbrirFormNoPanel<Forms>() where Forms : Form, new()
         {
+            panel3.Show();
             Form formulario;
             formulario = panel3.Controls.OfType<Forms>().FirstOrDefault();
 
