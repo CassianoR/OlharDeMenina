@@ -149,7 +149,6 @@
   <ItemGroup>
     <None Include="Resources\user.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\fundo_login.jpg" />
   </ItemGroup>
@@ -158,6 +157,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Captura_de_tela_2021-05-15_110046-removebg-preview %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionar_usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\borracha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\excluir_usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
