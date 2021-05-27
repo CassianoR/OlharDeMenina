@@ -167,5 +167,14 @@
   <ItemGroup>
     <None Include="Resources\excluir_usuario.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maxbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closebtnn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minbtn.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
