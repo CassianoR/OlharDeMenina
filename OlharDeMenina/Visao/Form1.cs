@@ -66,6 +66,7 @@ namespace OlharDeMenina
             pnlNav.Top = btnVisao.Top;
             pnlNav.Left = btnVisao.Left;
             btnVisao.BackColor = Color.FromArgb(249, 138, 237);
+            panel3.Hide();
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
@@ -191,6 +192,7 @@ namespace OlharDeMenina
 
         private void AbrirFormNoPanel<Forms>() where Forms : Form, new()
         {
+            panel3.Show();
             Form formulario;
             formulario = panel3.Controls.OfType<Forms>().FirstOrDefault();
 
