@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using OlharDeMenina.Controle;
-using OlharDeMenina.Modelo;
-using MySql.Data.MySqlClient;
 
 namespace OlharDeMenina
 {
@@ -28,23 +25,18 @@ namespace OlharDeMenina
 
         private void btn_AdicionarF_Click(object sender, EventArgs e)
         {
-
-
-            PreencherListView();
-            LimparCampos();
         }
 
         private void btn_ExcluirF_Click(object sender, EventArgs e)
         {
-
-
-            PreencherListView();
-            LimparCampos();
         }
 
         private void btn_limpar_Click(object sender, EventArgs e)
         {
-            LimparCampos();
+            tbox_nome.Text = String.Empty;
+            tbox_cpf.Text = String.Empty;
+            tbox_endereco.Text = String.Empty;
+            tbox_telefone.Text = String.Empty;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -58,35 +50,6 @@ namespace OlharDeMenina
             catch
             {
                 MessageBox.Show("Não foi possível conectar :(");
-            }
-        }
-
-        public void LimparCampos()
-        {
-            tbox_nome.Clear();
-            tbox_cpf.Clear();
-            tbox_endereco.Clear();
-            tbox_telefone.Clear();
-        }
-
-        public void PreencherListView()
-        {
-            listView_funf.Items.Clear();
-            MySqlDataReader dataReader;
-            ControleFuncionario cf = new ControleFuncionario();
-            dataReader = cf.RetornarFuncionarios(); //Chama o método responsável pela realização da consulta.
-
-            if (dataReader != null) //Verifico
-            {
-                while (dataReader.Read())
-                {
-                    ListViewItem lv = new ListViewItem(dataReader.GetString(0));
-                    lv.SubItems.Add(dataReader.GetString(2));
-                    lv.SubItems.Add(dataReader.GetString(5));
-                    lv.SubItems.Add(dataReader.GetString(4));
-                    lv.SubItems.Add(dataReader.GetString(6));
-                    listView_funf.Items.Add(lv);
-                }
             }
         }
     }

@@ -73,26 +73,6 @@ namespace OlharDeMenina.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap adicionar_usuario {
-            get {
-                object obj = ResourceManager.GetObject("adicionar_usuario", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap borracha {
-            get {
-                object obj = ResourceManager.GetObject("borracha", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap btnuser {
             get {
                 object obj = ResourceManager.GetObject("btnuser", resourceCulture);
@@ -146,16 +126,6 @@ namespace OlharDeMenina.Properties {
         internal static System.Drawing.Bitmap download__1_ {
             get {
                 object obj = ResourceManager.GetObject("download (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap excluir_usuario {
-            get {
-                object obj = ResourceManager.GetObject("excluir_usuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
