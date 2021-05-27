@@ -57,7 +57,7 @@ namespace OlharDeMenina
             mov = 0;
         }
 
-        //
+        
 
         private void btnVisao_Click(object sender, EventArgs e)
         {
@@ -66,6 +66,9 @@ namespace OlharDeMenina
             pnlNav.Top = btnVisao.Top;
             pnlNav.Left = btnVisao.Left;
             btnVisao.BackColor = Color.FromArgb(249, 138, 237);
+            // AbrirFormNoPanel<Form1>();
+            //lblTitulo.Text = "Visão Geral";
+            //Corrigir o nome e descomentar quando for corrigido o form1/ precisamos ver isso ainda. Problema de duplicar a janela toda no panel 
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
@@ -74,6 +77,9 @@ namespace OlharDeMenina
             pnlNav.Height = btnEstoque.Height;
             pnlNav.Top = btnEstoque.Top;
             btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
+            // AbrirFormNoPanel<FormEstoque>();
+            //lblTitulo.Text = "Estoque";
+            //Corrigir o nome e descomentar quando for adicionado o formEstoque. 
         }
 
         private void btnHist_Click(object sender, EventArgs e)
@@ -82,6 +88,9 @@ namespace OlharDeMenina
             pnlNav.Height = btnHist.Height;
             pnlNav.Top = btnHist.Top;
             btnHist.BackColor = Color.FromArgb(249, 138, 237);
+            // AbrirFormNoPanel<FormHist>();
+            //lblTitulo.Text = "Histórico";
+            //Corrigir o nome e descomentar quando for adicionado o formHist. 
         }
 
         private void btnVendas_Click(object sender, EventArgs e)
@@ -90,6 +99,9 @@ namespace OlharDeMenina
             pnlNav.Height = btnVendas.Height;
             pnlNav.Top = btnVendas.Top;
             btnVendas.BackColor = Color.FromArgb(249, 138, 237);
+           // AbrirFormNoPanel<FormVendas>();
+            //lblTitulo.Text = "Vendas";
+            //Corrigir o nome e descomentar quando for adicionado o formVendas. 
         }
 
         private void btnFunc_Click(object sender, EventArgs e)
@@ -109,6 +121,9 @@ namespace OlharDeMenina
             pnlNav.Height = btnClientes.Height;
             pnlNav.Top = btnClientes.Top;
             btnClientes.BackColor = Color.FromArgb(249, 138, 237);
+            // AbrirFormNoPanel<FormClientes>();
+            //lblTitulo.Text = "Clientes";
+            //Corrigir o nome e descomentar quando for adicionado o formClientes. 
         }
 
         private void btnVisao_Leave(object sender, EventArgs e)

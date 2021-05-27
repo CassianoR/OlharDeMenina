@@ -37,6 +37,8 @@ namespace OlharDeMenina
             this.pbl_titulo = new System.Windows.Forms.Panel();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.pnl_cadastro = new System.Windows.Forms.Panel();
+            this.tbox_cpf = new System.Windows.Forms.TextBox();
+            this.tbox_telefone = new System.Windows.Forms.TextBox();
             this.lbl_telefone = new System.Windows.Forms.Label();
             this.lbl_endereco = new System.Windows.Forms.Label();
             this.btn_limpar = new System.Windows.Forms.Button();
@@ -46,8 +48,6 @@ namespace OlharDeMenina
             this.lbl_nome = new System.Windows.Forms.Label();
             this.tbox_nome = new System.Windows.Forms.TextBox();
             this.lbl_cpf = new System.Windows.Forms.Label();
-            this.tbox_cpf = new System.Windows.Forms.TextBox();
-            this.tbox_telefone = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.pbl_titulo.SuspendLayout();
             this.pnl_cadastro.SuspendLayout();
@@ -128,6 +128,22 @@ namespace OlharDeMenina
             this.pnl_cadastro.Size = new System.Drawing.Size(553, 185);
             this.pnl_cadastro.TabIndex = 19;
             // 
+            // tbox_cpf
+            // 
+            this.tbox_cpf.Location = new System.Drawing.Point(180, 83);
+            this.tbox_cpf.MaxLength = 14;
+            this.tbox_cpf.Name = "tbox_cpf";
+            this.tbox_cpf.Size = new System.Drawing.Size(139, 20);
+            this.tbox_cpf.TabIndex = 21;
+            // 
+            // tbox_telefone
+            // 
+            this.tbox_telefone.Location = new System.Drawing.Point(12, 83);
+            this.tbox_telefone.MaxLength = 11;
+            this.tbox_telefone.Name = "tbox_telefone";
+            this.tbox_telefone.Size = new System.Drawing.Size(157, 20);
+            this.tbox_telefone.TabIndex = 20;
+            // 
             // lbl_telefone
             // 
             this.lbl_telefone.AutoSize = true;
@@ -148,9 +164,9 @@ namespace OlharDeMenina
             // 
             // btn_limpar
             // 
-            this.btn_limpar.Location = new System.Drawing.Point(481, 129);
+            this.btn_limpar.Location = new System.Drawing.Point(459, 129);
             this.btn_limpar.Name = "btn_limpar";
-            this.btn_limpar.Size = new System.Drawing.Size(53, 23);
+            this.btn_limpar.Size = new System.Drawing.Size(75, 23);
             this.btn_limpar.TabIndex = 15;
             this.btn_limpar.Text = "Limpar";
             this.btn_limpar.UseVisualStyleBackColor = true;
@@ -207,22 +223,6 @@ namespace OlharDeMenina
             this.lbl_cpf.Size = new System.Drawing.Size(27, 13);
             this.lbl_cpf.TabIndex = 11;
             this.lbl_cpf.Text = "CPF";
-            // 
-            // tbox_cpf
-            // 
-            this.tbox_cpf.Location = new System.Drawing.Point(180, 83);
-            this.tbox_cpf.MaxLength = 14;
-            this.tbox_cpf.Name = "tbox_cpf";
-            this.tbox_cpf.Size = new System.Drawing.Size(139, 20);
-            this.tbox_cpf.TabIndex = 21;
-            // 
-            // tbox_telefone
-            // 
-            this.tbox_telefone.Location = new System.Drawing.Point(12, 83);
-            this.tbox_telefone.MaxLength = 11;
-            this.tbox_telefone.Name = "tbox_telefone";
-            this.tbox_telefone.Size = new System.Drawing.Size(157, 20);
-            this.tbox_telefone.TabIndex = 20;
             // 
             // button1
             // 
