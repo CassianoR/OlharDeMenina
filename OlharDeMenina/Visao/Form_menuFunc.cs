@@ -4,9 +4,9 @@ using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OlharDeMenina
+namespace OlharDeMenina.Visao
 {
-    public partial class Form1 : Form
+    public partial class Form_menuFunc : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -19,88 +19,39 @@ namespace OlharDeMenina
             int nHeightEllipse
         );
 
-        public Form1()
+        public Form_menuFunc()
         {
             InitializeComponent();
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
-        private void visãoGeralToolStripMenuItem_Click(object sender, EventArgs e)
+        // Mover janela
+        private int mov;
+
+        private int movX;
+        private int movY;
+
+        private void pnlSuperior_MouseDown(object sender, MouseEventArgs e)
         {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void pnlSuperior_MouseMove(object sender, MouseEventArgs e)
         {
-            pnlNav.Hide();
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
         }
 
-        private void btnVisao_Click(object sender, EventArgs e)
+        private void pnlSuperior_MouseUp(object sender, MouseEventArgs e)
         {
-            pnlNav.Show();
-            pnlNav.Height = btnVisao.Height;
-            pnlNav.Top = btnVisao.Top;
-            pnlNav.Left = btnVisao.Left;
-            btnVisao.BackColor = Color.FromArgb(249, 138, 237);
-            var form_log = new Login();
-            form_log.Show();
+            mov = 0;
         }
 
-        private void btnEstoque_Click(object sender, EventArgs e)
-        {
-            pnlNav.Show();
-            pnlNav.Height = btnEstoque.Height;
-            pnlNav.Top = btnEstoque.Top;
-            btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
-        }
-
-        private void btnPedidos_Click(object sender, EventArgs e)
-        {
-            pnlNav.Show();
-            pnlNav.Height = btnPedidos.Height;
-            pnlNav.Top = btnPedidos.Top;
-            btnPedidos.BackColor = Color.FromArgb(249, 138, 237);
-        }
-
-        private void btnHist_Click(object sender, EventArgs e)
-        {
-            pnlNav.Show();
-            pnlNav.Height = btnHist.Height;
-            pnlNav.Top = btnHist.Top;
-            btnHist.BackColor = Color.FromArgb(249, 138, 237);
-        }
-
-        private void btnConfig_Click(object sender, EventArgs e)
-        {
-            pnlNav.Show();
-            pnlNav.Height = btnConfig.Height;
-            pnlNav.Top = btnConfig.Top;
-            btnConfig.BackColor = Color.FromArgb(249, 138, 237);
-        }
-
-        private void btnVisao_Leave(object sender, EventArgs e)
-        {
-            btnVisao.BackColor = Color.FromArgb(249, 138, 237);
-        }
-
-        private void btnEstoque_Leave(object sender, EventArgs e)
-        {
-            btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
-        }
-
-        private void btnPedidos_Leave(object sender, EventArgs e)
-        {
-            btnPedidos.BackColor = Color.FromArgb(249, 138, 237);
-        }
-
-        private void btnHist_Leave(object sender, EventArgs e)
-        {
-            btnHist.BackColor = Color.FromArgb(249, 138, 237);
-        }
-
-        private void btnConfig_Leave(object sender, EventArgs e)
-        {
-            btnConfig.BackColor = Color.FromArgb(249, 138, 237);
-        }
+        //
 
         private async void FadeIn(Form o, int interval = 80)
         {
@@ -126,8 +77,62 @@ namespace OlharDeMenina
             this.Close();
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Form_menuADM_Load(object sender, EventArgs e)
         {
+            pnlNav.Hide();
+        }
+
+        private void btnVisao_Click(object sender, EventArgs e)
+        {
+            pnlNav.Show();
+            pnlNav.Height = btnVisao.Height;
+            pnlNav.Top = btnVisao.Top;
+            pnlNav.Left = btnVisao.Left;
+            btnVisao.BackColor = Color.FromArgb(249, 138, 237);
+        }
+
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            pnlNav.Show();
+            pnlNav.Height = btnEstoque.Height;
+            pnlNav.Top = btnEstoque.Top;
+            btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
+        }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            pnlNav.Show();
+            pnlNav.Height = btnVendas.Height;
+            pnlNav.Top = btnVendas.Top;
+            btnVendas.BackColor = Color.FromArgb(249, 138, 237);
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            pnlNav.Show();
+            pnlNav.Height = btnClientes.Height;
+            pnlNav.Top = btnClientes.Top;
+            btnClientes.BackColor = Color.FromArgb(249, 138, 237);
+        }
+
+        private void btnVisao_Leave(object sender, EventArgs e)
+        {
+            btnVisao.BackColor = Color.FromArgb(249, 138, 237);
+        }
+
+        private void btnEstoque_Leave(object sender, EventArgs e)
+        {
+            btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
+        }
+
+        private void btnVendas_Leave(object sender, EventArgs e)
+        {
+            btnVendas.BackColor = Color.FromArgb(249, 138, 237);
+        }
+
+        private void btnClientes_Leave(object sender, EventArgs e)
+        {
+            btnClientes.BackColor = Color.FromArgb(249, 138, 237);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

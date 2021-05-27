@@ -15,6 +15,36 @@ namespace OlharDeMenina
             InitializeComponent();
         }
 
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        // Mover janela
+        int mov;
+        int movX;
+        int movY;
+        private void pnl_superior_MouseDown(object sender, MouseEventArgs e)
+        {
+            mov = 1;
+            movX = e.X;
+            movY = e.Y;
+        }
+
+        private void pnl_superior_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mov == 1)
+            {
+                this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
+            }
+        }
+
+        private void pnl_superior_MouseUp(object sender, MouseEventArgs e)
+        {
+            mov = 0;
+        }
+        //
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             txtB_senha1.Text = txtB_senha2.Text;
@@ -46,11 +76,6 @@ namespace OlharDeMenina
             }
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void btn_login_entrar_Click(object sender, EventArgs e)
         {
             Conexao objCon = new Conexao();
@@ -71,7 +96,7 @@ namespace OlharDeMenina
                         {
                             username = row["Nome"].ToString();
                             password = row["Senha"].ToString();
-                            MessageBox.Show("Usuário: " + username + " conectado com sucesso");
+                             //MessageBox.Show("Usuário: " + username + " conectado com sucesso");
                             this.Hide();
                             Form1 f1 = new Form1();
                             f1.ShowDialog();

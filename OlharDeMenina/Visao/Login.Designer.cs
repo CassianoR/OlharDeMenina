@@ -225,10 +225,14 @@ namespace OlharDeMenina
             // 
             this.pnl_superior.BackColor = System.Drawing.Color.Transparent;
             this.pnl_superior.Controls.Add(this.btn_close);
-            this.pnl_superior.Location = new System.Drawing.Point(-1, 0);
+            this.pnl_superior.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_superior.Location = new System.Drawing.Point(0, 0);
             this.pnl_superior.Name = "pnl_superior";
-            this.pnl_superior.Size = new System.Drawing.Size(418, 37);
+            this.pnl_superior.Size = new System.Drawing.Size(410, 37);
             this.pnl_superior.TabIndex = 4;
+            this.pnl_superior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnl_superior_MouseDown);
+            this.pnl_superior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_superior_MouseMove);
+            this.pnl_superior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnl_superior_MouseUp);
             // 
             // Login
             // 
