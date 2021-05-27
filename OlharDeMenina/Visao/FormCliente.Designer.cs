@@ -1,4 +1,4 @@
-﻿
+
 namespace OlharDeMenina
 {
     partial class FormCliente
@@ -119,10 +119,10 @@ namespace OlharDeMenina
             // 
             // tbox_telefone
             // 
-            this.tbox_telefone.Location = new System.Drawing.Point(18, 87);
+            this.tbox_telefone.Location = new System.Drawing.Point(12, 83);
             this.tbox_telefone.MaxLength = 11;
             this.tbox_telefone.Name = "tbox_telefone";
-            this.tbox_telefone.Size = new System.Drawing.Size(138, 20);
+            this.tbox_telefone.Size = new System.Drawing.Size(157, 20);
             this.tbox_telefone.TabIndex = 20;
             // 
             // lbl_telefone
@@ -145,14 +145,13 @@ namespace OlharDeMenina
             // 
             // btn_limparC
             // 
-            this.btn_limparC.BackgroundImage = global::OlharDeMenina.Properties.Resources.borracha;
-            this.btn_limparC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_limparC.Location = new System.Drawing.Point(560, 52);
-            this.btn_limparC.Name = "btn_limparC";
-            this.btn_limparC.Size = new System.Drawing.Size(41, 38);
-            this.btn_limparC.TabIndex = 15;
-            this.btn_limparC.UseVisualStyleBackColor = true;
-            this.btn_limparC.Click += new System.EventHandler(this.btn_limpar_Click);
+            this.btn_limpar.Location = new System.Drawing.Point(459, 129);
+            this.btn_limpar.Name = "btn_limpar";
+            this.btn_limpar.Size = new System.Drawing.Size(75, 23);
+            this.btn_limpar.TabIndex = 15;
+            this.btn_limpar.Text = "Limpar";
+            this.btn_limpar.UseVisualStyleBackColor = true;
+            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // tbox_endereco
             // 
@@ -208,16 +207,7 @@ namespace OlharDeMenina
             this.lbl_cpf.TabIndex = 11;
             this.lbl_cpf.Text = "CPF";
             // 
-            // lbl_datadenascimento
-            // 
-            this.lbl_datadenascimento.AutoSize = true;
-            this.lbl_datadenascimento.Location = new System.Drawing.Point(317, 70);
-            this.lbl_datadenascimento.Name = "lbl_datadenascimento";
-            this.lbl_datadenascimento.Size = new System.Drawing.Size(104, 13);
-            this.lbl_datadenascimento.TabIndex = 22;
-            this.lbl_datadenascimento.Text = "Data de Nascimento";
-            // 
-            // tbox_datadenascimento
+            // button1
             // 
             this.tbox_datadenascimento.Location = new System.Drawing.Point(320, 87);
             this.tbox_datadenascimento.Name = "tbox_datadenascimento";
