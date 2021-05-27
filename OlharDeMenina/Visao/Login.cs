@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
 
@@ -95,6 +95,7 @@ namespace OlharDeMenina
                         {
                             username = row["Nome"].ToString();
                             password = row["Senha"].ToString();
+
                             MessageBox.Show("Usuário: " + username + " conectado com sucesso");
                             this.Hide();
                             Form1 f1 = new Form1();
