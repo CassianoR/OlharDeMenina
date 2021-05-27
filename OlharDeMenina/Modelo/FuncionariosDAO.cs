@@ -45,7 +45,7 @@ namespace OlharDeMenina.Modelo
                 if (dataReader.HasRows)
                 {
                     Mensagem = "Dados atualizados com sucesso!";
-                    System.Windows.Forms.MessageBox.Show(Mensagem);
+                    //System.Windows.Forms.MessageBox.Show(Mensagem);
                 }
                 else
                 {
