@@ -109,6 +109,9 @@ namespace OlharDeMenina
             pnlNav.Height = btnClientes.Height;
             pnlNav.Top = btnClientes.Top;
             btnClientes.BackColor = Color.FromArgb(249, 138, 237);
+
+            AbrirFormNoPanel<FormCliente>();
+            lblTitulo.Text = "Clientes";
         }
 
         private void btnVisao_Leave(object sender, EventArgs e)
