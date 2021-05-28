@@ -89,5 +89,14 @@ namespace OlharDeMenina
                 }
             }
         }
+
+        private void btn_limparC_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
