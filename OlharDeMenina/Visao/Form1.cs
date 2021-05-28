@@ -23,7 +23,7 @@ namespace OlharDeMenina
         public Form1()
         {
             InitializeComponent();
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
+            //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -61,14 +61,13 @@ namespace OlharDeMenina
 
         private void btnVisao_Click(object sender, EventArgs e)
         {
+            //Precisa fazer um forms separado pra visão geral!
             pnlNav.Show();
             pnlNav.Height = btnVisao.Height;
             pnlNav.Top = btnVisao.Top;
             pnlNav.Left = btnVisao.Left;
             btnVisao.BackColor = Color.FromArgb(249, 138, 237);
-            // AbrirFormNoPanel<Form1>();
-            //lblTitulo.Text = "Visão Geral";
-            //Corrigir o nome e descomentar quando for corrigido o form1/ precisamos ver isso ainda. Problema de duplicar a janela toda no panel 
+            lblTitulo.Text = "Visão Geral";
             panel3.Hide();
         }
 
@@ -100,7 +99,7 @@ namespace OlharDeMenina
             pnlNav.Height = btnVendas.Height;
             pnlNav.Top = btnVendas.Top;
             btnVendas.BackColor = Color.FromArgb(249, 138, 237);
-           // AbrirFormNoPanel<FormVendas>();
+            // AbrirFormNoPanel<FormVendas>();
             //lblTitulo.Text = "Vendas";
             //Corrigir o nome e descomentar quando for adicionado o formVendas. 
         }
@@ -111,7 +110,6 @@ namespace OlharDeMenina
             pnlNav.Height = btnFunc.Height;
             pnlNav.Top = btnFunc.Top;
             btnFunc.BackColor = Color.FromArgb(249, 138, 237);
-
             AbrirFormNoPanel<FormFuncionario>();
             lblTitulo.Text = "Funcionários";
         }
@@ -122,9 +120,6 @@ namespace OlharDeMenina
             pnlNav.Height = btnClientes.Height;
             pnlNav.Top = btnClientes.Top;
             btnClientes.BackColor = Color.FromArgb(249, 138, 237);
-            // AbrirFormNoPanel<FormClientes>();
-            //lblTitulo.Text = "Clientes";
-            //Corrigir o nome e descomentar quando for adicionado o formClientes. 
             AbrirFormNoPanel<FormCliente>();
             lblTitulo.Text = "Clientes";
         }
@@ -212,7 +207,7 @@ namespace OlharDeMenina
             panel3.Show();
             Form formulario;
             formulario = panel3.Controls.OfType<Forms>().FirstOrDefault();
-
+            
             if (formulario == null)
             {
                 formulario = new Forms();
@@ -225,23 +220,31 @@ namespace OlharDeMenina
                 formulario.BringToFront();
             }
             else
-            {
-                if (formulario.WindowState == FormWindowState.Minimized)
-                    formulario.WindowState = FormWindowState.Normal;
+            {   
+                panel3.Controls.Remove(formulario);
                 formulario.BringToFront();
+                
+            }
+            if (this.WindowState == FormWindowState.Maximized)
+            {
+                formulario.WindowState = FormWindowState.Maximized;
             }
         }
 
         private void btnmax_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+            if(this.WindowState == FormWindowState.Maximized) {
+                this.WindowState = FormWindowState.Normal;
+            }else if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+
+            }
         }
 
         private void btmin_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Normal;
-            //btnRestaurar.Visible = false;
-            //btnMaximizar.Visible = true;
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
