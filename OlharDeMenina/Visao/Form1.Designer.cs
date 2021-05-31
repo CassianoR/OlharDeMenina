@@ -230,13 +230,13 @@ namespace OlharDeMenina
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Controls.Add(this.btnClientes);
             this.panel1.Controls.Add(this.btnEstoque);
             this.panel1.Controls.Add(this.btnHist);
             this.panel1.Controls.Add(this.btnFunc);
             this.panel1.Controls.Add(this.btnVendas);
             this.panel1.Controls.Add(this.btnVisao);
-            this.panel1.Controls.Add(this.pnlNav);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 151);
             this.panel1.Name = "panel1";
