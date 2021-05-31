@@ -144,8 +144,7 @@ namespace OlharDeMenina
             this.txtB_senha2.Name = "txtB_senha2";
             this.txtB_senha2.PasswordChar = '*';
             this.txtB_senha2.Size = new System.Drawing.Size(201, 17);
-            this.txtB_senha2.TabIndex = 5;
-            this.txtB_senha2.TabStop = false;
+            this.txtB_senha2.TabIndex = 2;
             this.txtB_senha2.Text = "Senha";
             this.txtB_senha2.Click += new System.EventHandler(this.txtB_senha2_Click);
             // 
@@ -159,7 +158,7 @@ namespace OlharDeMenina
             this.btn_login_entrar.Location = new System.Drawing.Point(89, 196);
             this.btn_login_entrar.Name = "btn_login_entrar";
             this.btn_login_entrar.Size = new System.Drawing.Size(122, 45);
-            this.btn_login_entrar.TabIndex = 2;
+            this.btn_login_entrar.TabIndex = 3;
             this.btn_login_entrar.Text = "Login";
             this.btn_login_entrar.UseVisualStyleBackColor = false;
             this.btn_login_entrar.Click += new System.EventHandler(this.btn_login_entrar_Click);
@@ -184,8 +183,7 @@ namespace OlharDeMenina
             this.txtB_nome.Location = new System.Drawing.Point(68, 56);
             this.txtB_nome.Name = "txtB_nome";
             this.txtB_nome.Size = new System.Drawing.Size(201, 17);
-            this.txtB_nome.TabIndex = 0;
-            this.txtB_nome.TabStop = false;
+            this.txtB_nome.TabIndex = 1;
             this.txtB_nome.Text = "Nome";
             this.txtB_nome.Click += new System.EventHandler(this.txtB_nome_Click);
             // 
@@ -210,7 +208,8 @@ namespace OlharDeMenina
             this.btn_close.Location = new System.Drawing.Point(375, 1);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(35, 33);
-            this.btn_close.TabIndex = 3;
+            this.btn_close.TabIndex = 4;
+            this.btn_close.TabStop = false;
             this.btn_close.Text = "X";
             this.btn_close.UseVisualStyleBackColor = false;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
