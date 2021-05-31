@@ -54,6 +54,7 @@ namespace OlharDeMenina
             // 
             // listView_funf
             // 
+            this.listView_funf.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.listView_funf.BackColor = System.Drawing.Color.White;
             this.listView_funf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView_funf.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -93,6 +94,7 @@ namespace OlharDeMenina
             // 
             // pnl_cadastro
             // 
+            this.pnl_cadastro.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pnl_cadastro.Controls.Add(this.btnEditar);
             this.pnl_cadastro.Controls.Add(this.tbox_datadenascimento);
             this.pnl_cadastro.Controls.Add(this.lbl_datadenascimento);
@@ -133,7 +135,7 @@ namespace OlharDeMenina
             this.tbox_datadenascimento.Location = new System.Drawing.Point(310, 86);
             this.tbox_datadenascimento.Name = "tbox_datadenascimento";
             this.tbox_datadenascimento.Size = new System.Drawing.Size(205, 22);
-            this.tbox_datadenascimento.TabIndex = 23;
+            this.tbox_datadenascimento.TabIndex = 4;
             // 
             // lbl_datadenascimento
             // 
@@ -154,7 +156,7 @@ namespace OlharDeMenina
             this.tbox_cpf.MaxLength = 14;
             this.tbox_cpf.Name = "tbox_cpf";
             this.tbox_cpf.Size = new System.Drawing.Size(126, 22);
-            this.tbox_cpf.TabIndex = 21;
+            this.tbox_cpf.TabIndex = 3;
             // 
             // tbox_telefone
             // 
@@ -164,7 +166,7 @@ namespace OlharDeMenina
             this.tbox_telefone.MaxLength = 11;
             this.tbox_telefone.Name = "tbox_telefone";
             this.tbox_telefone.Size = new System.Drawing.Size(157, 22);
-            this.tbox_telefone.TabIndex = 20;
+            this.tbox_telefone.TabIndex = 2;
             // 
             // lbl_telefone
             // 
@@ -209,7 +211,7 @@ namespace OlharDeMenina
             this.tbox_endereco.Location = new System.Drawing.Point(309, 34);
             this.tbox_endereco.Name = "tbox_endereco";
             this.tbox_endereco.Size = new System.Drawing.Size(204, 22);
-            this.tbox_endereco.TabIndex = 8;
+            this.tbox_endereco.TabIndex = 1;
             // 
             // btn_Adicionar
             // 
@@ -259,7 +261,7 @@ namespace OlharDeMenina
             this.tbox_nome.Location = new System.Drawing.Point(12, 34);
             this.tbox_nome.Name = "tbox_nome";
             this.tbox_nome.Size = new System.Drawing.Size(270, 22);
-            this.tbox_nome.TabIndex = 5;
+            this.tbox_nome.TabIndex = 0;
             // 
             // lbl_cpf
             // 
@@ -276,6 +278,7 @@ namespace OlharDeMenina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(748, 456);
             this.Controls.Add(this.listView_funf);

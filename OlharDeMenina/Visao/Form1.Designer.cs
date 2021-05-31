@@ -37,34 +37,34 @@ namespace OlharDeMenina
             this.panel3 = new System.Windows.Forms.Panel();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.pnlSuperior = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.btmin = new System.Windows.Forms.Button();
             this.btnmax = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlNav = new System.Windows.Forms.Panel();
-            this.btnFunc = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
-            this.btnHist = new System.Windows.Forms.Button();
-            this.btnVendas = new System.Windows.Forms.Button();
             this.btnEstoque = new System.Windows.Forms.Button();
+            this.btnHist = new System.Windows.Forms.Button();
+            this.btnFunc = new System.Windows.Forms.Button();
+            this.btnVendas = new System.Windows.Forms.Button();
             this.btnVisao = new System.Windows.Forms.Button();
+            this.pnlNav = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel4.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.SuspendLayout();
@@ -146,6 +146,32 @@ namespace OlharDeMenina
             this.pnlSuperior.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseMove);
             this.pnlSuperior.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseUp);
             // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.btnClose);
+            this.panel4.Controls.Add(this.btmin);
+            this.panel4.Controls.Add(this.btnmax);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(826, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(109, 35);
+            this.panel4.TabIndex = 9;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::OlharDeMenina.Properties.Resources.closebtnn;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(73, 2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(33, 30);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // btmin
             // 
             this.btmin.BackColor = System.Drawing.Color.Transparent;
@@ -176,20 +202,13 @@ namespace OlharDeMenina
             this.btnmax.UseVisualStyleBackColor = false;
             this.btnmax.Click += new System.EventHandler(this.btnmax_Click);
             // 
-            // btnClose
+            // panel7
             // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::OlharDeMenina.Properties.Resources.closebtnn;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(73, 2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(33, 30);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.panel7.Location = new System.Drawing.Point(0, 3);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(835, 29);
+            this.panel7.TabIndex = 10;
+            this.panel7.Visible = false;
             // 
             // panel6
             // 
@@ -224,33 +243,6 @@ namespace OlharDeMenina
             this.panel1.Size = new System.Drawing.Size(186, 352);
             this.panel1.TabIndex = 0;
             // 
-            // pnlNav
-            // 
-            this.pnlNav.BackColor = System.Drawing.Color.White;
-            this.pnlNav.Location = new System.Drawing.Point(0, 152);
-            this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(3, 318);
-            this.pnlNav.TabIndex = 3;
-            // 
-            // btnFunc
-            // 
-            this.btnFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
-            this.btnFunc.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFunc.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFunc.FlatAppearance.BorderSize = 0;
-            this.btnFunc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
-            this.btnFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFunc.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFunc.ForeColor = System.Drawing.Color.White;
-            this.btnFunc.Location = new System.Drawing.Point(0, 106);
-            this.btnFunc.Name = "btnFunc";
-            this.btnFunc.Size = new System.Drawing.Size(186, 53);
-            this.btnFunc.TabIndex = 5;
-            this.btnFunc.Text = "Funcionários";
-            this.btnFunc.UseVisualStyleBackColor = false;
-            this.btnFunc.Click += new System.EventHandler(this.btnFunc_Click);
-            this.btnFunc.Leave += new System.EventHandler(this.btnFunc_Leave);
-            // 
             // btnClientes
             // 
             this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
@@ -269,44 +261,6 @@ namespace OlharDeMenina
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             this.btnClientes.Leave += new System.EventHandler(this.btnClientes_Leave);
-            // 
-            // btnHist
-            // 
-            this.btnHist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
-            this.btnHist.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHist.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHist.FlatAppearance.BorderSize = 0;
-            this.btnHist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
-            this.btnHist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHist.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHist.ForeColor = System.Drawing.Color.White;
-            this.btnHist.Location = new System.Drawing.Point(0, 159);
-            this.btnHist.Name = "btnHist";
-            this.btnHist.Size = new System.Drawing.Size(186, 53);
-            this.btnHist.TabIndex = 2;
-            this.btnHist.Text = "Histórico";
-            this.btnHist.UseVisualStyleBackColor = false;
-            this.btnHist.Click += new System.EventHandler(this.btnHist_Click);
-            this.btnHist.Leave += new System.EventHandler(this.btnHist_Leave);
-            // 
-            // btnVendas
-            // 
-            this.btnVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
-            this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVendas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVendas.FlatAppearance.BorderSize = 0;
-            this.btnVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
-            this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVendas.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVendas.ForeColor = System.Drawing.Color.White;
-            this.btnVendas.Location = new System.Drawing.Point(0, 53);
-            this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(186, 53);
-            this.btnVendas.TabIndex = 2;
-            this.btnVendas.Text = "Vendas";
-            this.btnVendas.UseVisualStyleBackColor = false;
-            this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
-            this.btnVendas.Leave += new System.EventHandler(this.btnVendas_Leave);
             // 
             // btnEstoque
             // 
@@ -327,6 +281,63 @@ namespace OlharDeMenina
             this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             this.btnEstoque.Leave += new System.EventHandler(this.btnEstoque_Leave);
             // 
+            // btnHist
+            // 
+            this.btnHist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
+            this.btnHist.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHist.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHist.FlatAppearance.BorderSize = 0;
+            this.btnHist.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
+            this.btnHist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHist.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHist.ForeColor = System.Drawing.Color.White;
+            this.btnHist.Location = new System.Drawing.Point(0, 159);
+            this.btnHist.Name = "btnHist";
+            this.btnHist.Size = new System.Drawing.Size(186, 53);
+            this.btnHist.TabIndex = 2;
+            this.btnHist.Text = "Histórico";
+            this.btnHist.UseVisualStyleBackColor = false;
+            this.btnHist.Click += new System.EventHandler(this.btnHist_Click);
+            this.btnHist.Leave += new System.EventHandler(this.btnHist_Leave);
+            // 
+            // btnFunc
+            // 
+            this.btnFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
+            this.btnFunc.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFunc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFunc.FlatAppearance.BorderSize = 0;
+            this.btnFunc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
+            this.btnFunc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFunc.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFunc.ForeColor = System.Drawing.Color.White;
+            this.btnFunc.Location = new System.Drawing.Point(0, 106);
+            this.btnFunc.Name = "btnFunc";
+            this.btnFunc.Size = new System.Drawing.Size(186, 53);
+            this.btnFunc.TabIndex = 5;
+            this.btnFunc.Text = "Funcionários";
+            this.btnFunc.UseVisualStyleBackColor = false;
+            this.btnFunc.Click += new System.EventHandler(this.btnFunc_Click);
+            this.btnFunc.Leave += new System.EventHandler(this.btnFunc_Leave);
+            // 
+            // btnVendas
+            // 
+            this.btnVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
+            this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVendas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVendas.FlatAppearance.BorderSize = 0;
+            this.btnVendas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(159)))), ((int)(((byte)(255)))));
+            this.btnVendas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVendas.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendas.ForeColor = System.Drawing.Color.White;
+            this.btnVendas.Location = new System.Drawing.Point(0, 53);
+            this.btnVendas.Name = "btnVendas";
+            this.btnVendas.Size = new System.Drawing.Size(186, 53);
+            this.btnVendas.TabIndex = 2;
+            this.btnVendas.Text = "Vendas";
+            this.btnVendas.UseVisualStyleBackColor = false;
+            this.btnVendas.Click += new System.EventHandler(this.btnVendas_Click);
+            this.btnVendas.Leave += new System.EventHandler(this.btnVendas_Leave);
+            // 
             // btnVisao
             // 
             this.btnVisao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
@@ -345,6 +356,14 @@ namespace OlharDeMenina
             this.btnVisao.UseVisualStyleBackColor = false;
             this.btnVisao.Click += new System.EventHandler(this.btnVisao_Click);
             this.btnVisao.Leave += new System.EventHandler(this.btnVisao_Leave);
+            // 
+            // pnlNav
+            // 
+            this.pnlNav.BackColor = System.Drawing.Color.White;
+            this.pnlNav.Location = new System.Drawing.Point(0, 152);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(3, 318);
+            this.pnlNav.TabIndex = 3;
             // 
             // panel2
             // 
@@ -383,25 +402,6 @@ namespace OlharDeMenina
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnClose);
-            this.panel4.Controls.Add(this.btmin);
-            this.panel4.Controls.Add(this.btnmax);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(826, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(109, 35);
-            this.panel4.TabIndex = 9;
-            // 
-            // panel7
-            // 
-            this.panel7.Location = new System.Drawing.Point(0, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(835, 29);
-            this.panel7.TabIndex = 10;
-            this.panel7.Visible = false;
             // 
             // panel8
             // 
@@ -443,12 +443,12 @@ namespace OlharDeMenina
             this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.pnlSuperior.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.ResumeLayout(false);

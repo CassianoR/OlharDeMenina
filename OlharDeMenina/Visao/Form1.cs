@@ -68,7 +68,7 @@ namespace OlharDeMenina
             pnlNav.Left = btnVisao.Left;
             btnVisao.BackColor = Color.FromArgb(249, 138, 237);
             lblTitulo.Text = "Visão Geral";
-            panel3.Hide();
+            panel3.Controls.Clear();
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace OlharDeMenina
 
         private void btnFunc_Leave(object sender, EventArgs e)
         {
-            btnClientes.BackColor = Color.FromArgb(250, 88, 130);
+            btnFunc.BackColor = Color.FromArgb(250, 88, 130);
         }
 
         private async void FadeIn(Form o, int interval = 80)
@@ -204,6 +204,7 @@ namespace OlharDeMenina
 
         private void AbrirFormNoPanel<Forms>() where Forms : Form, new()
         {
+            panel3.Controls.Clear();
             panel3.Show();
             Form formulario;
             formulario = panel3.Controls.OfType<Forms>().FirstOrDefault();
@@ -233,12 +234,11 @@ namespace OlharDeMenina
 
         private void btnmax_Click(object sender, EventArgs e)
         {
-            if(this.WindowState == FormWindowState.Maximized) {
-                this.WindowState = FormWindowState.Normal;
-            }else if (this.WindowState == FormWindowState.Normal)
+            if(WindowState == FormWindowState.Maximized) {
+                WindowState = FormWindowState.Normal;
+            }else if (WindowState == FormWindowState.Normal)
             {
-                this.WindowState = FormWindowState.Maximized;
-
+                WindowState = FormWindowState.Maximized;
             }
         }
 
