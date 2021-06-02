@@ -17,6 +17,11 @@ namespace OlharDeMenina.Controle
             FuncionariosDAO funf = new FuncionariosDAO();
             return funf.RetornaFuncionarios();
         }
+        public MySqlDataReader RetornarFuncionarios(int idFunc)
+        {
+            FuncionariosDAO funf = new FuncionariosDAO();
+            return funf.RetornaFuncionarios();
+        }
 
         public string DeletarFuncionario(int idFunc)
         {

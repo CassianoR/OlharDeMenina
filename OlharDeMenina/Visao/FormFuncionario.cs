@@ -15,13 +15,6 @@ namespace OlharDeMenina
 
         public int idFunc;
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-        }
 
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
@@ -70,10 +63,11 @@ namespace OlharDeMenina
             {
                 while (dataReader.Read())
                 {
-                    ListViewItem lv = new ListViewItem(dataReader.GetString(0));
+                    ListViewItem lv = new ListViewItem(dataReader.GetInt32(0).ToString());
+                    lv.SubItems.Add(dataReader.GetString(1));
                     lv.SubItems.Add(dataReader.GetString(2));
+                    lv.SubItems.Add(dataReader.GetString(3));
                     lv.SubItems.Add(dataReader.GetString(5));
-                    lv.SubItems.Add(dataReader.GetString(4));
                     lv.SubItems.Add(dataReader.GetString(6));
                     listView_funf.Items.Add(lv);
                 }
@@ -88,9 +82,39 @@ namespace OlharDeMenina
         private void btn_Adicionar_Click(object sender, EventArgs e)
         {
             ControleFuncionario cf = new ControleFuncionario();
-            Funcionarios funcionario = new Funcionarios(tbox_nome.Text, tbox_cpf.Text, "1234", tbox_telefone.Text, tbox_endereco.Text);
+            Funcionarios funcionario = new Funcionarios("Funcionário", tbox_nome.Text, tbox_cpf.Text, "1234", tbox_telefone.Text, tbox_endereco.Text);
             cf.AdicionarFuncionarios(funcionario);
 
+            PreencherListView();
+            LimparCampos();
+        }
+        private void listView_funf_Click(object sender, EventArgs e)
+        {
+            idFunc = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            ControleFuncionario cf = new ControleFuncionario();
+            MySqlDataReader dr = cf.RetornarFuncionarios(idFunc);
+
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    tbox_nome.Text = dr.GetString(2);
+                    tbox_cpf.Text = dr.GetString(3);
+                    tbox_telefone.Text = dr.GetString(5);
+                    tbox_endereco.Text = dr.GetString(6);
+                }
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            ControleFuncionario cf = new ControleFuncionario();
+            Funcionarios funcionario = new Funcionarios("Funcionário", tbox_nome.Text, tbox_cpf.Text, "1234", tbox_telefone.Text, tbox_endereco.Text);
+            cf.AdicionarFuncionarios(funcionario);
+
+            idFunc = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            ControleFuncionario cp = new ControleFuncionario();
+            cp.DeletarFuncionario(idFunc);
             PreencherListView();
             LimparCampos();
         }
