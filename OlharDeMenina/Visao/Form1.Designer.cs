@@ -45,13 +45,13 @@ namespace OlharDeMenina
             this.panel6 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlNav = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnEstoque = new System.Windows.Forms.Button();
             this.btnHist = new System.Windows.Forms.Button();
             this.btnFunc = new System.Windows.Forms.Button();
             this.btnVendas = new System.Windows.Forms.Button();
             this.btnVisao = new System.Windows.Forms.Button();
-            this.pnlNav = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -95,6 +95,7 @@ namespace OlharDeMenina
             // 
             // panel5
             // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.panel5.BackColor = System.Drawing.Color.Turquoise;
             this.panel5.Controls.Add(this.listBox2);
             this.panel5.Controls.Add(this.label6);
@@ -128,6 +129,7 @@ namespace OlharDeMenina
             // 
             // monthCalendar1
             // 
+            this.monthCalendar1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.monthCalendar1.Location = new System.Drawing.Point(512, 250);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 5;
@@ -243,6 +245,14 @@ namespace OlharDeMenina
             this.panel1.Size = new System.Drawing.Size(186, 352);
             this.panel1.TabIndex = 0;
             // 
+            // pnlNav
+            // 
+            this.pnlNav.BackColor = System.Drawing.Color.White;
+            this.pnlNav.Location = new System.Drawing.Point(0, 152);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(3, 318);
+            this.pnlNav.TabIndex = 3;
+            // 
             // btnClientes
             // 
             this.btnClientes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
@@ -356,14 +366,6 @@ namespace OlharDeMenina
             this.btnVisao.UseVisualStyleBackColor = false;
             this.btnVisao.Click += new System.EventHandler(this.btnVisao_Click);
             this.btnVisao.Leave += new System.EventHandler(this.btnVisao_Leave);
-            // 
-            // pnlNav
-            // 
-            this.pnlNav.BackColor = System.Drawing.Color.White;
-            this.pnlNav.Location = new System.Drawing.Point(0, 152);
-            this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(3, 318);
-            this.pnlNav.TabIndex = 3;
             // 
             // panel2
             // 

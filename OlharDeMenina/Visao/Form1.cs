@@ -37,6 +37,8 @@ namespace OlharDeMenina
         private int movX;
         private int movY;
 
+        int teste;
+
         private void pnlSuperior_MouseDown(object sender, MouseEventArgs e)
         {
             mov = 1;
@@ -122,6 +124,7 @@ namespace OlharDeMenina
             btnClientes.BackColor = Color.FromArgb(249, 138, 237);
             AbrirFormNoPanel<FormCliente>();
             lblTitulo.Text = "Clientes";
+            teste = 1;
         }
 
         private void btnVisao_Leave(object sender, EventArgs e)
@@ -232,14 +235,40 @@ namespace OlharDeMenina
             }
         }
 
+        private void VerificaPainel()
+        {
+            Form formulario;
+            switch (teste)
+            {
+                case 1:
+                    formulario = panel3.Controls.OfType<FormCliente>().FirstOrDefault();
+                    if(this.WindowState == FormWindowState.Maximized)
+                    {
+                        formulario.WindowState = FormWindowState.Maximized;
+                    }else if (this.WindowState == FormWindowState.Normal)
+                    {
+                        formulario.WindowState = FormWindowState.Normal;
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("Case 2");
+                    break;
+                default:
+                    Console.WriteLine("Default case");
+                    break;
+            }
+        }
+
         private void btnmax_Click(object sender, EventArgs e)
         {
-            if(WindowState == FormWindowState.Maximized) {
+            
+            if (WindowState == FormWindowState.Maximized) {
                 WindowState = FormWindowState.Normal;
             }else if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
             }
+            VerificaPainel();
         }
 
         private void btmin_Click(object sender, EventArgs e)
