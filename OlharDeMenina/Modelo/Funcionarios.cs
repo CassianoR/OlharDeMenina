@@ -10,8 +10,9 @@
         public string Telefone { get; set; }
         public string Endereço { get; set; }
 
-        public Funcionarios(string Nome, string CPF, string Senha, string Telefone, string Endereço)
+        public Funcionarios(string Cargo, string Nome,  string CPF, string Senha, string Telefone, string Endereço)
         {
+            this.Cargo = Cargo;
             this.Nome = Nome;
             this.CPF = CPF;
             this.Senha = Senha;

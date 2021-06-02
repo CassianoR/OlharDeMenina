@@ -10,15 +10,15 @@ namespace OlharDeMenina.Modelo
 
         private MySqlDataReader dr;
 
-        public string Adicionar(Funcionarios funcAdd)
+        public string Adicionar(Funcionarios funcionarios)
         {
-            cmd.CommandText = "insert into Funcionarios (Nome, CPF, Senha, Telefone, Endereço) values (@nome, @cpf, @senha, @telefone, @endereco)";
-
-            cmd.Parameters.AddWithValue("nome", funcAdd.Nome);
-            cmd.Parameters.AddWithValue("cpf", funcAdd.CPF);
-            cmd.Parameters.AddWithValue("senha", funcAdd.Senha);
-            cmd.Parameters.AddWithValue("telefone", funcAdd.Telefone);
-            cmd.Parameters.AddWithValue("endereco", funcAdd.Endereço);
+            cmd.CommandText = "insert into funcionarios (Cargo, Nome, CPF, Senha, Telefone, Endereço) values (@cargo, @nome, @cpf, @senha, @telefone, @endereco)";
+            cmd.Parameters.AddWithValue("cargo", funcionarios.Cargo);
+            cmd.Parameters.AddWithValue("nome", funcionarios.Nome);
+            cmd.Parameters.AddWithValue("cpf", funcionarios.CPF);
+            cmd.Parameters.AddWithValue("senha", funcionarios.Senha);
+            cmd.Parameters.AddWithValue("telefone", funcionarios.Telefone);
+            cmd.Parameters.AddWithValue("endereco", funcionarios.Endereço);
             try
             {
                 cmd.Connection = con.Conectar();
@@ -35,7 +35,7 @@ namespace OlharDeMenina.Modelo
 
         public MySqlDataReader RetornaFuncionarios()
         {
-            string query = "SELECT * FROM Funcionarios";
+            string query = "SELECT * FROM funcionarios";
             MySqlCommand cmd = new MySqlCommand(query, con.Conectar());
             MySqlDataReader dataReader = cmd.ExecuteReader();
             try
@@ -64,7 +64,7 @@ namespace OlharDeMenina.Modelo
 
         public string DeletarFuncionarios(int idFunc)
         {
-            cmd.CommandText = "delete from Funcionarios where ID = @id";
+            cmd.CommandText = "delete from funcionarios where ID = @id";
             cmd.Parameters.AddWithValue("id", idFunc);
             try
             {
