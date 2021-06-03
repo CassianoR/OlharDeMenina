@@ -72,6 +72,12 @@
     <Compile Include="Visao\FormCliente.Designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visao\FormEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FormEstoque.Designer.cs">
+      <DependentUpon>FormEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Visao\FormFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,24 @@
     </Compile>
     <Compile Include="Visao\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FormHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FormHistorico.Designer.cs">
+      <DependentUpon>FormHistorico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FormVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FormVendas.Designer.cs">
+      <DependentUpon>FormVendas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visao\FormVGeral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visao\FormVGeral.Designer.cs">
+      <DependentUpon>FormVGeral.cs</DependentUpon>
     </Compile>
     <Compile Include="Visao\Login.cs">
       <SubType>Form</SubType>
@@ -108,8 +132,20 @@
     <EmbeddedResource Include="Visao\FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FormEstoque.resx">
+      <DependentUpon>FormEstoque.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Visao\FormFuncionario.resx">
       <DependentUpon>FormFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FormHistorico.resx">
+      <DependentUpon>FormHistorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FormVendas.resx">
+      <DependentUpon>FormVendas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visao\FormVGeral.resx">
+      <DependentUpon>FormVGeral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
