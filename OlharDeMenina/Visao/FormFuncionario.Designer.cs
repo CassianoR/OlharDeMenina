@@ -31,6 +31,7 @@ namespace OlharDeMenina
         {
             this.listView_funf = new System.Windows.Forms.ListView();
             this.ch_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_cargo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_cpf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_telefone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -48,13 +49,11 @@ namespace OlharDeMenina
             this.lbl_nome = new System.Windows.Forms.Label();
             this.tbox_nome = new System.Windows.Forms.TextBox();
             this.lbl_cpf = new System.Windows.Forms.Label();
-            this.ch_cargo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_cadastro.SuspendLayout();
             this.SuspendLayout();
             // 
             // listView_funf
             // 
-            this.listView_funf.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.listView_funf.BackColor = System.Drawing.Color.White;
             this.listView_funf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView_funf.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -64,11 +63,12 @@ namespace OlharDeMenina
             this.ch_cpf,
             this.ch_telefone,
             this.ch_endereco});
+            this.listView_funf.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listView_funf.FullRowSelect = true;
             this.listView_funf.HideSelection = false;
-            this.listView_funf.Location = new System.Drawing.Point(12, 176);
+            this.listView_funf.Location = new System.Drawing.Point(0, 188);
             this.listView_funf.Name = "listView_funf";
-            this.listView_funf.Size = new System.Drawing.Size(723, 268);
+            this.listView_funf.Size = new System.Drawing.Size(748, 268);
             this.listView_funf.TabIndex = 20;
             this.listView_funf.UseCompatibleStateImageBehavior = false;
             this.listView_funf.View = System.Windows.Forms.View.Details;
@@ -77,6 +77,10 @@ namespace OlharDeMenina
             // ch_id
             // 
             this.ch_id.Text = "ID";
+            // 
+            // ch_cargo
+            // 
+            this.ch_cargo.Text = "Cargo";
             // 
             // ch_nome
             // 
@@ -261,10 +265,6 @@ namespace OlharDeMenina
             this.lbl_cpf.Size = new System.Drawing.Size(40, 21);
             this.lbl_cpf.TabIndex = 11;
             this.lbl_cpf.Text = "CPF";
-            // 
-            // ch_cargo
-            // 
-            this.ch_cargo.Text = "Cargo";
             // 
             // FormFuncionario
             // 

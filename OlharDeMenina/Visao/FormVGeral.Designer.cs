@@ -38,14 +38,14 @@ namespace OlharDeMenina.Visao
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.monthCalendar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.monthCalendar1.Location = new System.Drawing.Point(509, 269);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 7;
             // 
             // panel5
             // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Turquoise;
             this.panel5.Controls.Add(this.listBox2);
             this.panel5.Controls.Add(this.label6);
@@ -58,7 +58,6 @@ namespace OlharDeMenina.Visao
             // 
             this.listBox2.BackColor = System.Drawing.Color.MintCream;
             this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBox2.ForeColor = System.Drawing.Color.White;
             this.listBox2.FormattingEnabled = true;
             this.listBox2.Location = new System.Drawing.Point(0, 48);
