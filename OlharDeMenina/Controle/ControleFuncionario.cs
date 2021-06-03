@@ -28,5 +28,13 @@ namespace OlharDeMenina.Controle
             FuncionariosDAO funf = new FuncionariosDAO();
             return funf.DeletarFuncionarios(idFunc);
         }
+
+        public string EditarFuncionario(Funcionarios funcionarios, int idFunc)
+        {
+            FuncionariosDAO funf = new FuncionariosDAO();
+            string mensagem = funf.EditarFuncionarios(funcionarios, idFunc);
+
+            return mensagem;
+        }
     }
 }

@@ -78,5 +78,32 @@ namespace OlharDeMenina.Modelo
             }
             return Mensagem;
         }
+
+        public string EditarFuncionarios(Funcionarios funcionarios, int idFunc)
+        {
+            cmd.CommandText = "UPDATE funcionarios SET Cargo = @cargo, Nome = @nome, CPF = @cpf, Senha = @senha, Telefone = @telefone, Endereço = @endereço WHERE ID = @id";
+            //cmd.CommandText = "update funcionarios set Cargo, Nome, CPF, Senha, Telefone, Endereço values(@cargo, @nome, @cpf, @senha, @telefone, @endereço) where ID = @ID";
+            cmd.Parameters.AddWithValue("cargo", funcionarios.Cargo);
+            cmd.Parameters.AddWithValue("nome", funcionarios.Nome);
+            cmd.Parameters.AddWithValue("cpf", funcionarios.CPF);
+            cmd.Parameters.AddWithValue("senha", funcionarios.Senha);
+            cmd.Parameters.AddWithValue("telefone", funcionarios.Telefone);
+            cmd.Parameters.AddWithValue("endereço", funcionarios.Endereço);
+            cmd.Parameters.AddWithValue("id", idFunc);
+
+            try
+            {
+                cmd.Connection = con.Conectar();
+                cmd.ExecuteNonQuery();
+                Mensagem = "Funcionário Atualizado com Sucesso";
+            }
+            catch(MySqlException ex)
+            {
+                Mensagem = ex.Message;
+            }
+
+
+            return Mensagem;
+        }
     }
 }
