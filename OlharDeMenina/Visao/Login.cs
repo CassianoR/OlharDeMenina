@@ -16,11 +16,6 @@ namespace OlharDeMenina
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-            this.AcceptButton = btn_login_entrar;
-        }
-
         private void btn_close_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -89,7 +84,7 @@ namespace OlharDeMenina
                 objCon.Open();
                 
             
-                if (txtB_nome.Text != "" && txtB_senha2.Text != "" && txtB_nome.Text != "Nome" && txtB_nome.Text != "Senha")
+                if (txtB_nome.Text != "" && txtB_senha2.Text != "")
                 {
                     objCon.Open();
                     string query = "select Nome,Senha from funcionarios WHERE Nome ='" + txtB_nome.Text + "' AND Senha ='" + txtB_senha2.Text + "'";
@@ -102,6 +97,7 @@ namespace OlharDeMenina
                             username = row["Nome"].ToString();
                             password = row["Senha"].ToString();
 
+                            MessageBox.Show("Usuário: " + username + " conectado com sucesso");
                             this.Hide();
                             Form1 f1 = new Form1();
                             f1.ShowDialog();
@@ -114,7 +110,7 @@ namespace OlharDeMenina
                 }
                 else
                 {
-                    MessageBox.Show("Os Campos não podem estar vazios.");
+                    MessageBox.Show("Erro: Campos de texto não podem estar vazios.");
                 }
             }
             catch
