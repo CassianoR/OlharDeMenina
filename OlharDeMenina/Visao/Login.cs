@@ -25,6 +25,8 @@ namespace OlharDeMenina
         int mov;
         int movX;
         int movY;
+
+
         private void pnl_superior_MouseDown(object sender, MouseEventArgs e)
         {
             mov = 1;
@@ -76,6 +78,11 @@ namespace OlharDeMenina
             }
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+                this.AcceptButton = btn_login_entrar;
+        }
+
         private void btn_login_entrar_Click(object sender, EventArgs e)
         {
             Conexao objCon = new Conexao();
@@ -97,7 +104,6 @@ namespace OlharDeMenina
                             username = row["Nome"].ToString();
                             password = row["Senha"].ToString();
 
-                            MessageBox.Show("Usuário: " + username + " conectado com sucesso");
                             this.Hide();
                             Form1 f1 = new Form1();
                             f1.ShowDialog();
