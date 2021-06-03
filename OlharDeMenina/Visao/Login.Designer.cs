@@ -191,8 +191,8 @@ namespace OlharDeMenina
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(97, 43);
+            this.pictureBox1.Image = global::OlharDeMenina.Properties.Resources.WhatsApp_Image_2021_05_15_at_16_11_36;
+            this.pictureBox1.Location = new System.Drawing.Point(100, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(224, 192);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
