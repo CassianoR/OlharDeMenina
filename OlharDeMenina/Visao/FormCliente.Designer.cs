@@ -30,10 +30,11 @@ namespace OlharDeMenina
         private void InitializeComponent()
         {
             this.listView_funf = new System.Windows.Forms.ListView();
+            this.ch_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ch_datanasc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_telefone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_endereco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_datanasc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_cadastro = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tbox_datadenascimento = new System.Windows.Forms.TextBox();
@@ -49,7 +50,6 @@ namespace OlharDeMenina
             this.btn_ExcluirC = new System.Windows.Forms.Button();
             this.btn_AdicionarC = new System.Windows.Forms.Button();
             this.btn_limparC = new System.Windows.Forms.Button();
-            this.ch_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_cadastro.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,29 +76,30 @@ namespace OlharDeMenina
             this.listView_funf.View = System.Windows.Forms.View.Details;
             this.listView_funf.Click += new System.EventHandler(this.listView_funf_Click);
             // 
+            // ch_id
+            // 
+            this.ch_id.Text = "ID";
+            this.ch_id.Width = 73;
+            // 
             // ch_nome
             // 
-            this.ch_nome.DisplayIndex = 1;
             this.ch_nome.Text = "Nome";
             this.ch_nome.Width = 164;
             // 
-            // ch_datanasc
-            // 
-            this.ch_datanasc.DisplayIndex = 4;
-            this.ch_datanasc.Text = "Data de nascimento";
-            this.ch_datanasc.Width = 153;
-            // 
             // ch_telefone
             // 
-            this.ch_telefone.DisplayIndex = 2;
             this.ch_telefone.Text = "Telefone";
             this.ch_telefone.Width = 152;
             // 
             // ch_endereco
             // 
-            this.ch_endereco.DisplayIndex = 3;
             this.ch_endereco.Text = "Endereço";
             this.ch_endereco.Width = 224;
+            // 
+            // ch_datanasc
+            // 
+            this.ch_datanasc.Text = "Data de nascimento";
+            this.ch_datanasc.Width = 153;
             // 
             // pnl_cadastro
             // 
@@ -280,11 +281,6 @@ namespace OlharDeMenina
             this.btn_limparC.Text = "Limpar";
             this.btn_limparC.UseVisualStyleBackColor = false;
             this.btn_limparC.Click += new System.EventHandler(this.btn_limparC_Click);
-            // 
-            // ch_id
-            // 
-            this.ch_id.DisplayIndex = 0;
-            this.ch_id.Text = "ID";
             // 
             // FormCliente
             // 

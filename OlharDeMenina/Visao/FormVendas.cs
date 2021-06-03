@@ -8,5 +8,10 @@ namespace OlharDeMenina.Visao
         {
             InitializeComponent();
         }
+
+        private void btn_Adicionar_Click(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
