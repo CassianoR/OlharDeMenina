@@ -37,7 +37,6 @@ namespace OlharDeMenina
             this.btnClose = new System.Windows.Forms.Button();
             this.btmin = new System.Windows.Forms.Button();
             this.btnmax = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
@@ -88,7 +87,6 @@ namespace OlharDeMenina
             // 
             this.pnlSuperior.BackColor = System.Drawing.Color.Turquoise;
             this.pnlSuperior.Controls.Add(this.panel4);
-            this.pnlSuperior.Controls.Add(this.panel7);
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperior.Name = "pnlSuperior";
@@ -154,14 +152,6 @@ namespace OlharDeMenina
             this.btnmax.UseVisualStyleBackColor = false;
             this.btnmax.Click += new System.EventHandler(this.btnmax_Click);
             // 
-            // panel7
-            // 
-            this.panel7.Location = new System.Drawing.Point(0, 3);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(835, 29);
-            this.panel7.TabIndex = 10;
-            this.panel7.Visible = false;
-            // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(88)))), ((int)(((byte)(130)))));
@@ -192,7 +182,7 @@ namespace OlharDeMenina
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 151);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(186, 352);
+            this.panel1.Size = new System.Drawing.Size(184, 352);
             this.panel1.TabIndex = 0;
             // 
             // pnlNav
@@ -215,7 +205,7 @@ namespace OlharDeMenina
             this.btnClientes.ForeColor = System.Drawing.Color.White;
             this.btnClientes.Location = new System.Drawing.Point(0, 265);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(186, 53);
+            this.btnClientes.Size = new System.Drawing.Size(184, 53);
             this.btnClientes.TabIndex = 2;
             this.btnClientes.Text = "Clientes";
             this.btnClientes.UseVisualStyleBackColor = false;
@@ -234,7 +224,7 @@ namespace OlharDeMenina
             this.btnEstoque.ForeColor = System.Drawing.Color.White;
             this.btnEstoque.Location = new System.Drawing.Point(0, 212);
             this.btnEstoque.Name = "btnEstoque";
-            this.btnEstoque.Size = new System.Drawing.Size(186, 53);
+            this.btnEstoque.Size = new System.Drawing.Size(184, 53);
             this.btnEstoque.TabIndex = 2;
             this.btnEstoque.Text = "Estoque";
             this.btnEstoque.UseVisualStyleBackColor = false;
@@ -253,7 +243,7 @@ namespace OlharDeMenina
             this.btnHist.ForeColor = System.Drawing.Color.White;
             this.btnHist.Location = new System.Drawing.Point(0, 159);
             this.btnHist.Name = "btnHist";
-            this.btnHist.Size = new System.Drawing.Size(186, 53);
+            this.btnHist.Size = new System.Drawing.Size(184, 53);
             this.btnHist.TabIndex = 2;
             this.btnHist.Text = "Histórico";
             this.btnHist.UseVisualStyleBackColor = false;
@@ -272,7 +262,7 @@ namespace OlharDeMenina
             this.btnFunc.ForeColor = System.Drawing.Color.White;
             this.btnFunc.Location = new System.Drawing.Point(0, 106);
             this.btnFunc.Name = "btnFunc";
-            this.btnFunc.Size = new System.Drawing.Size(186, 53);
+            this.btnFunc.Size = new System.Drawing.Size(184, 53);
             this.btnFunc.TabIndex = 5;
             this.btnFunc.Text = "Funcionários";
             this.btnFunc.UseVisualStyleBackColor = false;
@@ -291,7 +281,7 @@ namespace OlharDeMenina
             this.btnVendas.ForeColor = System.Drawing.Color.White;
             this.btnVendas.Location = new System.Drawing.Point(0, 53);
             this.btnVendas.Name = "btnVendas";
-            this.btnVendas.Size = new System.Drawing.Size(186, 53);
+            this.btnVendas.Size = new System.Drawing.Size(184, 53);
             this.btnVendas.TabIndex = 2;
             this.btnVendas.Text = "Vendas";
             this.btnVendas.UseVisualStyleBackColor = false;
@@ -310,7 +300,7 @@ namespace OlharDeMenina
             this.btnVisao.ForeColor = System.Drawing.Color.White;
             this.btnVisao.Location = new System.Drawing.Point(0, 0);
             this.btnVisao.Name = "btnVisao";
-            this.btnVisao.Size = new System.Drawing.Size(186, 53);
+            this.btnVisao.Size = new System.Drawing.Size(184, 53);
             this.btnVisao.TabIndex = 2;
             this.btnVisao.Text = "Visão Geral";
             this.btnVisao.UseVisualStyleBackColor = false;
@@ -347,8 +337,8 @@ namespace OlharDeMenina
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::OlharDeMenina.Properties.Resources.Captura_de_tela_2021_05_15_110046_removebg_preview__3_;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 35);
+            this.pictureBox1.Image = global::OlharDeMenina.Properties.Resources.WhatsApp_Image_2021_05_15_at_16_11_36;
+            this.pictureBox1.Location = new System.Drawing.Point(45, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(92, 83);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -426,7 +416,6 @@ namespace OlharDeMenina
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btmin;
         private System.Windows.Forms.Button btnmax;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
