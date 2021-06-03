@@ -29,7 +29,6 @@ namespace OlharDeMenina
         public System.Drawing.Size Size { get; set; }
         public System.Drawing.Point Location { get; set; }
 
-        FormVGeral v_geral = new FormVGeral();
         private void Form1_Load(object sender, EventArgs e)
         {
             pnlNav.Hide();
@@ -350,6 +349,7 @@ namespace OlharDeMenina
                 WindowState = FormWindowState.Normal;
                 panel8.Size = new Size(184, 352);
                 panel1.Size = new Size(184, 352);
+                pictureBox1.Location = new Point(45, 22);
 
             }
             else if (WindowState == FormWindowState.Normal)
@@ -357,6 +357,8 @@ namespace OlharDeMenina
                 WindowState = FormWindowState.Maximized;
                 panel8.Size = new Size(250, 352);
                 panel1.Size = new Size(250, 352);
+                pictureBox1.Location = new Point(77, 22);
+
             }
             VerificaPainel();
         }
