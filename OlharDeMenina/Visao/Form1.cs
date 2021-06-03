@@ -42,7 +42,7 @@ namespace OlharDeMenina
         private int movX;
         private int movY;
 
-        int QualFormSwitch;
+        private int QualFormSwitch;
 
         private void pnlSuperior_MouseDown(object sender, MouseEventArgs e)
         {
@@ -63,8 +63,6 @@ namespace OlharDeMenina
         {
             mov = 0;
         }
-
-        
 
         private void btnVisao_Click(object sender, EventArgs e)
         {
@@ -217,7 +215,7 @@ namespace OlharDeMenina
             panel3.Show();
             Form formulario;
             formulario = panel3.Controls.OfType<Forms>().FirstOrDefault();
-            
+
             if (formulario == null)
             {
                 formulario = new Forms();
@@ -230,10 +228,9 @@ namespace OlharDeMenina
                 formulario.BringToFront();
             }
             else
-            {   
+            {
                 panel3.Controls.Remove(formulario);
                 formulario.BringToFront();
-                
             }
             if (this.WindowState == FormWindowState.Maximized)
             {
@@ -257,6 +254,7 @@ namespace OlharDeMenina
                         formulario.WindowState = FormWindowState.Normal;
                     }
                     break;
+
                 case 2:
                     formulario = panel3.Controls.OfType<FormVGeral>().FirstOrDefault();
                     if (this.WindowState == FormWindowState.Maximized)
@@ -268,6 +266,7 @@ namespace OlharDeMenina
                         formulario.WindowState = FormWindowState.Normal;
                     }
                     break;
+
                 case 3:
                     formulario = panel3.Controls.OfType<FormVendas>().FirstOrDefault();
                     if (this.WindowState == FormWindowState.Maximized)
@@ -279,6 +278,7 @@ namespace OlharDeMenina
                         formulario.WindowState = FormWindowState.Normal;
                     }
                     break;
+
                 case 4:
                     formulario = panel3.Controls.OfType<FormFuncionario>().FirstOrDefault();
                     if (this.WindowState == FormWindowState.Maximized)
@@ -290,6 +290,7 @@ namespace OlharDeMenina
                         formulario.WindowState = FormWindowState.Normal;
                     }
                     break;
+
                 case 5:
                     formulario = panel3.Controls.OfType<FormHistorico>().FirstOrDefault();
                     if (this.WindowState == FormWindowState.Maximized)
@@ -301,6 +302,7 @@ namespace OlharDeMenina
                         formulario.WindowState = FormWindowState.Normal;
                     }
                     break;
+
                 case 6:
                     formulario = panel3.Controls.OfType<FormEstoque>().FirstOrDefault();
                     if (this.WindowState == FormWindowState.Maximized)
@@ -312,6 +314,7 @@ namespace OlharDeMenina
                         formulario.WindowState = FormWindowState.Normal;
                     }
                     break;
+
                 case 7:
                     formulario = panel3.Controls.OfType<FormCliente>().FirstOrDefault();
                     if (this.WindowState == FormWindowState.Maximized)
@@ -323,6 +326,7 @@ namespace OlharDeMenina
                         formulario.WindowState = FormWindowState.Normal;
                     }
                     break;
+
                 default:
                     Console.WriteLine("Default case");
                     break;
@@ -331,10 +335,11 @@ namespace OlharDeMenina
 
         private void btnmax_Click(object sender, EventArgs e)
         {
-            
-            if (WindowState == FormWindowState.Maximized) {
+            if (WindowState == FormWindowState.Maximized)
+            {
                 WindowState = FormWindowState.Normal;
-            }else if (WindowState == FormWindowState.Normal)
+            }
+            else if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
             }

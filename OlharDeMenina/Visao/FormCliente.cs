@@ -12,59 +12,32 @@ namespace OlharDeMenina
         {
             InitializeComponent();
         }
-
-        private void limparTextBoxes(Control.ControlCollection controles)
+        public int idClien;
+        private void btn_AdicionarC_Click(object sender, EventArgs e)
         {
-            //Faz um laço para todos os controles passados no parâmetro
-            foreach (Control ctrl in controles)
-            {
-                //Se o contorle for um TextBox...
-                if (ctrl is TextBox)
-                {
-                    ((TextBox)(ctrl)).Text = String.Empty;
-                }
-            }
-        }
-
-        private void btn_AdicionarF_Click(object sender, EventArgs e)
-        {
-
+            ControleCliente cc = new ControleCliente();
+            Clientes clientes = new Clientes(tbox_nome.Text, tbox_telefone.Text, tbox_endereco.Text, tbox_datadenascimento.Text);
+            cc.AdicionarClientes(clientes);
 
             PreencherListView();
             LimparCampos();
         }
 
-        private void btn_ExcluirF_Click(object sender, EventArgs e)
+        private void btn_ExcluirC_Click(object sender, EventArgs e)
         {
-
+            idClien = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            ControleCliente cc = new ControleCliente();
+            cc.DeletarClientes(idClien);
 
             PreencherListView();
             LimparCampos();
         }
 
-        private void btn_limpar_Click(object sender, EventArgs e)
-        {
-            LimparCampos();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //MySqlConnection objCon = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw");
-                Conexao objCon = new Conexao();
-                objCon.Open();
-            }
-            catch
-            {
-                MessageBox.Show("Não foi possível conectar :(");
-            }
-        }
 
         public void LimparCampos()
         {
             tbox_nome.Clear();
-            tbox_cpf.Clear();
+            tbox_datadenascimento.Clear();
             tbox_endereco.Clear();
             tbox_telefone.Clear();
         }
@@ -73,18 +46,18 @@ namespace OlharDeMenina
         {
             listView_funf.Items.Clear();
             MySqlDataReader dataReader;
-            ControleFuncionario cf = new ControleFuncionario();
-            dataReader = cf.RetornarFuncionarios(); //Chama o método responsável pela realização da consulta.
+            ControleCliente cf = new ControleCliente();
+            dataReader = cf.RetornarClientes(); //Chama o método responsável pela realização da consulta.
 
             if (dataReader != null) //Verifico
             {
                 while (dataReader.Read())
                 {
-                    ListViewItem lv = new ListViewItem(dataReader.GetString(0));
+                    ListViewItem lv = new ListViewItem(dataReader.GetInt32(0).ToString());
+                    lv.SubItems.Add(dataReader.GetString(1));
                     lv.SubItems.Add(dataReader.GetString(2));
-                    lv.SubItems.Add(dataReader.GetString(5));
-                    lv.SubItems.Add(dataReader.GetString(4));
-                    lv.SubItems.Add(dataReader.GetString(6));
+                    lv.SubItems.Add(dataReader.GetString(3));
+                    lv.SubItems.Add(dataReader.GetDateTime(4).ToString());
                     listView_funf.Items.Add(lv);
                 }
             }
@@ -97,6 +70,40 @@ namespace OlharDeMenina
 
         private void FormCliente_Load(object sender, EventArgs e)
         {
+            PreencherListView();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            ControleCliente cc = new ControleCliente();
+            Clientes clientes = new Clientes(tbox_nome.Text, tbox_telefone.Text, tbox_endereco.Text, tbox_datadenascimento.Text);
+
+            idClien = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+
+            string mensagem = cc.EditarClientes(clientes, idClien);
+
+            MessageBox.Show(mensagem);
+
+            PreencherListView();
+            LimparCampos();
+        }
+
+        private void listView_funf_Click(object sender, EventArgs e)
+        {
+            idClien = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            ControleCliente cf = new ControleCliente();
+            MySqlDataReader dr = cf.RetornarClientes(idClien);
+
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    tbox_nome.Text = dr.GetString(1);
+                    tbox_telefone.Text = dr.GetString(2);
+                    tbox_endereco.Text = dr.GetString(3);
+                    tbox_datadenascimento.Text = dr.GetDateTime(4).ToString();
+                }
+            }
         }
     }
 }
