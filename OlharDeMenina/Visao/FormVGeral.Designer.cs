@@ -38,8 +38,7 @@ namespace OlharDeMenina.Visao
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.monthCalendar1.Location = new System.Drawing.Point(-2, 261);
+            this.monthCalendar1.Location = new System.Drawing.Point(0, 271);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 7;
             // 
@@ -83,12 +82,13 @@ namespace OlharDeMenina.Visao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkViolet;
+            this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(751, 468);
             this.Controls.Add(this.panel5);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVGeral";
             this.Text = "FormVGeral";
+            this.Load += new System.EventHandler(this.FormVGeral_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace OlharDeMenina.Visao
 {
@@ -8,5 +9,14 @@ namespace OlharDeMenina.Visao
         {
             InitializeComponent();
         }
+        public System.Drawing.Size Size { get; set; }
+        public System.Drawing.Point Location { get; set; }
+        Form1 form = new Form1();
+
+        private void FormVGeral_Load(object sender, System.EventArgs e)
+        {
+
+        }
+
     }
 }
