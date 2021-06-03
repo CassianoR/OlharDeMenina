@@ -168,6 +168,7 @@ namespace OlharDeMenina
             this.txtB_senha1.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtB_senha1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtB_senha1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtB_senha1.ForeColor = System.Drawing.Color.PaleVioletRed;
             this.txtB_senha1.Location = new System.Drawing.Point(68, 107);
             this.txtB_senha1.Name = "txtB_senha1";
             this.txtB_senha1.Size = new System.Drawing.Size(201, 17);
@@ -250,6 +251,7 @@ namespace OlharDeMenina
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_senha)).EndInit();

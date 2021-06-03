@@ -57,8 +57,6 @@ namespace OlharDeMenina
             mov = 0;
         }
 
-        
-
         private void btnVisao_Click(object sender, EventArgs e)
         {
             //Precisa fazer um forms separado pra visão geral!
@@ -232,14 +230,22 @@ namespace OlharDeMenina
             }
         }
 
+        public System.Drawing.Point Location { get; set; }
+
         private void btnmax_Click(object sender, EventArgs e)
         {
             if(WindowState == FormWindowState.Maximized) {
                 WindowState = FormWindowState.Normal;
-            }else if (WindowState == FormWindowState.Normal)
+                panel5.Location = new Point(512, 13);
+                monthCalendar1.Location = new Point(512, 250);
+            }
+            else if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
+                panel5.Location = new Point(945, 13);
+                monthCalendar1.Location = new Point(945, 250);
             }
+
         }
 
         private void btmin_Click(object sender, EventArgs e)

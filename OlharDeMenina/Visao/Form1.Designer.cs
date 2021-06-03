@@ -38,35 +38,35 @@ namespace OlharDeMenina
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btmin = new System.Windows.Forms.Button();
-            this.btnmax = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlNav = new System.Windows.Forms.Panel();
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnEstoque = new System.Windows.Forms.Button();
             this.btnHist = new System.Windows.Forms.Button();
             this.btnFunc = new System.Windows.Forms.Button();
             this.btnVendas = new System.Windows.Forms.Button();
             this.btnVisao = new System.Windows.Forms.Button();
-            this.pnlNav = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btmin = new System.Windows.Forms.Button();
+            this.btnmax = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -157,51 +157,6 @@ namespace OlharDeMenina
             this.panel4.Size = new System.Drawing.Size(109, 35);
             this.panel4.TabIndex = 9;
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::OlharDeMenina.Properties.Resources.closebtnn;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(73, 2);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(33, 30);
-            this.btnClose.TabIndex = 6;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btmin
-            // 
-            this.btmin.BackColor = System.Drawing.Color.Transparent;
-            this.btmin.BackgroundImage = global::OlharDeMenina.Properties.Resources.minbtn;
-            this.btmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btmin.FlatAppearance.BorderSize = 0;
-            this.btmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btmin.Location = new System.Drawing.Point(9, 6);
-            this.btmin.Name = "btmin";
-            this.btmin.Size = new System.Drawing.Size(28, 23);
-            this.btmin.TabIndex = 8;
-            this.btmin.UseVisualStyleBackColor = false;
-            this.btmin.Click += new System.EventHandler(this.btmin_Click);
-            // 
-            // btnmax
-            // 
-            this.btnmax.BackColor = System.Drawing.Color.Transparent;
-            this.btnmax.BackgroundImage = global::OlharDeMenina.Properties.Resources.Maxbtn;
-            this.btnmax.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnmax.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnmax.FlatAppearance.BorderSize = 0;
-            this.btnmax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnmax.Location = new System.Drawing.Point(43, 6);
-            this.btnmax.Name = "btnmax";
-            this.btnmax.Size = new System.Drawing.Size(24, 23);
-            this.btnmax.TabIndex = 7;
-            this.btnmax.UseVisualStyleBackColor = false;
-            this.btnmax.Click += new System.EventHandler(this.btnmax_Click);
-            // 
             // panel7
             // 
             this.panel7.Location = new System.Drawing.Point(0, 3);
@@ -242,6 +197,14 @@ namespace OlharDeMenina
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(186, 352);
             this.panel1.TabIndex = 0;
+            // 
+            // pnlNav
+            // 
+            this.pnlNav.BackColor = System.Drawing.Color.White;
+            this.pnlNav.Location = new System.Drawing.Point(0, 152);
+            this.pnlNav.Name = "pnlNav";
+            this.pnlNav.Size = new System.Drawing.Size(3, 318);
+            this.pnlNav.TabIndex = 3;
             // 
             // btnClientes
             // 
@@ -357,13 +320,26 @@ namespace OlharDeMenina
             this.btnVisao.Click += new System.EventHandler(this.btnVisao_Click);
             this.btnVisao.Leave += new System.EventHandler(this.btnVisao_Leave);
             // 
-            // pnlNav
+            // panel8
             // 
-            this.pnlNav.BackColor = System.Drawing.Color.White;
-            this.pnlNav.Location = new System.Drawing.Point(0, 152);
-            this.pnlNav.Name = "pnlNav";
-            this.pnlNav.Size = new System.Drawing.Size(3, 318);
-            this.pnlNav.TabIndex = 3;
+            this.panel8.BackColor = System.Drawing.Color.Transparent;
+            this.panel8.Controls.Add(this.panel1);
+            this.panel8.Controls.Add(this.panel2);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(0, 35);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(184, 503);
+            this.panel8.TabIndex = 7;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Transparent;
+            this.panel9.Controls.Add(this.panel6);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel9.Location = new System.Drawing.Point(184, 35);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(751, 35);
+            this.panel9.TabIndex = 10;
             // 
             // panel2
             // 
@@ -395,34 +371,58 @@ namespace OlharDeMenina
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::OlharDeMenina.Properties.Resources.Captura_de_tela_2021_05_15_110046_removebg_preview__3_;
-            this.pictureBox1.Location = new System.Drawing.Point(43, 35);
+            this.pictureBox1.Image = global::OlharDeMenina.Properties.Resources.WhatsApp_Image_2021_05_15_at_16_111;
+            this.pictureBox1.Location = new System.Drawing.Point(40, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(92, 83);
+            this.pictureBox1.Size = new System.Drawing.Size(102, 96);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // panel8
+            // btnClose
             // 
-            this.panel8.BackColor = System.Drawing.Color.Transparent;
-            this.panel8.Controls.Add(this.panel1);
-            this.panel8.Controls.Add(this.panel2);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(0, 35);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(184, 503);
-            this.panel8.TabIndex = 7;
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::OlharDeMenina.Properties.Resources.closebtnn;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(73, 2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(33, 30);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // panel9
+            // btmin
             // 
-            this.panel9.BackColor = System.Drawing.Color.Transparent;
-            this.panel9.Controls.Add(this.panel6);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel9.Location = new System.Drawing.Point(184, 35);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(751, 35);
-            this.panel9.TabIndex = 10;
+            this.btmin.BackColor = System.Drawing.Color.Transparent;
+            this.btmin.BackgroundImage = global::OlharDeMenina.Properties.Resources.minbtn;
+            this.btmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btmin.FlatAppearance.BorderSize = 0;
+            this.btmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btmin.Location = new System.Drawing.Point(9, 6);
+            this.btmin.Name = "btmin";
+            this.btmin.Size = new System.Drawing.Size(28, 23);
+            this.btmin.TabIndex = 8;
+            this.btmin.UseVisualStyleBackColor = false;
+            this.btmin.Click += new System.EventHandler(this.btmin_Click);
+            // 
+            // btnmax
+            // 
+            this.btnmax.BackColor = System.Drawing.Color.Transparent;
+            this.btnmax.BackgroundImage = global::OlharDeMenina.Properties.Resources.Maxbtn;
+            this.btnmax.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnmax.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnmax.FlatAppearance.BorderSize = 0;
+            this.btnmax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmax.Location = new System.Drawing.Point(43, 6);
+            this.btnmax.Name = "btnmax";
+            this.btnmax.Size = new System.Drawing.Size(24, 23);
+            this.btnmax.TabIndex = 7;
+            this.btnmax.UseVisualStyleBackColor = false;
+            this.btnmax.Click += new System.EventHandler(this.btnmax_Click);
             // 
             // Form1
             // 
@@ -447,10 +447,10 @@ namespace OlharDeMenina
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
