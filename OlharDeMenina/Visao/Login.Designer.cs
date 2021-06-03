@@ -168,7 +168,6 @@ namespace OlharDeMenina
             this.txtB_senha1.BackColor = System.Drawing.Color.LavenderBlush;
             this.txtB_senha1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtB_senha1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtB_senha1.ForeColor = System.Drawing.Color.PaleVioletRed;
             this.txtB_senha1.Location = new System.Drawing.Point(68, 107);
             this.txtB_senha1.Name = "txtB_senha1";
             this.txtB_senha1.Size = new System.Drawing.Size(201, 17);
@@ -191,8 +190,8 @@ namespace OlharDeMenina
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::OlharDeMenina.Properties.Resources.WhatsApp_Image_2021_05_15_at_16_11_36;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 43);
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(97, 43);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(224, 192);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -251,7 +250,6 @@ namespace OlharDeMenina
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.Login_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_senha)).EndInit();
