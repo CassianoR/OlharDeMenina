@@ -26,6 +26,8 @@ namespace OlharDeMenina
             InitializeComponent();
             //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
+        public System.Drawing.Size Size { get; set; }
+        public System.Drawing.Point Location { get; set; }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -34,6 +36,12 @@ namespace OlharDeMenina
             lblTitulo.Text = "Visão Geral";
             QualFormSwitch = 2;
             VerificaPainel();
+            if (WindowState == FormWindowState.Maximized)
+            {
+                panel8.Size = new Size(250, 352);
+                panel1.Size = new Size(250, 352);
+            }
+
         }
 
         // Mover janela
@@ -43,6 +51,7 @@ namespace OlharDeMenina
         private int movY;
 
         private int QualFormSwitch;
+
 
         private void pnlSuperior_MouseDown(object sender, MouseEventArgs e)
         {
@@ -338,10 +347,18 @@ namespace OlharDeMenina
             if (WindowState == FormWindowState.Maximized)
             {
                 WindowState = FormWindowState.Normal;
+                panel8.Size = new Size(184, 352);
+                panel1.Size = new Size(184, 352);
+                pictureBox1.Location = new Point(45, 22);
+
             }
             else if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
+                panel8.Size = new Size(250, 352);
+                panel1.Size = new Size(250, 352);
+                pictureBox1.Location = new Point(77, 22);
+
             }
             VerificaPainel();
         }
