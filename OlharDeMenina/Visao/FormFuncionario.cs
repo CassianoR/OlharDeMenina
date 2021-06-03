@@ -110,11 +110,14 @@ namespace OlharDeMenina
         {
             ControleFuncionario cf = new ControleFuncionario();
             Funcionarios funcionario = new Funcionarios("Funcionário", tbox_nome.Text, tbox_cpf.Text, "1234", tbox_telefone.Text, tbox_endereco.Text);
-            cf.AdicionarFuncionarios(funcionario);
-
+            
             idFunc = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
-            ControleFuncionario cp = new ControleFuncionario();
-            cp.DeletarFuncionario(idFunc);
+
+
+            string mensagem = cf.EditarFuncionario(funcionario, idFunc);
+
+            MessageBox.Show(mensagem);
+
             PreencherListView();
             LimparCampos();
         }

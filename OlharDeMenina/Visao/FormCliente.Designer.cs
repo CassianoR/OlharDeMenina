@@ -31,7 +31,7 @@ namespace OlharDeMenina
         {
             this.listView_funf = new System.Windows.Forms.ListView();
             this.ch_nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ch_cpf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_datanasc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_telefone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_endereco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_cadastro = new System.Windows.Forms.Panel();
@@ -39,18 +39,17 @@ namespace OlharDeMenina
             this.tbox_datadenascimento = new System.Windows.Forms.TextBox();
             this.lbl_datadenascimento = new System.Windows.Forms.Label();
             this.lbl_nome = new System.Windows.Forms.Label();
-            this.tbox_cpf = new System.Windows.Forms.TextBox();
             this.tbox_nome = new System.Windows.Forms.TextBox();
             this.lbl_endereco = new System.Windows.Forms.Label();
             this.lbl_telefone = new System.Windows.Forms.Label();
             this.tbox_endereco = new System.Windows.Forms.TextBox();
             this.tbox_telefone = new System.Windows.Forms.TextBox();
-            this.lbl_cpf = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btn_ExcluirC = new System.Windows.Forms.Button();
             this.btn_AdicionarC = new System.Windows.Forms.Button();
             this.btn_limparC = new System.Windows.Forms.Button();
+            this.ch_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_cadastro.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -61,11 +60,13 @@ namespace OlharDeMenina
             this.listView_funf.BackColor = System.Drawing.Color.White;
             this.listView_funf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView_funf.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ch_id,
             this.ch_nome,
-            this.ch_cpf,
             this.ch_telefone,
-            this.ch_endereco});
+            this.ch_endereco,
+            this.ch_datanasc});
             this.listView_funf.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listView_funf.FullRowSelect = true;
             this.listView_funf.HideSelection = false;
             this.listView_funf.Location = new System.Drawing.Point(0, 188);
             this.listView_funf.Name = "listView_funf";
@@ -73,26 +74,29 @@ namespace OlharDeMenina
             this.listView_funf.TabIndex = 17;
             this.listView_funf.UseCompatibleStateImageBehavior = false;
             this.listView_funf.View = System.Windows.Forms.View.Details;
+            this.listView_funf.Click += new System.EventHandler(this.listView_funf_Click);
             // 
             // ch_nome
             // 
+            this.ch_nome.DisplayIndex = 1;
             this.ch_nome.Text = "Nome";
             this.ch_nome.Width = 164;
             // 
-            // ch_cpf
+            // ch_datanasc
             // 
-            this.ch_cpf.DisplayIndex = 2;
-            this.ch_cpf.Text = "CPF";
-            this.ch_cpf.Width = 153;
+            this.ch_datanasc.DisplayIndex = 4;
+            this.ch_datanasc.Text = "Data de nascimento";
+            this.ch_datanasc.Width = 153;
             // 
             // ch_telefone
             // 
-            this.ch_telefone.DisplayIndex = 1;
+            this.ch_telefone.DisplayIndex = 2;
             this.ch_telefone.Text = "Telefone";
             this.ch_telefone.Width = 152;
             // 
             // ch_endereco
             // 
+            this.ch_endereco.DisplayIndex = 3;
             this.ch_endereco.Text = "Endereço";
             this.ch_endereco.Width = 224;
             // 
@@ -111,13 +115,11 @@ namespace OlharDeMenina
             this.panel2.Controls.Add(this.tbox_datadenascimento);
             this.panel2.Controls.Add(this.lbl_datadenascimento);
             this.panel2.Controls.Add(this.lbl_nome);
-            this.panel2.Controls.Add(this.tbox_cpf);
             this.panel2.Controls.Add(this.tbox_nome);
             this.panel2.Controls.Add(this.lbl_endereco);
             this.panel2.Controls.Add(this.lbl_telefone);
             this.panel2.Controls.Add(this.tbox_endereco);
             this.panel2.Controls.Add(this.tbox_telefone);
-            this.panel2.Controls.Add(this.lbl_cpf);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -154,16 +156,6 @@ namespace OlharDeMenina
             this.lbl_nome.Size = new System.Drawing.Size(57, 21);
             this.lbl_nome.TabIndex = 9;
             this.lbl_nome.Text = "Nome";
-            // 
-            // tbox_cpf
-            // 
-            this.tbox_cpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbox_cpf.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.tbox_cpf.Location = new System.Drawing.Point(177, 100);
-            this.tbox_cpf.MaxLength = 14;
-            this.tbox_cpf.Name = "tbox_cpf";
-            this.tbox_cpf.Size = new System.Drawing.Size(126, 22);
-            this.tbox_cpf.TabIndex = 3;
             // 
             // tbox_nome
             // 
@@ -212,19 +204,8 @@ namespace OlharDeMenina
             this.tbox_telefone.Location = new System.Drawing.Point(12, 100);
             this.tbox_telefone.MaxLength = 11;
             this.tbox_telefone.Name = "tbox_telefone";
-            this.tbox_telefone.Size = new System.Drawing.Size(157, 22);
+            this.tbox_telefone.Size = new System.Drawing.Size(270, 22);
             this.tbox_telefone.TabIndex = 2;
-            // 
-            // lbl_cpf
-            // 
-            this.lbl_cpf.AutoSize = true;
-            this.lbl_cpf.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lbl_cpf.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_cpf.Location = new System.Drawing.Point(173, 76);
-            this.lbl_cpf.Name = "lbl_cpf";
-            this.lbl_cpf.Size = new System.Drawing.Size(40, 21);
-            this.lbl_cpf.TabIndex = 11;
-            this.lbl_cpf.Text = "CPF";
             // 
             // panel1
             // 
@@ -251,6 +232,7 @@ namespace OlharDeMenina
             this.btnEditar.TabIndex = 25;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btn_ExcluirC
             // 
@@ -266,7 +248,7 @@ namespace OlharDeMenina
             this.btn_ExcluirC.TabIndex = 14;
             this.btn_ExcluirC.Text = "Excluir";
             this.btn_ExcluirC.UseVisualStyleBackColor = false;
-            this.btn_ExcluirC.Click += new System.EventHandler(this.btn_ExcluirF_Click);
+            this.btn_ExcluirC.Click += new System.EventHandler(this.btn_ExcluirC_Click);
             // 
             // btn_AdicionarC
             // 
@@ -282,7 +264,7 @@ namespace OlharDeMenina
             this.btn_AdicionarC.TabIndex = 13;
             this.btn_AdicionarC.Text = "Adicionar";
             this.btn_AdicionarC.UseVisualStyleBackColor = false;
-            this.btn_AdicionarC.Click += new System.EventHandler(this.btn_AdicionarF_Click);
+            this.btn_AdicionarC.Click += new System.EventHandler(this.btn_AdicionarC_Click);
             // 
             // btn_limparC
             // 
@@ -298,6 +280,11 @@ namespace OlharDeMenina
             this.btn_limparC.Text = "Limpar";
             this.btn_limparC.UseVisualStyleBackColor = false;
             this.btn_limparC.Click += new System.EventHandler(this.btn_limparC_Click);
+            // 
+            // ch_id
+            // 
+            this.ch_id.DisplayIndex = 0;
+            this.ch_id.Text = "ID";
             // 
             // FormCliente
             // 
@@ -323,7 +310,7 @@ namespace OlharDeMenina
 
         private System.Windows.Forms.ListView listView_funf;
         private System.Windows.Forms.ColumnHeader ch_nome;
-        private System.Windows.Forms.ColumnHeader ch_cpf;
+        private System.Windows.Forms.ColumnHeader ch_datanasc;
         private System.Windows.Forms.ColumnHeader ch_telefone;
         private System.Windows.Forms.ColumnHeader ch_endereco;
         private System.Windows.Forms.Panel pnl_cadastro;
@@ -335,13 +322,12 @@ namespace OlharDeMenina
         private System.Windows.Forms.Button btn_ExcluirC;
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.TextBox tbox_nome;
-        private System.Windows.Forms.Label lbl_cpf;
-        private System.Windows.Forms.TextBox tbox_cpf;
         private System.Windows.Forms.TextBox tbox_telefone;
         private System.Windows.Forms.TextBox tbox_datadenascimento;
         private System.Windows.Forms.Label lbl_datadenascimento;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ColumnHeader ch_id;
     }
 }

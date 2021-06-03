@@ -8,7 +8,7 @@ namespace OlharDeMenina
     internal class Conexao
     {
         private MySqlConnection conn;
-        private MySqlConnection con = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw");
+        private MySqlConnection con = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw; convert zero datetime=True");
 
         public MySqlConnection Conectar()
         {
@@ -34,7 +34,7 @@ namespace OlharDeMenina
         {
             try
             {
-                conn = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw");
+                conn = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw; convert zero datetime=True");
                 conn.Open();
                 //MessageBox.Show("Conectado com sucesso!");
                 return true;
