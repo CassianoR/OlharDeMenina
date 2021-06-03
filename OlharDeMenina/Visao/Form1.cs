@@ -24,14 +24,16 @@ namespace OlharDeMenina
         public Form1()
         {
             InitializeComponent();
-            AbrirFormNoPanel<FormVGeral>();
-            lblTitulo.Text = "Visão Geral";
             //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             pnlNav.Hide();
+            AbrirFormNoPanel<FormVGeral>();
+            lblTitulo.Text = "Visão Geral";
+            QualFormSwitch = 2;
+            VerificaPainel();
         }
 
         // Mover janela
