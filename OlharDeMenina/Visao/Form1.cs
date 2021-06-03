@@ -338,10 +338,14 @@ namespace OlharDeMenina
             if (WindowState == FormWindowState.Maximized)
             {
                 WindowState = FormWindowState.Normal;
+                panel5.Location = new Point(512, 13);
+                monthCalendar1.Location = new Point(512, 250);
             }
             else if (WindowState == FormWindowState.Normal)
             {
                 WindowState = FormWindowState.Maximized;
+                panel5.Location = new Point(945, 13);
+                monthCalendar1.Location = new Point(945, 250);
             }
             VerificaPainel();
         }

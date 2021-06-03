@@ -259,5 +259,15 @@ namespace OlharDeMenina.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2021_05_15_at_16_111 {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2021-05-15 at 16.111", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

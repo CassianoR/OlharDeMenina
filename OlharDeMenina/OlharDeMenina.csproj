@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -67,11 +67,13 @@
   <ItemGroup>
     <Compile Include="Controle\ControleCliente.cs" />
     <Compile Include="Controle\ControleFuncionario.cs" />
+
     <Compile Include="Controle\ControleProduto.cs" />
     <Compile Include="Modelo\Clientes.cs" />
     <Compile Include="Modelo\ClientesDAO.cs" />
     <Compile Include="Modelo\Produtos.cs" />
     <Compile Include="Modelo\ProdutosDAO.cs" />
+
     <Compile Include="Visao\FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +133,7 @@
     <Compile Include="Visao\Form_menuFunc.Designer.cs">
       <DependentUpon>Form_menuFunc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Visao\space.cs" />
     <EmbeddedResource Include="Visao\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -217,6 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\minbtn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-05-15 at 16.11.361.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
