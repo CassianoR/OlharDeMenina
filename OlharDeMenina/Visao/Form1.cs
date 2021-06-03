@@ -1,3 +1,4 @@
+using OlharDeMenina.Visao;
 using System;
 using System.Drawing;
 using System.Linq;
@@ -23,6 +24,8 @@ namespace OlharDeMenina
         public Form1()
         {
             InitializeComponent();
+            AbrirFormNoPanel<FormVGeral>();
+            lblTitulo.Text = "Visão Geral";
             //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
@@ -37,7 +40,7 @@ namespace OlharDeMenina
         private int movX;
         private int movY;
 
-        int teste;
+        int QualFormSwitch;
 
         private void pnlSuperior_MouseDown(object sender, MouseEventArgs e)
         {
@@ -63,14 +66,14 @@ namespace OlharDeMenina
 
         private void btnVisao_Click(object sender, EventArgs e)
         {
-            //Precisa fazer um forms separado pra visão geral!
             pnlNav.Show();
             pnlNav.Height = btnVisao.Height;
             pnlNav.Top = btnVisao.Top;
             pnlNav.Left = btnVisao.Left;
             btnVisao.BackColor = Color.FromArgb(249, 138, 237);
+            AbrirFormNoPanel<FormVGeral>();
             lblTitulo.Text = "Visão Geral";
-            panel3.Controls.Clear();
+            QualFormSwitch = 2;
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
@@ -79,9 +82,9 @@ namespace OlharDeMenina
             pnlNav.Height = btnEstoque.Height;
             pnlNav.Top = btnEstoque.Top;
             btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
-            // AbrirFormNoPanel<FormEstoque>();
-            //lblTitulo.Text = "Estoque";
-            //Corrigir o nome e descomentar quando for adicionado o formEstoque. 
+            AbrirFormNoPanel<FormEstoque>();
+            lblTitulo.Text = "Estoque";
+            QualFormSwitch = 6;
         }
 
         private void btnHist_Click(object sender, EventArgs e)
@@ -90,9 +93,9 @@ namespace OlharDeMenina
             pnlNav.Height = btnHist.Height;
             pnlNav.Top = btnHist.Top;
             btnHist.BackColor = Color.FromArgb(249, 138, 237);
-            // AbrirFormNoPanel<FormHist>();
-            //lblTitulo.Text = "Histórico";
-            //Corrigir o nome e descomentar quando for adicionado o formHist. 
+            AbrirFormNoPanel<FormHistorico>();
+            lblTitulo.Text = "Histórico";
+            QualFormSwitch = 5;
         }
 
         private void btnVendas_Click(object sender, EventArgs e)
@@ -101,9 +104,9 @@ namespace OlharDeMenina
             pnlNav.Height = btnVendas.Height;
             pnlNav.Top = btnVendas.Top;
             btnVendas.BackColor = Color.FromArgb(249, 138, 237);
-            // AbrirFormNoPanel<FormVendas>();
-            //lblTitulo.Text = "Vendas";
-            //Corrigir o nome e descomentar quando for adicionado o formVendas. 
+            AbrirFormNoPanel<FormVendas>();
+            lblTitulo.Text = "Vendas";
+            QualFormSwitch = 3;
         }
 
         private void btnFunc_Click(object sender, EventArgs e)
@@ -114,6 +117,7 @@ namespace OlharDeMenina
             btnFunc.BackColor = Color.FromArgb(249, 138, 237);
             AbrirFormNoPanel<FormFuncionario>();
             lblTitulo.Text = "Funcionários";
+            QualFormSwitch = 4;
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
@@ -124,7 +128,7 @@ namespace OlharDeMenina
             btnClientes.BackColor = Color.FromArgb(249, 138, 237);
             AbrirFormNoPanel<FormCliente>();
             lblTitulo.Text = "Clientes";
-            teste = 1;
+            QualFormSwitch = 7;
         }
 
         private void btnVisao_Leave(object sender, EventArgs e)
@@ -238,20 +242,84 @@ namespace OlharDeMenina
         private void VerificaPainel()
         {
             Form formulario;
-            switch (teste)
+            switch (QualFormSwitch)
             {
                 case 1:
-                    formulario = panel3.Controls.OfType<FormCliente>().FirstOrDefault();
-                    if(this.WindowState == FormWindowState.Maximized)
+                    formulario = panel3.Controls.OfType<Form1>().FirstOrDefault();
+                    if (this.WindowState == FormWindowState.Maximized)
                     {
                         formulario.WindowState = FormWindowState.Maximized;
-                    }else if (this.WindowState == FormWindowState.Normal)
+                    }
+                    else if (this.WindowState == FormWindowState.Normal)
                     {
                         formulario.WindowState = FormWindowState.Normal;
                     }
                     break;
                 case 2:
-                    Console.WriteLine("Case 2");
+                    formulario = panel3.Controls.OfType<FormVGeral>().FirstOrDefault();
+                    if (this.WindowState == FormWindowState.Maximized)
+                    {
+                        formulario.WindowState = FormWindowState.Maximized;
+                    }
+                    else if (this.WindowState == FormWindowState.Normal)
+                    {
+                        formulario.WindowState = FormWindowState.Normal;
+                    }
+                    break;
+                case 3:
+                    formulario = panel3.Controls.OfType<FormVendas>().FirstOrDefault();
+                    if (this.WindowState == FormWindowState.Maximized)
+                    {
+                        formulario.WindowState = FormWindowState.Maximized;
+                    }
+                    else if (this.WindowState == FormWindowState.Normal)
+                    {
+                        formulario.WindowState = FormWindowState.Normal;
+                    }
+                    break;
+                case 4:
+                    formulario = panel3.Controls.OfType<FormFuncionario>().FirstOrDefault();
+                    if (this.WindowState == FormWindowState.Maximized)
+                    {
+                        formulario.WindowState = FormWindowState.Maximized;
+                    }
+                    else if (this.WindowState == FormWindowState.Normal)
+                    {
+                        formulario.WindowState = FormWindowState.Normal;
+                    }
+                    break;
+                case 5:
+                    formulario = panel3.Controls.OfType<FormHistorico>().FirstOrDefault();
+                    if (this.WindowState == FormWindowState.Maximized)
+                    {
+                        formulario.WindowState = FormWindowState.Maximized;
+                    }
+                    else if (this.WindowState == FormWindowState.Normal)
+                    {
+                        formulario.WindowState = FormWindowState.Normal;
+                    }
+                    break;
+                case 6:
+                    formulario = panel3.Controls.OfType<FormEstoque>().FirstOrDefault();
+                    if (this.WindowState == FormWindowState.Maximized)
+                    {
+                        formulario.WindowState = FormWindowState.Maximized;
+                    }
+                    else if (this.WindowState == FormWindowState.Normal)
+                    {
+                        formulario.WindowState = FormWindowState.Normal;
+                    }
+                    break;
+                case 7:
+                    formulario = panel3.Controls.OfType<FormCliente>().FirstOrDefault();
+                    if (this.WindowState == FormWindowState.Maximized)
+                    {
+                        formulario.WindowState = FormWindowState.Maximized;
+                    }
+                    else if (this.WindowState == FormWindowState.Normal)
+                    {
+                        formulario.WindowState = FormWindowState.Normal;
+                    }
                     break;
                 default:
                     Console.WriteLine("Default case");
