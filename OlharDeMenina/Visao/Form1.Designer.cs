@@ -390,6 +390,7 @@ namespace OlharDeMenina
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Olhar de Menina";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlSuperior.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
