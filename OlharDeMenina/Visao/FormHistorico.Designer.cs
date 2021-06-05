@@ -30,12 +30,12 @@ namespace OlharDeMenina.Visao
         private void InitializeComponent()
         {
             this.listView_funf = new System.Windows.Forms.ListView();
+            this.ch_codigodavenda = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_codigocliente = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_valor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_metododepagamento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_dataehora = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ch_valor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ch_codigodavenda = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.tbox_codigovenda = new System.Windows.Forms.TextBox();
             this.lbl_marca = new System.Windows.Forms.Label();
@@ -70,6 +70,11 @@ namespace OlharDeMenina.Visao
             this.listView_funf.UseCompatibleStateImageBehavior = false;
             this.listView_funf.View = System.Windows.Forms.View.Details;
             // 
+            // ch_codigodavenda
+            // 
+            this.ch_codigodavenda.Text = "Código da Venda";
+            this.ch_codigodavenda.Width = 102;
+            // 
             // ch_id
             // 
             this.ch_id.Text = "ID";
@@ -80,6 +85,11 @@ namespace OlharDeMenina.Visao
             this.ch_codigocliente.Text = "Código Cliente";
             this.ch_codigocliente.Width = 122;
             // 
+            // ch_valor
+            // 
+            this.ch_valor.Text = "Valor";
+            this.ch_valor.Width = 70;
+            // 
             // ch_metododepagamento
             // 
             this.ch_metododepagamento.Text = "Método de Pagamento";
@@ -89,16 +99,6 @@ namespace OlharDeMenina.Visao
             // 
             this.ch_dataehora.Text = "Data e Hora";
             this.ch_dataehora.Width = 186;
-            // 
-            // ch_valor
-            // 
-            this.ch_valor.Text = "Valor";
-            this.ch_valor.Width = 70;
-            // 
-            // ch_codigodavenda
-            // 
-            this.ch_codigodavenda.Text = "Código da Venda";
-            this.ch_codigodavenda.Width = 102;
             // 
             // button1
             // 
@@ -210,6 +210,7 @@ namespace OlharDeMenina.Visao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(748, 456);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listView_funf);

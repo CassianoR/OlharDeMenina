@@ -79,7 +79,7 @@ namespace OlharDeMenina
             pnlNav.Height = btnVisao.Height;
             pnlNav.Top = btnVisao.Top;
             pnlNav.Left = btnVisao.Left;
-            btnVisao.BackColor = Color.FromArgb(249, 138, 237);
+            btnVisao.BackColor = Color.FromArgb(248, 212, 216);
             AbrirFormNoPanel<FormVGeral>();
             lblTitulo.Text = "Visão Geral";
             QualFormSwitch = 2;
@@ -90,7 +90,7 @@ namespace OlharDeMenina
             pnlNav.Show();
             pnlNav.Height = btnEstoque.Height;
             pnlNav.Top = btnEstoque.Top;
-            btnEstoque.BackColor = Color.FromArgb(249, 138, 237);
+            btnEstoque.BackColor = Color.FromArgb(248, 212, 216);
             AbrirFormNoPanel<FormEstoque>();
             lblTitulo.Text = "Estoque";
             QualFormSwitch = 6;
@@ -101,7 +101,7 @@ namespace OlharDeMenina
             pnlNav.Show();
             pnlNav.Height = btnHist.Height;
             pnlNav.Top = btnHist.Top;
-            btnHist.BackColor = Color.FromArgb(249, 138, 237);
+            btnHist.BackColor = Color.FromArgb(248, 212, 216);
             AbrirFormNoPanel<FormHistorico>();
             lblTitulo.Text = "Histórico";
             QualFormSwitch = 5;
@@ -112,7 +112,7 @@ namespace OlharDeMenina
             pnlNav.Show();
             pnlNav.Height = btnVendas.Height;
             pnlNav.Top = btnVendas.Top;
-            btnVendas.BackColor = Color.FromArgb(249, 138, 237);
+            btnVendas.BackColor = Color.FromArgb(248, 212, 216);
             AbrirFormNoPanel<FormVendas>();
             lblTitulo.Text = "Vendas";
             QualFormSwitch = 3;
@@ -123,7 +123,7 @@ namespace OlharDeMenina
             pnlNav.Show();
             pnlNav.Height = btnFunc.Height;
             pnlNav.Top = btnFunc.Top;
-            btnFunc.BackColor = Color.FromArgb(249, 138, 237);
+            btnFunc.BackColor = Color.FromArgb(248, 212, 216);
             AbrirFormNoPanel<FormFuncionario>();
             lblTitulo.Text = "Funcionários";
             QualFormSwitch = 4;
@@ -134,7 +134,7 @@ namespace OlharDeMenina
             pnlNav.Show();
             pnlNav.Height = btnClientes.Height;
             pnlNav.Top = btnClientes.Top;
-            btnClientes.BackColor = Color.FromArgb(249, 138, 237);
+            btnClientes.BackColor = Color.FromArgb(248, 212, 216);
             AbrirFormNoPanel<FormCliente>();
             lblTitulo.Text = "Clientes";
             QualFormSwitch = 7;
@@ -142,32 +142,32 @@ namespace OlharDeMenina
 
         private void btnVisao_Leave(object sender, EventArgs e)
         {
-            btnVisao.BackColor = Color.FromArgb(250, 88, 130);
+            btnVisao.BackColor = Color.Transparent;
         }
 
         private void btnEstoque_Leave(object sender, EventArgs e)
         {
-            btnEstoque.BackColor = Color.FromArgb(250, 88, 130);
+            btnEstoque.BackColor = Color.Transparent;
         }
 
         private void btnVendas_Leave(object sender, EventArgs e)
         {
-            btnVendas.BackColor = Color.FromArgb(250, 88, 130);
+            btnVendas.BackColor = Color.Transparent;
         }
 
         private void btnHist_Leave(object sender, EventArgs e)
         {
-            btnHist.BackColor = Color.FromArgb(250, 88, 130);
+            btnHist.BackColor = Color.Transparent;
         }
 
         private void btnClientes_Leave(object sender, EventArgs e)
         {
-            btnClientes.BackColor = Color.FromArgb(250, 88, 130);
+            btnClientes.BackColor = Color.Transparent;
         }
 
         private void btnFunc_Leave(object sender, EventArgs e)
         {
-            btnFunc.BackColor = Color.FromArgb(250, 88, 130);
+            btnFunc.BackColor = Color.Transparent;
         }
 
         private async void FadeIn(Form o, int interval = 80)
@@ -346,18 +346,22 @@ namespace OlharDeMenina
         {
             if (WindowState == FormWindowState.Maximized)
             {
-                WindowState = FormWindowState.Normal;
+                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+                this.WindowState = FormWindowState.Normal;
+                //WindowState = FormWindowState.Normal;
                 panel8.Size = new Size(184, 352);
                 panel1.Size = new Size(184, 352);
-                pictureBox1.Location = new Point(45, 22);
+                pictureBox2.Location = new Point(45, 22);
 
             }
             else if (WindowState == FormWindowState.Normal)
             {
-                WindowState = FormWindowState.Maximized;
+                this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+                this.WindowState = FormWindowState.Maximized;
+                //WindowState = FormWindowState.Maximized;
                 panel8.Size = new Size(250, 352);
                 panel1.Size = new Size(250, 352);
-                pictureBox1.Location = new Point(77, 22);
+                pictureBox2.Location = new Point(77, 22);
 
             }
             VerificaPainel();

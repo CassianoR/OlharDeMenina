@@ -88,7 +88,7 @@ namespace OlharDeMenina
             PreencherListView();
             LimparCampos();
         }
-        private void listView_funf_Click(object sender, EventArgs e)
+        private void listView_funf_DoubleClick(object sender, EventArgs e)
         {
             idFunc = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
             ControleFuncionario cf = new ControleFuncionario();
