@@ -183,6 +183,26 @@ namespace OlharDeMenina.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap home {
+            get {
+                object obj = ResourceManager.GetObject("home", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap home1 {
+            get {
+                object obj = ResourceManager.GetObject("home1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Maxbtn {
             get {
                 object obj = ResourceManager.GetObject("Maxbtn", resourceCulture);
@@ -206,6 +226,16 @@ namespace OlharDeMenina.Properties {
         internal static System.Drawing.Bitmap olho__1_ {
             get {
                 object obj = ResourceManager.GetObject("olho (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap re_pict_house_base {
+            get {
+                object obj = ResourceManager.GetObject("re-pict-house-base", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

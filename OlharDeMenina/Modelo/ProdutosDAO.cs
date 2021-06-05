@@ -12,12 +12,13 @@ namespace OlharDeMenina.Modelo
 
         public string Adicionar(Produtos produtos)
         {
-            cmd.CommandText = "insert into produto (NomeProduto, Marca, Categoria, Descricao, Valor) values (@nomeproduto, @marca, @categoria, @descricao, @valor)";
+            cmd.CommandText = "insert into produto (NomeProduto, Marca, Categoria, Descricao, Valor, Quantidade) values (@nomeproduto, @marca, @categoria, @descricao, @valor, @quantidade)";
             cmd.Parameters.AddWithValue("nomeproduto", produtos.NomeProduto);
             cmd.Parameters.AddWithValue("marca", produtos.Marca);
             cmd.Parameters.AddWithValue("categoria", produtos.Categoria);
             cmd.Parameters.AddWithValue("descricao", produtos.Descricao);
             cmd.Parameters.AddWithValue("valor", produtos.Valor);
+            cmd.Parameters.AddWithValue("quantidade", produtos.Quantidade);
             try
             {
                 cmd.Connection = con.Conectar();
@@ -80,12 +81,13 @@ namespace OlharDeMenina.Modelo
 
         public string EditarProdutos(Produtos produtos, int idProd)
         {
-            cmd.CommandText = "UPDATE produto SET NomeProduto = @nomeproduto, Marca = @marca, Categoria = @categoria, Descricao = @descricao, Valor = @valor WHERE Codigo = @id";
+            cmd.CommandText = "UPDATE produto SET NomeProduto = @nomeproduto, Marca = @marca, Categoria = @categoria, Descricao = @descricao, Valor = @valor, Quantidade = @quantidade WHERE Codigo = @id";
             cmd.Parameters.AddWithValue("nomeproduto", produtos.NomeProduto);
             cmd.Parameters.AddWithValue("marca", produtos.Marca);
             cmd.Parameters.AddWithValue("categoria", produtos.Categoria);
             cmd.Parameters.AddWithValue("descricao", produtos.Descricao);
             cmd.Parameters.AddWithValue("valor", produtos.Valor);
+            cmd.Parameters.AddWithValue("quantidade", produtos.Quantidade);
             cmd.Parameters.AddWithValue("id", idProd);
 
             try

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using OlharDeMenina.Controle;
+using OlharDeMenina.Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +18,104 @@ namespace OlharDeMenina.Visao
         public FormEstoque()
         {
             InitializeComponent();
+        }
+        int idProd;
+        public void PreencherListView()
+        {
+            listView_funf.Items.Clear();
+            MySqlDataReader dataReader;
+            ControleProduto cp = new ControleProduto();
+            dataReader = cp.RetornarProdutos(); //Chama o método responsável pela realização da consulta.
+
+            if (dataReader != null) //Verifico
+            {
+                while (dataReader.Read())
+                {
+                    ListViewItem lv = new ListViewItem(dataReader.GetInt32(0).ToString());
+                    lv.SubItems.Add(dataReader.GetString(6));
+                    lv.SubItems.Add(dataReader.GetString(1));
+                    lv.SubItems.Add(dataReader.GetString(2));
+                    lv.SubItems.Add(dataReader.GetString(3));
+                    lv.SubItems.Add(dataReader.GetString(4));
+                    lv.SubItems.Add(dataReader.GetString(5));
+                    listView_funf.Items.Add(lv);
+                }
+            }
+        }
+
+        private void listView_funf_DoubleClick(object sender, EventArgs e)
+        {
+            idProd = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            ControleProduto cp = new ControleProduto();
+            MySqlDataReader dr = cp.RetornarProdutos(idProd);
+
+            if (dr != null)
+            {
+                while (dr.Read())
+                {
+                    tbox_nome.Text = dr.GetString(1);
+                    tbox_marca.Text = dr.GetString(2);
+                    tbox_categoria.Text = dr.GetString(3);
+                    tbox_descricao.Text = dr.GetString(4);
+                    tbox_valor.Text = dr.GetString(5);
+                    tbox_quantidade.Value = Convert.ToInt32(dr.GetString(6));
+                }
+            }
+        }
+
+        public void LimparCampos()
+        {
+            tbox_nome.Clear();
+            tbox_marca.Clear();
+            tbox_categoria.Clear();
+            tbox_descricao.Clear();
+            tbox_valor.Clear();
+            tbox_quantidade.Value = 1;
+        }
+
+        private void btn_Adicionar_Click(object sender, EventArgs e)
+        {
+            ControleProduto cp = new ControleProduto();
+            Produtos produtos = new Produtos(tbox_nome.Text, tbox_marca.Text, tbox_categoria.Text, tbox_descricao.Text, tbox_valor.Text, Convert.ToInt32(tbox_quantidade.Value));
+            cp.AdicionarProdutos(produtos);
+
+            PreencherListView();
+            LimparCampos();
+        }
+
+        private void btn_Excluir_Click(object sender, EventArgs e)
+        {
+            idProd = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            ControleProduto cp = new ControleProduto();
+            cp.DeletarProdutos(idProd);
+            LimparCampos();
+            PreencherListView();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            ControleProduto cp = new ControleProduto();
+            Produtos produtos = new Produtos(tbox_nome.Text, tbox_marca.Text, tbox_categoria.Text, tbox_descricao.Text, tbox_valor.Text, Convert.ToInt32(tbox_quantidade.Value));
+
+            idProd = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+
+
+            string mensagem = cp.EditarProdutos(produtos, idProd);
+
+            MessageBox.Show(mensagem);
+
+            PreencherListView();
+            LimparCampos();
+        }
+
+        private void btn_limpar_Click(object sender, EventArgs e)
+        {
+            LimparCampos();
+        }
+
+        private void FormEstoque_Load(object sender, EventArgs e)
+        {
+            PreencherListView();
         }
     }
 }
