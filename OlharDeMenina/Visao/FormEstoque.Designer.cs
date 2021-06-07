@@ -31,14 +31,14 @@ namespace OlharDeMenina.Visao
         {
             this.listView_funf = new System.Windows.Forms.ListView();
             this.ch_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ch_quantidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_marca = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_categoria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_quantidade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_descricao = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_valor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_cadastro = new System.Windows.Forms.Panel();
-            this.tbox_valor = new System.Windows.Forms.TextBox();
+            this.tbox_valor = new System.Windows.Forms.MaskedTextBox();
             this.lbl_valor = new System.Windows.Forms.Label();
             this.tbox_quantidade = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -88,11 +88,6 @@ namespace OlharDeMenina.Visao
             this.ch_id.Text = "ID";
             this.ch_id.Width = 38;
             // 
-            // ch_quantidade
-            // 
-            this.ch_quantidade.Text = "Quantidade";
-            this.ch_quantidade.Width = 68;
-            // 
             // ch_nome
             // 
             this.ch_nome.Text = "Nome";
@@ -107,6 +102,11 @@ namespace OlharDeMenina.Visao
             // 
             this.ch_categoria.Text = "Categoria";
             this.ch_categoria.Width = 91;
+            // 
+            // ch_quantidade
+            // 
+            this.ch_quantidade.Text = "Quantidade";
+            this.ch_quantidade.Width = 68;
             // 
             // ch_descricao
             // 
@@ -142,9 +142,9 @@ namespace OlharDeMenina.Visao
             // 
             this.tbox_valor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbox_valor.Location = new System.Drawing.Point(411, 87);
-            this.tbox_valor.Multiline = true;
+            this.tbox_valor.Mask = "00,00";
             this.tbox_valor.Name = "tbox_valor";
-            this.tbox_valor.Size = new System.Drawing.Size(74, 22);
+            this.tbox_valor.Size = new System.Drawing.Size(74, 13);
             this.tbox_valor.TabIndex = 5;
             // 
             // lbl_valor
@@ -398,7 +398,7 @@ namespace OlharDeMenina.Visao
         private System.Windows.Forms.TextBox tbox_nome;
         private System.Windows.Forms.Label lbl_marca;
         private System.Windows.Forms.NumericUpDown tbox_quantidade;
-        private System.Windows.Forms.TextBox tbox_valor;
+        private System.Windows.Forms.MaskedTextBox tbox_valor;
         private System.Windows.Forms.Label lbl_valor;
         private System.Windows.Forms.Panel panel1;
     }
