@@ -103,12 +103,6 @@
     <Compile Include="Visao\FormHistorico.Designer.cs">
       <DependentUpon>FormHistorico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Visao\FormUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Visao\FormUsuario.Designer.cs">
-      <DependentUpon>FormUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Visao\FormVendas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,9 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\FormHistorico.resx">
       <DependentUpon>FormHistorico.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Visao\FormUsuario.resx">
-      <DependentUpon>FormUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Visao\FormVendas.resx">
       <DependentUpon>FormVendas.cs</DependentUpon>

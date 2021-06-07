@@ -16,7 +16,6 @@ namespace OlharDeMenina.Visao
 
         }
 
-        public string idFunc { get; set; }
         private void PreencherCheckbox()
         {
             listView1.Items.Clear();
@@ -53,7 +52,6 @@ namespace OlharDeMenina.Visao
             listView1.CheckBoxes = true;
             PreencherCheckbox();
             PreencherCombobox();
-            MessageBox.Show("ID: " + idFunc);
         }
     }
 }

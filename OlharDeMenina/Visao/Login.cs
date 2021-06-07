@@ -1,26 +1,31 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
+using OlharDeMenina.Visao;
+
+
 
 namespace OlharDeMenina
 {
     public partial class Login : Form
     {
+        string username, password;
+
         public Login()
         {
             InitializeComponent();
         }
-        
+
         private void btn_close_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
         // Mover janela
-        private int mov;
+        int mov;
+        int movX;
+        int movY;
 
-        private int movX;
-        private int movY;
 
         private void pnl_superior_MouseDown(object sender, MouseEventArgs e)
         {
@@ -75,36 +80,34 @@ namespace OlharDeMenina
 
         private void Login_Load(object sender, EventArgs e)
         {
-            this.AcceptButton = btn_login_entrar;
+                this.AcceptButton = btn_login_entrar;
         }
 
         private void btn_login_entrar_Click(object sender, EventArgs e)
         {
-            //Conexao objCon = new Conexao();
-            MySqlConnection objCon = new MySqlConnection("server=localhost; port=3306; User Id=root;database=OlharMeninaBD; password=muniz321; convert zero datetime=True");
-            Form1 f = new Form1();
+            Conexao objCon = new Conexao();
             try
             {
                 objCon.Open();
-
+                
+            
                 if (txtB_nome.Text != "" && txtB_senha2.Text != "")
                 {
-                   // string query = "select ID, Nome, Senha from funcionarios WHERE Nome ='" + txtB_nome.Text + "' AND Senha ='" + txtB_senha2.Text + "'";
-                    MySqlCommand objCmd = new MySqlCommand("select ID, Nome, Senha from funcionarios WHERE Nome = @nome AND Senha = @senha", objCon);
-                    objCmd.Parameters.Clear();
-                    objCmd.Parameters.AddWithValue("nome", txtB_nome.Text);
-                    objCmd.Parameters.AddWithValue("senha", txtB_senha2.Text);
-                    MySqlDataReader dr;
-                    dr = objCmd.ExecuteReader();
-                    dr.Read();
-                    if (dr.HasRows)
+                    objCon.Open();
+                    string query = "select Nome,Senha from funcionarios WHERE Nome ='" + txtB_nome.Text + "' AND Senha ='" + txtB_senha2.Text + "'";
+                    MySqlDataReader row;
+                    row = objCon.ExecuteReader(query);
+                    if (row.HasRows)
                     {
-                        f.idFunc = dr.GetInt32(0).ToString();
-                        f.username = dr.GetString("Nome");
-                        f.password = dr.GetInt32("Senha").ToString();
+                        while (row.Read())
+                        {
+                            username = row["Nome"].ToString();
+                            password = row["Senha"].ToString();
 
-                        this.Hide();
-                        f.ShowDialog();
+                            this.Hide();
+                            Form1 f1 = new Form1();
+                            f1.ShowDialog();
+                        }
                     }
                     else
                     {
@@ -115,12 +118,10 @@ namespace OlharDeMenina
                 {
                     MessageBox.Show("Erro: Campos de texto não podem estar vazios.");
                 }
-
-                objCon.Close();
             }
-            catch(MySqlException ex)
+            catch
             {
-                MessageBox.Show("Erro de conexão: " + ex);
+                MessageBox.Show("Erro de conexão");
             }
         }
     }

@@ -1,4 +1,3 @@
-using OlharDeMenina.Controle;
 using OlharDeMenina.Visao;
 using System;
 using System.Drawing;
@@ -11,10 +10,6 @@ namespace OlharDeMenina
 {
     public partial class Form1 : Form
     {
-        public string username { get; set; }
-        public string password { get; set; }
-        public string idFunc { get; set; }
-
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -31,11 +26,11 @@ namespace OlharDeMenina
             InitializeComponent();
             //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
+        public System.Drawing.Size Size { get; set; }
+        public System.Drawing.Point Location { get; set; }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            label2.Text = "Olá, " + username;
             pnlNav.Hide();
             AbrirFormNoPanel<FormVGeral>();
             lblTitulo.Text = "Visão Geral";
@@ -46,6 +41,7 @@ namespace OlharDeMenina
                 panel8.Size = new Size(250, 352);
                 panel1.Size = new Size(250, 352);
             }
+
         }
 
         // Mover janela
@@ -55,6 +51,7 @@ namespace OlharDeMenina
         private int movY;
 
         private int QualFormSwitch;
+
 
         private void pnlSuperior_MouseDown(object sender, MouseEventArgs e)
         {
@@ -112,8 +109,6 @@ namespace OlharDeMenina
 
         private void btnVendas_Click(object sender, EventArgs e)
         {
-            FormVendas fv = new FormVendas();
-            fv.idFunc = idFunc;
             pnlNav.Show();
             pnlNav.Height = btnVendas.Height;
             pnlNav.Top = btnVendas.Top;
@@ -357,6 +352,7 @@ namespace OlharDeMenina
                 panel8.Size = new Size(184, 352);
                 panel1.Size = new Size(184, 352);
                 pictureBox2.Location = new Point(45, 22);
+
             }
             else if (WindowState == FormWindowState.Normal)
             {
@@ -366,6 +362,7 @@ namespace OlharDeMenina
                 panel8.Size = new Size(250, 352);
                 panel1.Size = new Size(250, 352);
                 pictureBox2.Location = new Point(77, 22);
+
             }
             VerificaPainel();
         }
@@ -373,12 +370,6 @@ namespace OlharDeMenina
         private void btmin_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-        }
-        private void label2_Click(object sender, EventArgs e)
-        {
-            FormUsuario fu = new FormUsuario();
-            fu.idUser = idFunc;
-            fu.ShowDialog();
         }
     }
 }

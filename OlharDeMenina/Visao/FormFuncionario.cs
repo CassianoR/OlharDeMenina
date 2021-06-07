@@ -15,6 +15,7 @@ namespace OlharDeMenina
 
         public int idFunc;
 
+
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
             idFunc = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
@@ -23,6 +24,21 @@ namespace OlharDeMenina
             LimparCampos();
             PreencherListView();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //MySqlConnection objCon = new MySqlConnection("server=localhost;port=3307;User Id=root;database=OlharMeninaBD; password=usbw");
+                Conexao objCon = new Conexao();
+                objCon.Open();
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível conectar :(");
+            }
+        }
+
         private void FormFuncionario_Load(object sender, EventArgs e)
         {
             PreencherListView();
@@ -72,8 +88,7 @@ namespace OlharDeMenina
             PreencherListView();
             LimparCampos();
         }
-
-        private void listView_funf_Click(object sender, EventArgs e)
+        private void listView_funf_DoubleClick(object sender, EventArgs e)
         {
             idFunc = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
             ControleFuncionario cf = new ControleFuncionario();
@@ -81,13 +96,13 @@ namespace OlharDeMenina
 
             if (dr != null)
             {
-                dr.Read();
-                
+                while (dr.Read())
+                {
                     tbox_nome.Text = dr.GetString(2);
                     tbox_cpf.Text = dr.GetString(3);
                     tbox_telefone.Text = dr.GetString(5);
                     tbox_endereco.Text = dr.GetString(6);
-                
+                }
             }
         }
 
@@ -95,8 +110,9 @@ namespace OlharDeMenina
         {
             ControleFuncionario cf = new ControleFuncionario();
             Funcionarios funcionario = new Funcionarios("Funcionário", tbox_nome.Text, tbox_cpf.Text, "1234", tbox_telefone.Text, tbox_endereco.Text);
-
+            
             idFunc = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+
 
             string mensagem = cf.EditarFuncionario(funcionario, idFunc);
 
