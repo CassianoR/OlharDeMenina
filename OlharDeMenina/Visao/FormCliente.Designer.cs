@@ -38,16 +38,16 @@ namespace OlharDeMenina
             this.ch_datanasc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_cadastro = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tbox_cpf = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbox_cpf = new System.Windows.Forms.MaskedTextBox();
             this.lbl_cpf = new System.Windows.Forms.Label();
-            this.tbox_datadenascimento = new System.Windows.Forms.TextBox();
-            this.lbl_datadenascimento = new System.Windows.Forms.Label();
+            this.tbox_datadenascimento = new System.Windows.Forms.MaskedTextBox();
             this.lbl_nome = new System.Windows.Forms.Label();
             this.tbox_nome = new System.Windows.Forms.TextBox();
             this.lbl_endereco = new System.Windows.Forms.Label();
             this.lbl_telefone = new System.Windows.Forms.Label();
             this.tbox_endereco = new System.Windows.Forms.TextBox();
-            this.tbox_telefone = new System.Windows.Forms.TextBox();
+            this.tbox_telefone = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btn_ExcluirC = new System.Windows.Forms.Button();
@@ -122,10 +122,10 @@ namespace OlharDeMenina
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.tbox_cpf);
             this.panel2.Controls.Add(this.lbl_cpf);
             this.panel2.Controls.Add(this.tbox_datadenascimento);
-            this.panel2.Controls.Add(this.lbl_datadenascimento);
             this.panel2.Controls.Add(this.lbl_nome);
             this.panel2.Controls.Add(this.tbox_nome);
             this.panel2.Controls.Add(this.lbl_endereco);
@@ -138,12 +138,23 @@ namespace OlharDeMenina
             this.panel2.Size = new System.Drawing.Size(548, 171);
             this.panel2.TabIndex = 27;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(305, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 21);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Data de Nascimento";
+            // 
             // tbox_cpf
             // 
             this.tbox_cpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbox_cpf.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbox_cpf.Location = new System.Drawing.Point(12, 135);
-            this.tbox_cpf.MaxLength = 14;
+            this.tbox_cpf.Mask = "000,000,000-00";
             this.tbox_cpf.Name = "tbox_cpf";
             this.tbox_cpf.Size = new System.Drawing.Size(270, 22);
             this.tbox_cpf.TabIndex = 20;
@@ -162,22 +173,14 @@ namespace OlharDeMenina
             // tbox_datadenascimento
             // 
             this.tbox_datadenascimento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbox_datadenascimento.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tbox_datadenascimento.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.tbox_datadenascimento.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbox_datadenascimento.Location = new System.Drawing.Point(309, 86);
+            this.tbox_datadenascimento.Mask = "00/00/0000";
             this.tbox_datadenascimento.Name = "tbox_datadenascimento";
-            this.tbox_datadenascimento.Size = new System.Drawing.Size(205, 22);
+            this.tbox_datadenascimento.Size = new System.Drawing.Size(205, 21);
             this.tbox_datadenascimento.TabIndex = 4;
-            // 
-            // lbl_datadenascimento
-            // 
-            this.lbl_datadenascimento.AutoSize = true;
-            this.lbl_datadenascimento.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
-            this.lbl_datadenascimento.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_datadenascimento.Location = new System.Drawing.Point(305, 63);
-            this.lbl_datadenascimento.Name = "lbl_datadenascimento";
-            this.lbl_datadenascimento.Size = new System.Drawing.Size(166, 21);
-            this.lbl_datadenascimento.TabIndex = 22;
-            this.lbl_datadenascimento.Text = "Data de Nascimento";
+            this.tbox_datadenascimento.ValidatingType = typeof(System.DateTime);
             // 
             // lbl_nome
             // 
@@ -235,7 +238,7 @@ namespace OlharDeMenina
             this.tbox_telefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbox_telefone.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbox_telefone.Location = new System.Drawing.Point(12, 86);
-            this.tbox_telefone.MaxLength = 11;
+            this.tbox_telefone.Mask = "(00) 00000-0000";
             this.tbox_telefone.Name = "tbox_telefone";
             this.tbox_telefone.Size = new System.Drawing.Size(270, 22);
             this.tbox_telefone.TabIndex = 2;
@@ -350,15 +353,15 @@ namespace OlharDeMenina
         private System.Windows.Forms.Button btn_ExcluirC;
         private System.Windows.Forms.Label lbl_nome;
         private System.Windows.Forms.TextBox tbox_nome;
-        private System.Windows.Forms.TextBox tbox_telefone;
-        private System.Windows.Forms.TextBox tbox_datadenascimento;
-        private System.Windows.Forms.Label lbl_datadenascimento;
+        private System.Windows.Forms.MaskedTextBox tbox_telefone;
+        private System.Windows.Forms.MaskedTextBox tbox_datadenascimento;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ColumnHeader ch_id;
-        private System.Windows.Forms.TextBox tbox_cpf;
+        private System.Windows.Forms.MaskedTextBox tbox_cpf;
         private System.Windows.Forms.Label lbl_cpf;
         private System.Windows.Forms.ColumnHeader ch_cpf;
+        private System.Windows.Forms.Label label1;
     }
 }

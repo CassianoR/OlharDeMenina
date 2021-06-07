@@ -38,8 +38,8 @@ namespace OlharDeMenina
             this.ch_endereco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_cadastro = new System.Windows.Forms.Panel();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.tbox_cpf = new System.Windows.Forms.TextBox();
-            this.tbox_telefone = new System.Windows.Forms.TextBox();
+            this.tbox_cpf = new System.Windows.Forms.MaskedTextBox();
+            this.tbox_telefone = new System.Windows.Forms.MaskedTextBox();
             this.lbl_telefone = new System.Windows.Forms.Label();
             this.lbl_endereco = new System.Windows.Forms.Label();
             this.btn_limpar = new System.Windows.Forms.Button();
@@ -142,7 +142,7 @@ namespace OlharDeMenina
             this.tbox_cpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbox_cpf.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbox_cpf.Location = new System.Drawing.Point(301, 34);
-            this.tbox_cpf.MaxLength = 14;
+            this.tbox_cpf.Mask = "000,000,000-00";
             this.tbox_cpf.Name = "tbox_cpf";
             this.tbox_cpf.Size = new System.Drawing.Size(204, 22);
             this.tbox_cpf.TabIndex = 1;
@@ -152,7 +152,7 @@ namespace OlharDeMenina
             this.tbox_telefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbox_telefone.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.tbox_telefone.Location = new System.Drawing.Point(12, 87);
-            this.tbox_telefone.MaxLength = 11;
+            this.tbox_telefone.Mask = "(00) 00000-0000";
             this.tbox_telefone.Name = "tbox_telefone";
             this.tbox_telefone.Size = new System.Drawing.Size(270, 22);
             this.tbox_telefone.TabIndex = 2;
@@ -294,8 +294,8 @@ namespace OlharDeMenina
         private System.Windows.Forms.ColumnHeader ch_endereco;
         private System.Windows.Forms.Panel pnl_cadastro;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.TextBox tbox_cpf;
-        private System.Windows.Forms.TextBox tbox_telefone;
+        private System.Windows.Forms.MaskedTextBox tbox_cpf;
+        private System.Windows.Forms.MaskedTextBox tbox_telefone;
         private System.Windows.Forms.Label lbl_telefone;
         private System.Windows.Forms.Label lbl_endereco;
         private System.Windows.Forms.Button btn_limpar;
