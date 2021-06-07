@@ -30,7 +30,7 @@ namespace OlharDeMenina
         {
             try
             {
-                conn = new MySqlConnection("server=localhost; port=3306; User Id=root;database=OlharMeninaBD; password=senha; convert zero datetime=True");
+                conn = new MySqlConnection("server=localhost; port=3306; User Id=root;database=OlharMeninaBD; password=muniz321; convert zero datetime=True");
                 conn.Open();
                 //MessageBox.Show("Conectado com sucesso!");
                 return true;

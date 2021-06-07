@@ -16,7 +16,7 @@ namespace OlharDeMenina
         private void btn_AdicionarC_Click(object sender, EventArgs e)
         {
             ControleCliente cc = new ControleCliente();
-            Clientes clientes = new Clientes(tbox_nome.Text, tbox_telefone.Text, tbox_endereco.Text, tbox_datadenascimento.Text);
+            Clientes clientes = new Clientes(tbox_nome.Text, tbox_cpf.Text, tbox_telefone.Text, tbox_endereco.Text, tbox_datadenascimento.Text);
             cc.AdicionarClientes(clientes);
 
             PreencherListView();
@@ -37,6 +37,7 @@ namespace OlharDeMenina
         public void LimparCampos()
         {
             tbox_nome.Clear();
+            tbox_cpf.Clear();
             tbox_datadenascimento.Clear();
             tbox_endereco.Clear();
             tbox_telefone.Clear();
@@ -46,8 +47,8 @@ namespace OlharDeMenina
         {
             listView_funf.Items.Clear();
             MySqlDataReader dataReader;
-            ControleCliente cf = new ControleCliente();
-            dataReader = cf.RetornarClientes(); //Chama o método responsável pela realização da consulta.
+            ControleCliente cc = new ControleCliente();
+            dataReader = cc.RetornarClientes(); //Chama o método responsável pela realização da consulta.
 
             if (dataReader != null) //Verifico
             {
@@ -57,7 +58,8 @@ namespace OlharDeMenina
                     lv.SubItems.Add(dataReader.GetString(1));
                     lv.SubItems.Add(dataReader.GetString(2));
                     lv.SubItems.Add(dataReader.GetString(3));
-                    lv.SubItems.Add(dataReader.GetDateTime(4).ToString());
+                    lv.SubItems.Add(dataReader.GetString(4));
+                    lv.SubItems.Add(dataReader.GetString(5));
                     listView_funf.Items.Add(lv);
                 }
             }
@@ -76,7 +78,7 @@ namespace OlharDeMenina
         private void btnEditar_Click(object sender, EventArgs e)
         {
             ControleCliente cc = new ControleCliente();
-            Clientes clientes = new Clientes(tbox_nome.Text, tbox_telefone.Text, tbox_endereco.Text, tbox_datadenascimento.Text);
+            Clientes clientes = new Clientes(tbox_nome.Text, tbox_cpf.Text, tbox_telefone.Text, tbox_endereco.Text, tbox_datadenascimento.Text);
 
             idClien = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
 
@@ -96,14 +98,14 @@ namespace OlharDeMenina
 
             if (dr != null)
             {
-                while (dr.Read())
-                {
+                dr.Read();
+                
                     tbox_nome.Text = dr.GetString(1);
-                    tbox_telefone.Text = dr.GetString(2);
-                    tbox_endereco.Text = dr.GetString(3);
-                    tbox_datadenascimento.Text = dr.GetDateTime(4).ToString();
+                    tbox_cpf.Text = dr.GetString(2);
+                    tbox_telefone.Text = dr.GetString(3);
+                    tbox_endereco.Text = dr.GetString(4);
+                    tbox_datadenascimento.Text = dr.GetString(5);
                 }
             }
         }
     }
-}

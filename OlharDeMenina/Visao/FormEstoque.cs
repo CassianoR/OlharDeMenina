@@ -32,18 +32,18 @@ namespace OlharDeMenina.Visao
                 while (dataReader.Read())
                 {
                     ListViewItem lv = new ListViewItem(dataReader.GetInt32(0).ToString());
-                    lv.SubItems.Add(dataReader.GetString(6));
                     lv.SubItems.Add(dataReader.GetString(1));
                     lv.SubItems.Add(dataReader.GetString(2));
                     lv.SubItems.Add(dataReader.GetString(3));
                     lv.SubItems.Add(dataReader.GetString(4));
                     lv.SubItems.Add(dataReader.GetString(5));
+                    lv.SubItems.Add(dataReader.GetString(6));
                     listView_funf.Items.Add(lv);
                 }
             }
         }
 
-        private void listView_funf_DoubleClick(object sender, EventArgs e)
+        private void listView_funf_Click(object sender, EventArgs e)
         {
             idProd = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
             ControleProduto cp = new ControleProduto();
@@ -51,15 +51,14 @@ namespace OlharDeMenina.Visao
 
             if (dr != null)
             {
-                while (dr.Read())
-                {
-                    tbox_nome.Text = dr.GetString(1);
-                    tbox_marca.Text = dr.GetString(2);
-                    tbox_categoria.Text = dr.GetString(3);
-                    tbox_descricao.Text = dr.GetString(4);
-                    tbox_valor.Text = dr.GetString(5);
-                    tbox_quantidade.Value = Convert.ToInt32(dr.GetString(6));
-                }
+                dr.Read();
+                tbox_nome.Text = dr.GetString(1);
+                tbox_marca.Text = dr.GetString(2);
+                tbox_categoria.Text = dr.GetString(3);
+                tbox_descricao.Text = dr.GetString(5);
+                tbox_quantidade.Value = dr.GetInt32(4);
+                tbox_valor.Text = dr.GetString(6);
+
             }
         }
 

@@ -21,7 +21,7 @@ namespace OlharDeMenina.Controle
         public MySqlDataReader RetornarClientes(int idClien)
         {
             ClientesDAO cli = new ClientesDAO();
-            return cli.RetornaClientes();
+            return cli.RetornaClientes(idClien);
         }
 
         public string DeletarClientes(int idClien)

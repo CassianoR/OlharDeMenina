@@ -29,6 +29,7 @@ namespace OlharDeMenina.Visao
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuario));
             this.lbl_nome = new System.Windows.Forms.Label();
             this.lbl_senha = new System.Windows.Forms.Label();
             this.lbl_cargo = new System.Windows.Forms.Label();
@@ -115,6 +116,7 @@ namespace OlharDeMenina.Visao
             this.Controls.Add(this.lbl_cargo);
             this.Controls.Add(this.lbl_senha);
             this.Controls.Add(this.lbl_nome);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormUsuario";
             this.Text = "Seus dados";
             this.Load += new System.EventHandler(this.FormUsuario_Load);
