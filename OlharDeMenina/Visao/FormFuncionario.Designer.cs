@@ -72,7 +72,7 @@ namespace OlharDeMenina
             this.listView_funf.TabIndex = 20;
             this.listView_funf.UseCompatibleStateImageBehavior = false;
             this.listView_funf.View = System.Windows.Forms.View.Details;
-            this.listView_funf.Click += new System.EventHandler(this.listView_funf_Click);
+            this.listView_funf.DoubleClick += new System.EventHandler(this.listView_funf_DoubleClick);
             // 
             // ch_id
             // 
