@@ -32,11 +32,14 @@ namespace OlharDeMenina
             this.listView_funf = new System.Windows.Forms.ListView();
             this.ch_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ch_cpf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_telefone = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_endereco = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_datanasc = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnl_cadastro = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbox_cpf = new System.Windows.Forms.TextBox();
+            this.lbl_cpf = new System.Windows.Forms.Label();
             this.tbox_datadenascimento = new System.Windows.Forms.TextBox();
             this.lbl_datadenascimento = new System.Windows.Forms.Label();
             this.lbl_nome = new System.Windows.Forms.Label();
@@ -62,6 +65,7 @@ namespace OlharDeMenina
             this.listView_funf.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ch_id,
             this.ch_nome,
+            this.ch_cpf,
             this.ch_telefone,
             this.ch_endereco,
             this.ch_datanasc});
@@ -86,6 +90,11 @@ namespace OlharDeMenina
             this.ch_nome.Text = "Nome";
             this.ch_nome.Width = 164;
             // 
+            // ch_cpf
+            // 
+            this.ch_cpf.Text = "CPF";
+            this.ch_cpf.Width = 127;
+            // 
             // ch_telefone
             // 
             this.ch_telefone.Text = "Telefone";
@@ -94,12 +103,12 @@ namespace OlharDeMenina
             // ch_endereco
             // 
             this.ch_endereco.Text = "Endereço";
-            this.ch_endereco.Width = 224;
+            this.ch_endereco.Width = 109;
             // 
             // ch_datanasc
             // 
             this.ch_datanasc.Text = "Data de nascimento";
-            this.ch_datanasc.Width = 153;
+            this.ch_datanasc.Width = 184;
             // 
             // pnl_cadastro
             // 
@@ -113,6 +122,8 @@ namespace OlharDeMenina
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.tbox_cpf);
+            this.panel2.Controls.Add(this.lbl_cpf);
             this.panel2.Controls.Add(this.tbox_datadenascimento);
             this.panel2.Controls.Add(this.lbl_datadenascimento);
             this.panel2.Controls.Add(this.lbl_nome);
@@ -127,11 +138,32 @@ namespace OlharDeMenina
             this.panel2.Size = new System.Drawing.Size(548, 171);
             this.panel2.TabIndex = 27;
             // 
+            // tbox_cpf
+            // 
+            this.tbox_cpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbox_cpf.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.tbox_cpf.Location = new System.Drawing.Point(12, 135);
+            this.tbox_cpf.MaxLength = 14;
+            this.tbox_cpf.Name = "tbox_cpf";
+            this.tbox_cpf.Size = new System.Drawing.Size(270, 22);
+            this.tbox_cpf.TabIndex = 20;
+            // 
+            // lbl_cpf
+            // 
+            this.lbl_cpf.AutoSize = true;
+            this.lbl_cpf.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
+            this.lbl_cpf.ForeColor = System.Drawing.Color.Gray;
+            this.lbl_cpf.Location = new System.Drawing.Point(8, 111);
+            this.lbl_cpf.Name = "lbl_cpf";
+            this.lbl_cpf.Size = new System.Drawing.Size(40, 21);
+            this.lbl_cpf.TabIndex = 21;
+            this.lbl_cpf.Text = "CPF";
+            // 
             // tbox_datadenascimento
             // 
             this.tbox_datadenascimento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbox_datadenascimento.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.tbox_datadenascimento.Location = new System.Drawing.Point(309, 100);
+            this.tbox_datadenascimento.Location = new System.Drawing.Point(309, 86);
             this.tbox_datadenascimento.Name = "tbox_datadenascimento";
             this.tbox_datadenascimento.Size = new System.Drawing.Size(205, 22);
             this.tbox_datadenascimento.TabIndex = 4;
@@ -141,7 +173,7 @@ namespace OlharDeMenina
             this.lbl_datadenascimento.AutoSize = true;
             this.lbl_datadenascimento.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.lbl_datadenascimento.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_datadenascimento.Location = new System.Drawing.Point(305, 77);
+            this.lbl_datadenascimento.Location = new System.Drawing.Point(305, 63);
             this.lbl_datadenascimento.Name = "lbl_datadenascimento";
             this.lbl_datadenascimento.Size = new System.Drawing.Size(166, 21);
             this.lbl_datadenascimento.TabIndex = 22;
@@ -152,7 +184,7 @@ namespace OlharDeMenina
             this.lbl_nome.AutoSize = true;
             this.lbl_nome.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.lbl_nome.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_nome.Location = new System.Drawing.Point(12, 29);
+            this.lbl_nome.Location = new System.Drawing.Point(12, 15);
             this.lbl_nome.Name = "lbl_nome";
             this.lbl_nome.Size = new System.Drawing.Size(57, 21);
             this.lbl_nome.TabIndex = 9;
@@ -162,7 +194,7 @@ namespace OlharDeMenina
             // 
             this.tbox_nome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbox_nome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbox_nome.Location = new System.Drawing.Point(12, 53);
+            this.tbox_nome.Location = new System.Drawing.Point(12, 39);
             this.tbox_nome.Name = "tbox_nome";
             this.tbox_nome.Size = new System.Drawing.Size(270, 22);
             this.tbox_nome.TabIndex = 0;
@@ -172,7 +204,7 @@ namespace OlharDeMenina
             this.lbl_endereco.AutoSize = true;
             this.lbl_endereco.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.lbl_endereco.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_endereco.Location = new System.Drawing.Point(305, 24);
+            this.lbl_endereco.Location = new System.Drawing.Point(305, 10);
             this.lbl_endereco.Name = "lbl_endereco";
             this.lbl_endereco.Size = new System.Drawing.Size(81, 21);
             this.lbl_endereco.TabIndex = 12;
@@ -183,7 +215,7 @@ namespace OlharDeMenina
             this.lbl_telefone.AutoSize = true;
             this.lbl_telefone.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F);
             this.lbl_telefone.ForeColor = System.Drawing.Color.Gray;
-            this.lbl_telefone.Location = new System.Drawing.Point(12, 76);
+            this.lbl_telefone.Location = new System.Drawing.Point(12, 62);
             this.lbl_telefone.Name = "lbl_telefone";
             this.lbl_telefone.Size = new System.Drawing.Size(76, 21);
             this.lbl_telefone.TabIndex = 17;
@@ -193,7 +225,7 @@ namespace OlharDeMenina
             // 
             this.tbox_endereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbox_endereco.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.tbox_endereco.Location = new System.Drawing.Point(308, 48);
+            this.tbox_endereco.Location = new System.Drawing.Point(308, 34);
             this.tbox_endereco.Name = "tbox_endereco";
             this.tbox_endereco.Size = new System.Drawing.Size(204, 22);
             this.tbox_endereco.TabIndex = 1;
@@ -202,7 +234,7 @@ namespace OlharDeMenina
             // 
             this.tbox_telefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbox_telefone.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.tbox_telefone.Location = new System.Drawing.Point(12, 100);
+            this.tbox_telefone.Location = new System.Drawing.Point(12, 86);
             this.tbox_telefone.MaxLength = 11;
             this.tbox_telefone.Name = "tbox_telefone";
             this.tbox_telefone.Size = new System.Drawing.Size(270, 22);
@@ -325,5 +357,8 @@ namespace OlharDeMenina
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ColumnHeader ch_id;
+        private System.Windows.Forms.TextBox tbox_cpf;
+        private System.Windows.Forms.Label lbl_cpf;
+        private System.Windows.Forms.ColumnHeader ch_cpf;
     }
 }

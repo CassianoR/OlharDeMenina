@@ -62,6 +62,36 @@ namespace OlharDeMenina.Modelo
             }
         }
 
+        public MySqlDataReader RetornaProdutos(int idProd)
+        {
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM Produto WHERE Codigo = @id", con.Conectar());
+            cmd.Parameters.Clear();
+            cmd.Parameters.Add(new MySqlParameter("id", idProd));
+            MySqlDataReader dataReader = cmd.ExecuteReader();
+            try
+            {
+                dataReader.Read();
+
+                if (dataReader.HasRows)
+                {
+                    Mensagem = "Dados atualizados com sucesso!";
+                    //System.Windows.Forms.MessageBox.Show(Mensagem);
+                }
+                else
+                {
+                    Mensagem = "Não há dados na tabela.";
+                    System.Windows.Forms.MessageBox.Show(Mensagem);
+                }
+                return dataReader;
+            }
+            catch (MySqlException ex)
+            {
+                Mensagem = ex.Message;
+                System.Windows.Forms.MessageBox.Show(Mensagem + ex);
+                return dataReader;
+            }
+        }
+
         public string DeletarProdutos(int idProd)
         {
             cmd.CommandText = "delete from produto where Codigo = @id";

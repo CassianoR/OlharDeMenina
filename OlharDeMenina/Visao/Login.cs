@@ -81,7 +81,7 @@ namespace OlharDeMenina
         private void btn_login_entrar_Click(object sender, EventArgs e)
         {
             //Conexao objCon = new Conexao();
-            MySqlConnection objCon = new MySqlConnection("server=localhost; port=3306; User Id=root;database=OlharMeninaBD; password=senha; convert zero datetime=True");
+            MySqlConnection objCon = new MySqlConnection("server=localhost; port=3306; User Id=root;database=OlharMeninaBD; password=muniz321; convert zero datetime=True");
             Form1 f = new Form1();
             try
             {

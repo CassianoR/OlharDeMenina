@@ -21,7 +21,7 @@ namespace OlharDeMenina.Controle
         public MySqlDataReader RetornarProdutos(int idProd)
         {
             ProdutosDAO cli = new ProdutosDAO();
-            return cli.RetornaProdutos();
+            return cli.RetornaProdutos(idProd);
         }
 
         public string DeletarProdutos(int idProd)

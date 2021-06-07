@@ -66,10 +66,10 @@ namespace OlharDeMenina.Visao
             this.listView_funf.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listView_funf.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ch_id,
-            this.ch_quantidade,
             this.ch_nome,
             this.ch_marca,
             this.ch_categoria,
+            this.ch_quantidade,
             this.ch_descricao,
             this.ch_valor});
             this.listView_funf.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -81,7 +81,7 @@ namespace OlharDeMenina.Visao
             this.listView_funf.TabIndex = 21;
             this.listView_funf.UseCompatibleStateImageBehavior = false;
             this.listView_funf.View = System.Windows.Forms.View.Details;
-            this.listView_funf.DoubleClick += new System.EventHandler(this.listView_funf_DoubleClick);
+            this.listView_funf.Click += new System.EventHandler(this.listView_funf_Click);
             // 
             // ch_id
             // 
