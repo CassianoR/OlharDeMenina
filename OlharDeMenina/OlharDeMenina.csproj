@@ -68,10 +68,13 @@
     <Compile Include="Controle\ControleCliente.cs" />
     <Compile Include="Controle\ControleFuncionario.cs" />
     <Compile Include="Controle\ControleProduto.cs" />
+    <Compile Include="Controle\ControleVenda.cs" />
     <Compile Include="Modelo\Clientes.cs" />
     <Compile Include="Modelo\ClientesDAO.cs" />
     <Compile Include="Modelo\Produtos.cs" />
     <Compile Include="Modelo\ProdutosDAO.cs" />
+    <Compile Include="Modelo\Vendas.cs" />
+    <Compile Include="Modelo\VendasDAO.cs" />
     <Compile Include="Visao\FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
