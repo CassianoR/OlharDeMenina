@@ -112,15 +112,22 @@ namespace OlharDeMenina
 
         private void btnVendas_Click(object sender, EventArgs e)
         {
+            QualFormSwitch = 3;
             FormVendas fv = new FormVendas();
             fv.idFunc = idFunc;
             pnlNav.Show();
             pnlNav.Height = btnVendas.Height;
             pnlNav.Top = btnVendas.Top;
             btnVendas.BackColor = Color.FromArgb(248, 212, 216);
-            AbrirFormNoPanel<FormVendas>();
             lblTitulo.Text = "Vendas";
-            QualFormSwitch = 3;
+            //AbrirFormNoPanel<FormVendas>();
+            fv.TopLevel = false;
+            //formulario.FormBorderStyle = FormBorderStyle.None;
+            //formulario.Dock = DockStyle.Fill;
+            panel3.Controls.Add(fv);
+            panel3.Tag = fv;
+            fv.Show();
+            fv.BringToFront();
         }
 
         private void btnFunc_Click(object sender, EventArgs e)
@@ -354,18 +361,18 @@ namespace OlharDeMenina
                 this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                 this.WindowState = FormWindowState.Normal;
                 //WindowState = FormWindowState.Normal;
-                panel8.Size = new Size(184, 352);
-                panel1.Size = new Size(184, 352);
-                pictureBox2.Location = new Point(45, 22);
+                //panel8.Size = new Size(184, 352);
+               // panel1.Size = new Size(184, 352);
+                //pictureBox2.Location = new Point(45, 22);
             }
             else if (WindowState == FormWindowState.Normal)
             {
                 this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
                 this.WindowState = FormWindowState.Maximized;
                 //WindowState = FormWindowState.Maximized;
-                panel8.Size = new Size(250, 352);
-                panel1.Size = new Size(250, 352);
-                pictureBox2.Location = new Point(77, 22);
+               // panel8.Size = new Size(250, 352);
+                //panel1.Size = new Size(250, 352);
+                //pictureBox2.Location = new Point(77, 22);
             }
             VerificaPainel();
         }
