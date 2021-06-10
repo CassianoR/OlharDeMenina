@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using OlharDeMenina.Controle;
 using OlharDeMenina.Modelo;
@@ -104,7 +104,7 @@ namespace OlharDeMenina
                     tbox_cpf.Text = dr.GetString(2);
                     tbox_telefone.Text = dr.GetString(3);
                     tbox_endereco.Text = dr.GetString(4);
-                    tbox_datadenascimento.Text = dr.GetDateTime(5).ToString();
+                    tbox_datadenascimento.Text = dr.GetString(5);
                 }
             }
         }

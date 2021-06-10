@@ -39,9 +39,11 @@ namespace OlharDeMenina.Visao
             this.lbl_rs = new System.Windows.Forms.Label();
             this.btn_Adicionar = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
+            this.ch_codigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_produtos = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ch_valor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -160,7 +162,10 @@ namespace OlharDeMenina.Visao
             // 
             this.listView1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ch_produtos});
+            this.ch_codigo,
+            this.ch_produtos,
+            this.ch_valor});
+            this.listView1.FullRowSelect = true;
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(93, 144);
             this.listView1.Name = "listView1";
@@ -168,11 +173,16 @@ namespace OlharDeMenina.Visao
             this.listView1.TabIndex = 26;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.Click += new System.EventHandler(this.listView1_Click);
+            // 
+            // ch_codigo
+            // 
+            this.ch_codigo.Text = "Código";
             // 
             // ch_produtos
             // 
             this.ch_produtos.Text = "Produtos";
-            this.ch_produtos.Width = 427;
+            this.ch_produtos.Width = 239;
             // 
             // panel1
             // 
@@ -194,6 +204,11 @@ namespace OlharDeMenina.Visao
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(155, 82);
             this.panel2.TabIndex = 0;
+            // 
+            // ch_valor
+            // 
+            this.ch_valor.Text = "Valor";
+            this.ch_valor.Width = 191;
             // 
             // FormVendas
             // 
@@ -234,5 +249,7 @@ namespace OlharDeMenina.Visao
         private System.Windows.Forms.ColumnHeader ch_produtos;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ColumnHeader ch_codigo;
+        private System.Windows.Forms.ColumnHeader ch_valor;
     }
 }
