@@ -53,6 +53,8 @@ namespace OlharDeMenina
             this.btn_ExcluirC = new System.Windows.Forms.Button();
             this.btn_AdicionarC = new System.Windows.Forms.Button();
             this.btn_limparC = new System.Windows.Forms.Button();
+            this.caixaBuscar = new System.Windows.Forms.TextBox();
+            this.botaoBuscar = new System.Windows.Forms.Button();
             this.pnl_cadastro.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -122,6 +124,8 @@ namespace OlharDeMenina
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.botaoBuscar);
+            this.panel2.Controls.Add(this.caixaBuscar);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.tbox_cpf);
             this.panel2.Controls.Add(this.lbl_cpf);
@@ -317,6 +321,23 @@ namespace OlharDeMenina
             this.btn_limparC.UseVisualStyleBackColor = false;
             this.btn_limparC.Click += new System.EventHandler(this.btn_limparC_Click);
             // 
+            // caixaBuscar
+            // 
+            this.caixaBuscar.Location = new System.Drawing.Point(308, 135);
+            this.caixaBuscar.Name = "caixaBuscar";
+            this.caixaBuscar.Size = new System.Drawing.Size(123, 20);
+            this.caixaBuscar.TabIndex = 23;
+            // 
+            // botaoBuscar
+            // 
+            this.botaoBuscar.Location = new System.Drawing.Point(437, 134);
+            this.botaoBuscar.Name = "botaoBuscar";
+            this.botaoBuscar.Size = new System.Drawing.Size(75, 21);
+            this.botaoBuscar.TabIndex = 24;
+            this.botaoBuscar.Text = "Buscar";
+            this.botaoBuscar.UseVisualStyleBackColor = true;
+            this.botaoBuscar.Click += new System.EventHandler(this.botaoBuscar_Click_1);
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,5 +384,7 @@ namespace OlharDeMenina
         private System.Windows.Forms.Label lbl_cpf;
         private System.Windows.Forms.ColumnHeader ch_cpf;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button botaoBuscar;
+        private System.Windows.Forms.TextBox caixaBuscar;
     }
 }

@@ -82,7 +82,7 @@ namespace OlharDeMenina
         private void btn_login_entrar_Click(object sender, EventArgs e)
         {
             //Conexao objCon = new Conexao();
-            MySqlConnection objCon = new MySqlConnection("server=localhost; port=3306; User Id=root;database=OlharMeninaBD; password=dagimos123*; convert zero datetime=True");
+            MySqlConnection objCon = new MySqlConnection("server=localhost; port=3307; User Id=root;database=OlharMeninaBD; password=usbw; convert zero datetime=True");
             try
             {
                 objCon.Open();
