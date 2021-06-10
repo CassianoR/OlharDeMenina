@@ -29,7 +29,7 @@ namespace OlharDeMenina.Visao
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView_funf = new System.Windows.Forms.ListView();
+            this.listView_esto = new System.Windows.Forms.ListView();
             this.ch_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_marca = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -60,11 +60,11 @@ namespace OlharDeMenina.Visao
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView_funf
+            // listView_esto
             // 
-            this.listView_funf.BackColor = System.Drawing.Color.White;
-            this.listView_funf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView_funf.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView_esto.BackColor = System.Drawing.Color.White;
+            this.listView_esto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView_esto.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ch_id,
             this.ch_nome,
             this.ch_marca,
@@ -72,16 +72,16 @@ namespace OlharDeMenina.Visao
             this.ch_quantidade,
             this.ch_descricao,
             this.ch_valor});
-            this.listView_funf.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView_funf.FullRowSelect = true;
-            this.listView_funf.HideSelection = false;
-            this.listView_funf.Location = new System.Drawing.Point(0, 188);
-            this.listView_funf.Name = "listView_funf";
-            this.listView_funf.Size = new System.Drawing.Size(748, 268);
-            this.listView_funf.TabIndex = 21;
-            this.listView_funf.UseCompatibleStateImageBehavior = false;
-            this.listView_funf.View = System.Windows.Forms.View.Details;
-            this.listView_funf.Click += new System.EventHandler(this.listView_funf_Click);
+            this.listView_esto.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listView_esto.FullRowSelect = true;
+            this.listView_esto.HideSelection = false;
+            this.listView_esto.Location = new System.Drawing.Point(0, 188);
+            this.listView_esto.Name = "listView_esto";
+            this.listView_esto.Size = new System.Drawing.Size(748, 268);
+            this.listView_esto.TabIndex = 21;
+            this.listView_esto.UseCompatibleStateImageBehavior = false;
+            this.listView_esto.View = System.Windows.Forms.View.Details;
+            this.listView_esto.Click += new System.EventHandler(this.listView_funf_Click);
             // 
             // ch_id
             // 
@@ -360,7 +360,7 @@ namespace OlharDeMenina.Visao
             this.ClientSize = new System.Drawing.Size(748, 456);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnl_cadastro);
-            this.Controls.Add(this.listView_funf);
+            this.Controls.Add(this.listView_esto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormEstoque";
             this.Text = "FormEstoque";
@@ -375,7 +375,7 @@ namespace OlharDeMenina.Visao
 
         #endregion
 
-        private System.Windows.Forms.ListView listView_funf;
+        private System.Windows.Forms.ListView listView_esto;
         private System.Windows.Forms.ColumnHeader ch_id;
         private System.Windows.Forms.ColumnHeader ch_nome;
         private System.Windows.Forms.ColumnHeader ch_marca;

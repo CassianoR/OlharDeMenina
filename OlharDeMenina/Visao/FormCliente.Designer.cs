@@ -29,7 +29,7 @@ namespace OlharDeMenina
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView_funf = new System.Windows.Forms.ListView();
+            this.listView_clie = new System.Windows.Forms.ListView();
             this.ch_id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ch_cpf = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,27 +58,27 @@ namespace OlharDeMenina
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView_funf
+            // listView_clie
             // 
-            this.listView_funf.BackColor = System.Drawing.Color.White;
-            this.listView_funf.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listView_funf.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listView_clie.BackColor = System.Drawing.Color.White;
+            this.listView_clie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listView_clie.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ch_id,
             this.ch_nome,
             this.ch_cpf,
             this.ch_telefone,
             this.ch_endereco,
             this.ch_datanasc});
-            this.listView_funf.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listView_funf.FullRowSelect = true;
-            this.listView_funf.HideSelection = false;
-            this.listView_funf.Location = new System.Drawing.Point(0, 188);
-            this.listView_funf.Name = "listView_funf";
-            this.listView_funf.Size = new System.Drawing.Size(748, 268);
-            this.listView_funf.TabIndex = 17;
-            this.listView_funf.UseCompatibleStateImageBehavior = false;
-            this.listView_funf.View = System.Windows.Forms.View.Details;
-            this.listView_funf.Click += new System.EventHandler(this.listView_funf_Click);
+            this.listView_clie.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.listView_clie.FullRowSelect = true;
+            this.listView_clie.HideSelection = false;
+            this.listView_clie.Location = new System.Drawing.Point(0, 188);
+            this.listView_clie.Name = "listView_clie";
+            this.listView_clie.Size = new System.Drawing.Size(748, 268);
+            this.listView_clie.TabIndex = 17;
+            this.listView_clie.UseCompatibleStateImageBehavior = false;
+            this.listView_clie.View = System.Windows.Forms.View.Details;
+            this.listView_clie.Click += new System.EventHandler(this.listView_funf_Click);
             // 
             // ch_id
             // 
@@ -323,7 +323,7 @@ namespace OlharDeMenina
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LavenderBlush;
             this.ClientSize = new System.Drawing.Size(748, 456);
-            this.Controls.Add(this.listView_funf);
+            this.Controls.Add(this.listView_clie);
             this.Controls.Add(this.pnl_cadastro);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCliente";
@@ -339,7 +339,7 @@ namespace OlharDeMenina
 
         #endregion
 
-        private System.Windows.Forms.ListView listView_funf;
+        private System.Windows.Forms.ListView listView_clie;
         private System.Windows.Forms.ColumnHeader ch_nome;
         private System.Windows.Forms.ColumnHeader ch_datanasc;
         private System.Windows.Forms.ColumnHeader ch_telefone;

@@ -22,7 +22,7 @@ namespace OlharDeMenina.Visao
         int idProd;
         public void PreencherListView()
         {
-            listView_funf.Items.Clear();
+            listView_esto.Items.Clear();
             MySqlDataReader dataReader;
             ControleProduto cp = new ControleProduto();
             dataReader = cp.RetornarProdutos(); //Chama o método responsável pela realização da consulta.
@@ -37,15 +37,15 @@ namespace OlharDeMenina.Visao
                     lv.SubItems.Add(dataReader.GetString(3));
                     lv.SubItems.Add(dataReader.GetString(4));
                     lv.SubItems.Add(dataReader.GetString(5));
-                    lv.SubItems.Add(dataReader.GetString(6));
-                    listView_funf.Items.Add(lv);
+                    lv.SubItems.Add(dataReader.GetDouble(6).ToString());
+                    listView_esto.Items.Add(lv);
                 }
             }
         }
 
         private void listView_funf_Click(object sender, EventArgs e)
         {
-            idProd = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            idProd = int.Parse(listView_esto.SelectedItems[0].SubItems[0].Text);
             ControleProduto cp = new ControleProduto();
             MySqlDataReader dr = cp.RetornarProdutos(idProd);
 
@@ -84,7 +84,7 @@ namespace OlharDeMenina.Visao
 
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
-            idProd = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            idProd = int.Parse(listView_esto.SelectedItems[0].SubItems[0].Text);
             ControleProduto cp = new ControleProduto();
             cp.DeletarProdutos(idProd);
             LimparCampos();
@@ -96,7 +96,7 @@ namespace OlharDeMenina.Visao
             ControleProduto cp = new ControleProduto();
             Produtos produtos = new Produtos(tbox_nome.Text, tbox_marca.Text, tbox_categoria.Text, tbox_descricao.Text, tbox_valor.Text, Convert.ToInt32(tbox_quantidade.Value));
 
-            idProd = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            idProd = int.Parse(listView_esto.SelectedItems[0].SubItems[0].Text);
 
 
             string mensagem = cp.EditarProdutos(produtos, idProd);

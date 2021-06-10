@@ -35,7 +35,7 @@ namespace OlharDeMenina.Modelo
 
         public MySqlDataReader RetornaProdutos()
         {
-            string query = "SELECT * FROM produto";
+            string query = "SELECT * FROM Produto";
             MySqlCommand cmd = new MySqlCommand(query, con.Conectar());
             MySqlDataReader dataReader = cmd.ExecuteReader();
             try

@@ -25,7 +25,7 @@ namespace OlharDeMenina
 
         private void btn_ExcluirC_Click(object sender, EventArgs e)
         {
-            idClien = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            idClien = int.Parse(listView_clie.SelectedItems[0].SubItems[0].Text);
             ControleCliente cc = new ControleCliente();
             cc.DeletarClientes(idClien);
 
@@ -45,7 +45,7 @@ namespace OlharDeMenina
 
         public void PreencherListView()
         {
-            listView_funf.Items.Clear();
+            listView_clie.Items.Clear();
             MySqlDataReader dataReader;
             ControleCliente cc = new ControleCliente();
             dataReader = cc.RetornarClientes(); //Chama o método responsável pela realização da consulta.
@@ -59,8 +59,8 @@ namespace OlharDeMenina
                     lv.SubItems.Add(dataReader.GetString(2));
                     lv.SubItems.Add(dataReader.GetString(3));
                     lv.SubItems.Add(dataReader.GetString(4));
-                    lv.SubItems.Add(dataReader.GetDateTime(5).ToString());
-                    listView_funf.Items.Add(lv);
+                    lv.SubItems.Add(dataReader.GetString(5));
+                    listView_clie.Items.Add(lv);
                 }
             }
         }
@@ -80,7 +80,7 @@ namespace OlharDeMenina
             ControleCliente cc = new ControleCliente();
             Clientes clientes = new Clientes(tbox_nome.Text, tbox_cpf.Text, tbox_telefone.Text, tbox_endereco.Text, tbox_datadenascimento.Text);
 
-            idClien = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            idClien = int.Parse(listView_clie.SelectedItems[0].SubItems[0].Text);
 
             string mensagem = cc.EditarClientes(clientes, idClien);
 
@@ -92,7 +92,7 @@ namespace OlharDeMenina
 
         private void listView_funf_Click(object sender, EventArgs e)
         {
-            idClien = int.Parse(listView_funf.SelectedItems[0].SubItems[0].Text);
+            idClien = int.Parse(listView_clie.SelectedItems[0].SubItems[0].Text);
             ControleCliente cf = new ControleCliente();
             MySqlDataReader dr = cf.RetornarClientes(idClien);
 

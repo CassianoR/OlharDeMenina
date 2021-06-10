@@ -82,9 +82,9 @@ namespace OlharDeMenina
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(184, 70);
+            this.panel3.Location = new System.Drawing.Point(184, 76);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(751, 468);
+            this.panel3.Size = new System.Drawing.Size(751, 462);
             this.panel3.TabIndex = 7;
             // 
             // pnlSuperior
@@ -164,7 +164,7 @@ namespace OlharDeMenina
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(250, 35);
+            this.panel6.Size = new System.Drawing.Size(250, 41);
             this.panel6.TabIndex = 9;
             // 
             // timer1
@@ -384,7 +384,7 @@ namespace OlharDeMenina
             this.panel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel9.Location = new System.Drawing.Point(184, 35);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(751, 35);
+            this.panel9.Size = new System.Drawing.Size(751, 41);
             this.panel9.TabIndex = 10;
             // 
             // Form1

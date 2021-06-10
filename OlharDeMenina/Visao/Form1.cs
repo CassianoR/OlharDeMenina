@@ -14,6 +14,7 @@ namespace OlharDeMenina
         public string username { get; set; }
         public string password { get; set; }
         public string idFunc { get; set; }
+        public bool Adm { get; set; }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
@@ -45,6 +46,12 @@ namespace OlharDeMenina
             {
                 panel8.Size = new Size(250, 352);
                 panel1.Size = new Size(250, 352);
+            }
+
+            if (Adm == false)
+            {
+                btnFunc.Hide();
+                btnEstoque.Hide();
             }
         }
 
