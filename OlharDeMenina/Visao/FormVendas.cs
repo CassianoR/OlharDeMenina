@@ -54,13 +54,14 @@ namespace OlharDeMenina.Visao
 
             if (dataReader != null) //Verifico
             {
-                while (dataReader.Read())
+                do
                 {
                     ListViewItem lv = new ListViewItem(dataReader.GetInt32(0).ToString());
                     lv.SubItems.Add(dataReader.GetString(1));
                     lv.SubItems.Add(dataReader.GetString(6));
                     listView1.Items.Add(lv);
                 }
+                while (dataReader.Read());
             }
         }
 
@@ -73,10 +74,11 @@ namespace OlharDeMenina.Visao
 
             if (dataReader != null) //Verifico
             {
-                while (dataReader.Read())
+                do
                 {
                     cbox_cliente.Items.Add(dataReader.GetString(1));
                 }
+                while (dataReader.Read());
             }
         }
 

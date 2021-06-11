@@ -63,16 +63,20 @@ namespace OlharDeMenina
 
             if (dataReader != null) //Verifico
             {
-                while (dataReader.Read())
+                do
                 {
-                    ListViewItem lv = new ListViewItem(dataReader.GetInt32(0).ToString());
-                    lv.SubItems.Add(dataReader.GetString(1));
-                    lv.SubItems.Add(dataReader.GetString(2));
-                    lv.SubItems.Add(dataReader.GetString(3));
-                    lv.SubItems.Add(dataReader.GetString(4));
-                    lv.SubItems.Add(dataReader.GetString(5));
-                    listView_clie.Items.Add(lv);
-                }
+                    try
+                    {
+                        ListViewItem lv = new ListViewItem(dataReader.GetInt32(0).ToString());
+                        lv.SubItems.Add(dataReader.GetString(1));
+                        lv.SubItems.Add(dataReader.GetString(2));
+                        lv.SubItems.Add(dataReader.GetString(3));
+                        lv.SubItems.Add(dataReader.GetString(4));
+                        lv.SubItems.Add(dataReader.GetString(5));
+                        listView_clie.Items.Add(lv);
+                    }
+                    catch { }
+                } while (dataReader.Read());
             }
         }
 

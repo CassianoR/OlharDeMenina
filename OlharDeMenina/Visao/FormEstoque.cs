@@ -24,17 +24,18 @@ namespace OlharDeMenina.Visao
 
             if (dataReader != null) //Verifico
             {
-                while (dataReader.Read())
+                do
                 {
                     ListViewItem lv = new ListViewItem(dataReader.GetInt32(0).ToString());
                     lv.SubItems.Add(dataReader.GetString(1));
                     lv.SubItems.Add(dataReader.GetString(2));
                     lv.SubItems.Add(dataReader.GetString(3));
-                    lv.SubItems.Add(dataReader.GetString(4));
+                    lv.SubItems.Add(dataReader.GetInt32(4).ToString());
                     lv.SubItems.Add(dataReader.GetString(5));
                     lv.SubItems.Add(dataReader.GetDouble(6).ToString());
                     listView_esto.Items.Add(lv);
-                }
+                } while (dataReader.Read());
+
             }
         }
 

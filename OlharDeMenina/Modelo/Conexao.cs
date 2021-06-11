@@ -7,7 +7,7 @@ namespace OlharDeMenina
     internal class Conexao
     {
         private MySqlConnection conn;
-        private MySqlConnection con = new MySqlConnection("server=localhost; port=3307; User Id=root;database=OlharMeninaBD; password=usbw; convert zero datetime=True");
+        private MySqlConnection con = new MySqlConnection("server=localhost; port=3306; User Id=root;database=OlharMeninaBD; password=muniz321; convert zero datetime=True");
 
         public MySqlConnection Conectar()
         {
