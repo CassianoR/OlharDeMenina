@@ -1,26 +1,36 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace OlharDeMenina
 {
     internal class Conexao
     {
-        private MySqlConnection conn;
-        private MySqlConnection con = new MySqlConnection("server=localhost; port=3306; User Id=root;database=OlharMeninaBD; password=senha; convert zero datetime=True");
+        private static MySqlConnection databaseConnection = null;
+        public MySqlConnection getDBConnection()
+        {
+            if (databaseConnection == null)
+            {
+                string connectionString = ConfigurationManager.ConnectionStrings["myDatabaseConnection"].ConnectionString;
+                databaseConnection = new MySqlConnection(connectionString);
+            }
+            return databaseConnection;
+        }
 
         public MySqlConnection Conectar()
         {
-            con.Open();
-            return con;
+            getDBConnection();
+            databaseConnection.Open();
+            return databaseConnection;
         }
 
         public void Desconectar()
         {
             //Verifica se o estado da conexão é aberto, então fecho.
-            if (con.State == System.Data.ConnectionState.Open)
+            if (databaseConnection.State == System.Data.ConnectionState.Open)
             {
-                con.Close();
+                databaseConnection.Close();
             }
         }
 
@@ -29,7 +39,7 @@ namespace OlharDeMenina
         {
             try
             {
-                con.Open();
+                databaseConnection.Open();
                 return true;
             }
             catch (Exception er)
@@ -41,8 +51,8 @@ namespace OlharDeMenina
 
         public void Close()
         {
-            conn.Close();
-            conn.Dispose();
+            databaseConnection.Close();
+            databaseConnection.Dispose();
         }
     }
 }

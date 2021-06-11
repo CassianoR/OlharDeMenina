@@ -10,6 +10,7 @@ namespace OlharDeMenina.Modelo
 
         public string Adicionar(Vendas vendas)
         {
+            con.Close();
             cmd.CommandText = "INSERT INTO Vendas (FK_IDFuncionario, FK_CodigoCliente, Valor, MetodoPagamento, DataHora) values (@fk_idfuncionario, @fk_codigocliente, @valor, @metodopagamento, @datahora)";
             cmd.Parameters.AddWithValue("fk_idfuncionario", vendas.FK_CodigoFuncionario);
             cmd.Parameters.AddWithValue("fk_codigocliente", vendas.FK_CodigoCliente);
@@ -32,6 +33,7 @@ namespace OlharDeMenina.Modelo
 
         public MySqlDataReader RetornaVendas()
         {
+            con.Close();
             string query = "SELECT * FROM vendas";
             MySqlCommand cmd = new MySqlCommand(query, con.Conectar());
             MySqlDataReader dataReader = cmd.ExecuteReader();
@@ -61,6 +63,7 @@ namespace OlharDeMenina.Modelo
 
         public MySqlDataReader RetornaVendas(int idProd)
         {
+            con.Close();
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM Produto WHERE Codigo = @id", con.Conectar());
             cmd.Parameters.Clear();
             cmd.Parameters.Add(new MySqlParameter("id", idProd));
@@ -91,6 +94,7 @@ namespace OlharDeMenina.Modelo
 
         public string DeletarVendas(int idProd)
         {
+            con.Close();
             cmd.CommandText = "delete from produto where Codigo = @id";
             cmd.Parameters.AddWithValue("id", idProd);
             try
@@ -108,6 +112,7 @@ namespace OlharDeMenina.Modelo
 
         public string EditarProdutos(Produtos produtos, int idProd)
         {
+            con.Close();
             cmd.CommandText = "UPDATE produto SET NomeProduto = @nomeproduto, Marca = @marca, Categoria = @categoria, Descricao = @descricao, Valor = @valor, Quantidade = @quantidade WHERE Codigo = @id";
             cmd.Parameters.AddWithValue("nomeproduto", produtos.NomeProduto);
             cmd.Parameters.AddWithValue("marca", produtos.Marca);
