@@ -110,7 +110,7 @@ namespace OlharDeMenina
                         f.idFunc = dr.GetInt32(0).ToString();
                         f.username = dr.GetString("Nome");
                         f.password = dr.GetInt32("Senha").ToString();
-
+                        objCon.Close();
                         this.Hide();
                         f.ShowDialog();
                     }
@@ -123,7 +123,6 @@ namespace OlharDeMenina
                 {
                     MessageBox.Show("Erro: Campos de texto não podem estar vazios.");
                 }
-                objCon.Close();
             }
             catch (MySqlException ex)
             {

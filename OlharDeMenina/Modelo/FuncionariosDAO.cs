@@ -10,6 +10,7 @@ namespace OlharDeMenina.Modelo
 
         public string Adicionar(Funcionarios funcionarios)
         {
+            con.Close();
             cmd.CommandText = "insert into funcionarios (Cargo, Nome, CPF, Senha, Telefone, Endereco) values (@cargo, @nome, @cpf, @senha, @telefone, @endereco)";
             cmd.Parameters.AddWithValue("cargo", funcionarios.Cargo);
             cmd.Parameters.AddWithValue("nome", funcionarios.Nome);
@@ -33,6 +34,7 @@ namespace OlharDeMenina.Modelo
 
         public MySqlDataReader RetornaFuncionarios()
         {
+            con.Close();
             string query = "SELECT * FROM funcionarios";
             MySqlCommand cmd = new MySqlCommand(query, con.Conectar());
             MySqlDataReader dataReader = cmd.ExecuteReader();
@@ -62,6 +64,7 @@ namespace OlharDeMenina.Modelo
 
         public MySqlDataReader RetornaFuncionarios(int idFunc)
         {
+            con.Close();
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM funcionarios WHERE ID = @id", con.Conectar());
             cmd.Parameters.Clear();
             cmd.Parameters.Add(new MySqlParameter("id", idFunc));
@@ -92,6 +95,7 @@ namespace OlharDeMenina.Modelo
 
         public string DeletarFuncionarios(int idFunc)
         {
+            con.Close();
             cmd.CommandText = "delete from funcionarios where ID = @id";
             cmd.Parameters.AddWithValue("id", idFunc);
             try
@@ -109,6 +113,7 @@ namespace OlharDeMenina.Modelo
 
         public string EditarFuncionarios(Funcionarios funcionarios, int idFunc)
         {
+            con.Close();
             cmd.CommandText = "UPDATE funcionarios SET Cargo = @cargo, Nome = @nome, CPF = @cpf, Senha = @senha, Telefone = @telefone, Endereco = @endereco WHERE ID = @id";
             //cmd.CommandText = "update funcionarios set Cargo, Nome, CPF, Senha, Telefone, Endereço values(@cargo, @nome, @cpf, @senha, @telefone, @endereço) where ID = @ID";
             cmd.Parameters.AddWithValue("cargo", funcionarios.Cargo);

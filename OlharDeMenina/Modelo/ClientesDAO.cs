@@ -12,6 +12,7 @@ namespace OlharDeMenina.Modelo
 
         public string Adicionar(Clientes clientes)
         {
+            con.Close();
             cmd.CommandText = "insert into clientes (Nome, CPF, Telefone, Endereco, DataNasc) values (@nome, @cpf, @telefone, @endereco, @datanasc)";
             cmd.Parameters.AddWithValue("nome", clientes.Nome);
             cmd.Parameters.AddWithValue("cpf", clientes.CPF);
@@ -34,6 +35,7 @@ namespace OlharDeMenina.Modelo
 
         public MySqlDataReader RetornaClientes()
         {
+            con.Close();
             string query = "SELECT * FROM clientes";
             MySqlCommand cmd = new MySqlCommand(query, con.Conectar());
             MySqlDataReader dataReader = cmd.ExecuteReader();
@@ -63,6 +65,7 @@ namespace OlharDeMenina.Modelo
 
         public MySqlDataReader RetornaClientes(int idClien)
         {
+            con.Close();
             MySqlCommand cmd = new MySqlCommand("SELECT * FROM clientes WHERE Codigo = @id", con.Conectar());
             cmd.Parameters.Clear();
             cmd.Parameters.Add(new MySqlParameter("id", idClien));
@@ -93,6 +96,7 @@ namespace OlharDeMenina.Modelo
 
         public string DeletarClientes(int idClien)
         {
+            con.Close();
             cmd.CommandText = "delete from clientes where Codigo = @id";
             cmd.Parameters.AddWithValue("id", idClien);
             try
@@ -110,6 +114,7 @@ namespace OlharDeMenina.Modelo
 
         public string EditarClientes(Clientes clientes, int idClien)
         {
+            con.Close();
             cmd.CommandText = "UPDATE clientes SET Nome = @nome, CPF = @cpf, Telefone = @telefone, Endereco = @endereco, DataNasc = @datanasc WHERE Codigo = @id";
             cmd.Parameters.AddWithValue("nome", clientes.Nome);
             cmd.Parameters.AddWithValue("cpf", clientes.CPF);

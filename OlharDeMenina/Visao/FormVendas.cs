@@ -74,11 +74,15 @@ namespace OlharDeMenina.Visao
 
             if (dataReader != null) //Verifico
             {
-                do
+                try
                 {
-                    cbox_cliente.Items.Add(dataReader.GetString(1));
+                    do
+                    {
+                        cbox_cliente.Items.Add(dataReader.GetString(1));
+                    }
+                    while (dataReader.Read());
                 }
-                while (dataReader.Read());
+                catch { }
             }
         }
 
