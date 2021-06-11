@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OlharDeMenina.Modelo
+﻿namespace OlharDeMenina.Modelo
 {
-    class Vendas
+    internal class Vendas
     {
         public int Codigo { get; set; }
         public int FK_CodigoFuncionario { get; set; }

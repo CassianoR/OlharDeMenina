@@ -12,11 +12,12 @@ namespace OlharDeMenina.Visao
         {
             InitializeComponent();
         }
-        int idProd;
-        string nomeClien;
-        int idClien;
-        string valor;
-        
+
+        private int idProd;
+        private string nomeClien;
+        private int idClien;
+        private string valor;
+
         private void btn_Adicionar_Click(object sender, System.EventArgs e)
         {
             Conexao objCon = new Conexao();
@@ -32,7 +33,7 @@ namespace OlharDeMenina.Visao
                 idClien = dataReader.GetInt32(0);
                 //MessageBox.Show("IDProd: " + idProd + ", Data: " + now + ", IDClien: " + idClien + ", IDFunc" + idFunc);
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show("Erro: " + ex);
             }
@@ -43,6 +44,7 @@ namespace OlharDeMenina.Visao
         }
 
         public string idFunc { get; set; }
+
         private void PreencherCheckbox()
         {
             listView1.Items.Clear();
@@ -61,6 +63,7 @@ namespace OlharDeMenina.Visao
                 }
             }
         }
+
         private void PreencherCombobox()
         {
             cbox_cliente.Items.Clear();
@@ -76,6 +79,7 @@ namespace OlharDeMenina.Visao
                 }
             }
         }
+
         private void FormVendas_Load(object sender, System.EventArgs e)
         {
             //listView1.CheckBoxes = true;

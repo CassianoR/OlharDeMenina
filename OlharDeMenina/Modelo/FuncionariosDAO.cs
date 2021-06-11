@@ -8,8 +8,6 @@ namespace OlharDeMenina.Modelo
         private MySqlCommand cmd = new MySqlCommand();
         private Conexao con = new Conexao();
 
-        private MySqlDataReader dr;
-
         public string Adicionar(Funcionarios funcionarios)
         {
             cmd.CommandText = "insert into funcionarios (Cargo, Nome, CPF, Senha, Telefone, Endereco) values (@cargo, @nome, @cpf, @senha, @telefone, @endereco)";
