@@ -85,8 +85,6 @@ namespace OlharDeMenina
         {
             try
             {
-                objCon.Open();
-
                 if (txtB_nome.Text != "" && txtB_senha2.Text != "")
                 {
                     MySqlCommand objCmd = new MySqlCommand("select ID, Cargo, Nome, Senha from funcionarios WHERE Nome = @nome AND Senha = @senha", objCon.Conectar());

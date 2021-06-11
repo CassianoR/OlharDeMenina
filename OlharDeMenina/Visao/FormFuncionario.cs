@@ -46,7 +46,7 @@ namespace OlharDeMenina
 
             if (dataReader != null) //Verifico
             {
-                while (dataReader.Read())
+                do
                 {
                     ListViewItem lv = new ListViewItem(dataReader.GetInt32(0).ToString());
                     lv.SubItems.Add(dataReader.GetString(1));
@@ -56,6 +56,7 @@ namespace OlharDeMenina
                     lv.SubItems.Add(dataReader.GetString(6));
                     listView_funf.Items.Add(lv);
                 }
+                while (dataReader.Read());
             }
         }
 
