@@ -89,7 +89,6 @@ namespace OlharDeMenina.Visao
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormVGeral";
             this.Text = "FormVGeral";
-            this.Load += new System.EventHandler(this.FormVGeral_Load);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);

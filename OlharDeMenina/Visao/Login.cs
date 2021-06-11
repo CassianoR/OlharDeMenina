@@ -1,7 +1,6 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
-using OlharDeMenina.Visao;
 
 namespace OlharDeMenina
 {
@@ -11,7 +10,7 @@ namespace OlharDeMenina
         {
             InitializeComponent();
         }
-        
+
         private void btn_close_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -22,6 +21,9 @@ namespace OlharDeMenina
 
         private int movX;
         private int movY;
+        private string cargo;
+        private Conexao objCon = new Conexao();
+        private Form1 f = new Form1();
 
         private void pnl_superior_MouseDown(object sender, MouseEventArgs e)
         {
@@ -81,16 +83,13 @@ namespace OlharDeMenina
 
         private void btn_login_entrar_Click(object sender, EventArgs e)
         {
-            //Conexao objCon = new Conexao();
-            MySqlConnection objCon = new MySqlConnection("server=localhost; port=3307; User Id=root;database=OlharMeninaBD; password=usbw; convert zero datetime=True");
             try
             {
                 objCon.Open();
 
                 if (txtB_nome.Text != "" && txtB_senha2.Text != "")
                 {
-                   // string query = "select ID, Nome, Senha from funcionarios WHERE Nome ='" + txtB_nome.Text + "' AND Senha ='" + txtB_senha2.Text + "'";
-                    MySqlCommand objCmd = new MySqlCommand("select ID, Cargo, Nome, Senha from funcionarios WHERE Nome = @nome AND Senha = @senha", objCon);
+                    MySqlCommand objCmd = new MySqlCommand("select ID, Cargo, Nome, Senha from funcionarios WHERE Nome = @nome AND Senha = @senha", objCon.Conectar());
                     objCmd.Parameters.Clear();
                     objCmd.Parameters.AddWithValue("nome", txtB_nome.Text);
                     objCmd.Parameters.AddWithValue("senha", txtB_senha2.Text);
@@ -98,36 +97,24 @@ namespace OlharDeMenina
                     dr = objCmd.ExecuteReader();
                     dr.Read();
 
-                    Form1 f = new Form1();
-
-                    string cargo;
-
                     cargo = dr.GetString(1);
-
 
                     if (dr.HasRows)
                     {
                         if (cargo == "Administrador")
                         {
                             f.Adm = true;
-                            f.idFunc = dr.GetInt32(0).ToString();
-                            f.username = dr.GetString("Nome");
-                            f.password = dr.GetInt32("Senha").ToString();
-
-                            this.Hide();
-                            f.ShowDialog();
                         }
                         else
                         {
                             f.Adm = false;
-
-                            f.idFunc = dr.GetInt32(0).ToString();
-                            f.username = dr.GetString("Nome");
-                            f.password = dr.GetInt32("Senha").ToString();
-
-                            this.Hide();
-                            f.ShowDialog();
                         }
+                        f.idFunc = dr.GetInt32(0).ToString();
+                        f.username = dr.GetString("Nome");
+                        f.password = dr.GetInt32("Senha").ToString();
+
+                        this.Hide();
+                        f.ShowDialog();
                     }
                     else
                     {
@@ -138,10 +125,9 @@ namespace OlharDeMenina
                 {
                     MessageBox.Show("Erro: Campos de texto não podem estar vazios.");
                 }
-
                 objCon.Close();
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show("Erro de conexão: " + ex);
             }

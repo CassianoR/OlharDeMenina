@@ -2,13 +2,6 @@
 using OlharDeMenina.Controle;
 using OlharDeMenina.Modelo;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OlharDeMenina.Visao
@@ -19,7 +12,9 @@ namespace OlharDeMenina.Visao
         {
             InitializeComponent();
         }
-        int idProd;
+
+        private int idProd;
+
         public void PreencherListView()
         {
             listView_esto.Items.Clear();
@@ -58,7 +53,6 @@ namespace OlharDeMenina.Visao
                 tbox_descricao.Text = dr.GetString(5);
                 tbox_quantidade.Value = dr.GetInt32(4);
                 tbox_valor.Text = dr.GetString(6);
-
             }
         }
 
@@ -97,7 +91,6 @@ namespace OlharDeMenina.Visao
             Produtos produtos = new Produtos(tbox_nome.Text, tbox_marca.Text, tbox_categoria.Text, tbox_descricao.Text, tbox_valor.Text, Convert.ToInt32(tbox_quantidade.Value));
 
             idProd = int.Parse(listView_esto.SelectedItems[0].SubItems[0].Text);
-
 
             string mensagem = cp.EditarProdutos(produtos, idProd);
 

@@ -24,7 +24,6 @@ namespace OlharDeMenina.Controle
             return funf.RetornaFuncionarios(idFunc);
         }
 
-
         public string DeletarFuncionario(int idFunc)
         {
             FuncionariosDAO funf = new FuncionariosDAO();

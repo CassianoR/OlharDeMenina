@@ -1,14 +1,9 @@
 ﻿using MySql.Data.MySqlClient;
 using OlharDeMenina.Modelo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OlharDeMenina.Controle
 {
-    class ControleVenda
+    internal class ControleVenda
     {
         public string AdicionarVendas(Vendas vendas)
         {

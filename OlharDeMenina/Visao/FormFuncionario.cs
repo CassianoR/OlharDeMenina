@@ -23,6 +23,7 @@ namespace OlharDeMenina
             LimparCampos();
             PreencherListView();
         }
+
         private void FormFuncionario_Load(object sender, EventArgs e)
         {
             PreencherListView();
@@ -82,12 +83,11 @@ namespace OlharDeMenina
             if (dr != null)
             {
                 dr.Read();
-                
-                    tbox_nome.Text = dr.GetString(2);
-                    tbox_cpf.Text = dr.GetString(3);
-                    tbox_telefone.Text = dr.GetString(5);
-                    tbox_endereco.Text = dr.GetString(6);
-                
+
+                tbox_nome.Text = dr.GetString(2);
+                tbox_cpf.Text = dr.GetString(3);
+                tbox_telefone.Text = dr.GetString(5);
+                tbox_endereco.Text = dr.GetString(6);
             }
         }
 

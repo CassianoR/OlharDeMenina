@@ -1,19 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OlharDeMenina.Modelo
 {
-    class VendasDAO
+    internal class VendasDAO
     {
         public string Mensagem { get; private set; }
         private MySqlCommand cmd = new MySqlCommand();
         private Conexao con = new Conexao();
-
-        private MySqlDataReader dr;
 
         public string Adicionar(Vendas vendas)
         {

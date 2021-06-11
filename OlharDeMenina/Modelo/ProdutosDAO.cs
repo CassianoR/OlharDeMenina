@@ -8,8 +8,6 @@ namespace OlharDeMenina.Modelo
         private MySqlCommand cmd = new MySqlCommand();
         private Conexao con = new Conexao();
 
-        private MySqlDataReader dr;
-
         public string Adicionar(Produtos produtos)
         {
             cmd.CommandText = "insert into produto (NomeProduto, Marca, Categoria, Descricao, Valor, Quantidade) values (@nomeproduto, @marca, @categoria, @descricao, @valor, @quantidade)";

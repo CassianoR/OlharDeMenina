@@ -91,7 +91,6 @@ namespace OlharDeMenina.Modelo
             }
         }
 
-
         public string DeletarClientes(int idClien)
         {
             cmd.CommandText = "delete from clientes where Codigo = @id";

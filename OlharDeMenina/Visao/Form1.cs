@@ -15,22 +15,9 @@ namespace OlharDeMenina
         public string password { get; set; }
         public string idFunc { get; set; }
         public bool Adm { get; set; }
-
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-        );
-
         public Form1()
         {
             InitializeComponent();
-            //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 25, 25));
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -42,12 +29,6 @@ namespace OlharDeMenina
             lblTitulo.Text = "Visão Geral";
             QualFormSwitch = 2;
             VerificaPainel();
-            if (WindowState == FormWindowState.Maximized)
-            {
-                panel8.Size = new Size(250, 352);
-                panel1.Size = new Size(250, 352);
-            }
-
             if (Adm == false)
             {
                 btnFunc.Hide();
@@ -212,11 +193,6 @@ namespace OlharDeMenina
             Environment.Exit(-1);
             this.Close();
         }
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             FadeOut(this, 20);
@@ -226,17 +202,6 @@ namespace OlharDeMenina
         {
             this.label1.Text = DateTime.Now.ToString("hh:mm");
         }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void btnCon_Click_1(object sender, EventArgs e)
-        {
-            Conexao objCon = new Conexao();
-            objCon.Open();
-        }
-
         private void AbrirFormNoPanel<Forms>() where Forms : Form, new()
         {
             panel3.Controls.Clear();

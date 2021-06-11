@@ -1,7 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using OlharDeMenina.Controle;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace OlharDeMenina.Visao
@@ -12,8 +11,9 @@ namespace OlharDeMenina.Visao
         {
             InitializeComponent();
         }
+
         public string idUser { get; set; }
-        
+
         private void FormUsuario_Load(object sender, EventArgs e)
         {
             LimparCampos();
@@ -37,14 +37,12 @@ namespace OlharDeMenina.Visao
                     lbl_cpf.Text = dr.GetString(3);
                     lbl_telefone.Text = dr.GetString(5);
                     lbl_endereco.Text = dr.GetString(6);
-
                 }
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show("Erro: " + ex);
             }
-
         }
 
         private void LimparCampos()
