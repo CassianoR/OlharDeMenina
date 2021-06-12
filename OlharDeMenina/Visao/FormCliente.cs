@@ -34,7 +34,6 @@ namespace OlharDeMenina
             LimparCampos();
             //index += 1 ;
         }
-
         private void btn_ExcluirC_Click(object sender, EventArgs e)
         {
             idClien = int.Parse(listView_clie.SelectedItems[0].SubItems[0].Text);
