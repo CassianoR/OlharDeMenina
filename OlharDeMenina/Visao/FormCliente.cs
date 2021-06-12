@@ -57,7 +57,7 @@ namespace OlharDeMenina
             listView_clie.Items.Clear();
             MySqlDataReader dataReader;
             ControleCliente cc = new ControleCliente();
-            dataReader = cc.RetornarClientes(); //Chama o método responsável pela realização da consulta.
+            dataReader = cc.RetornarClientes();
 
             if (dataReader != null) //Verifico
             {
