@@ -44,7 +44,6 @@ namespace OlharDeMenina
             PreencherListView();
             LimparCampos();
         }
-
         public void LimparCampos()
         {
             tbox_nome.Clear();
