@@ -100,7 +100,7 @@ INSERT INTO Clientes (ID, Nome, CPF, Telefone, Endereco, DataNasc) values (1, "G
 INSERT INTO Clientes (Nome, CPF, Telefone, Endereco, DataNasc) values ("Shayene", '22222-2222', '1234', "Rua Do Laranja", '2003-06-12');
 INSERT INTO Clientes (Nome, CPF, Telefone, Endereco, DataNasc) values ("Louise",'99999-9999','1234', "Rua Do sda", '1985-07-25');
 
-INSERT INTO Produto (Codigo, NomeProduto, Marca, Categoria, Descricao, Valor) values ('1',"Batom", "Marca x", 'p', 'aaaa', '15.50');
+INSERT INTO Produto (Codigo, NomeProduto, Marca, Categoria, Descricao, Valor) values ('1',"Batom", "Marca w", 'p', 'aaaa', '15.50');
 INSERT INTO Produto (NomeProduto, Marca, Categoria, Descricao, Valor) values ("Base", "Marca y", 'o', 'bbbb', '16.90');
 INSERT INTO Produto (NomeProduto, Marca, Categoria, Descricao, Valor) values ("Delineador", "Marca z", 'b', 'cccc', '99.90');
 
