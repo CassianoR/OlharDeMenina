@@ -93,7 +93,7 @@ WHERE tbl_vendas.FK_IDFuncionario = tbl_funcionarios.ID AND tbl_clientes.ID = tb
 
 -- INSERÇÃO PARA TESTE
 INSERT INTO Funcionarios (ID, Cargo, Nome, CPF, Senha, Telefone, Endereco) values ('1', "Administrador", "João", "111.111.111-11",'1234',"99999-9999","Rua Do Palmito");
-INSERT INTO Funcionarios (Cargo, Nome, CPF, Senha, Telefone, Endereco) values ("Caixa", "Janaína", "555.555.555-55",'1234',"99999-9999","Rua Do Limão");
+INSERT INTO Funcionarios (Cargo, Nome, CPF, Senha, Telefone, Endereco) values ("Caixa", "Janaína", "445.555.555-55",'1234',"99999-9999","Rua Do Limão");
 INSERT INTO Funcionarios (Cargo, Nome, CPF, Senha, Telefone, Endereco) values ("Cozinheiro", "ll", "455.555.555-55",'1234',"99999-9999","Rua Do Limão");
 
 INSERT INTO Clientes (ID, Nome, CPF, Telefone, Endereco, DataNasc) values (1, "Gorete", '11111-1111', '1234', "Rua Do Palmito", '1999-02-15');
