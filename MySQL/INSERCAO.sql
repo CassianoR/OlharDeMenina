@@ -1,6 +1,6 @@
 USE OlharMeninaBDlimpo;
 
-INSERT INTO Funcionarios (ID, Cargo, Nome, CPF, Senha, Telefone, Endereco) values ('1', "Administrador", "João", "111.111.111-11",'1234',"99999-9999","Rua Do Palmito");
+INSERT INTO Funcionarios (ID, Cargo, Nome, CPF, Senha, Telefone, Endereco) values ('1', "Administrador", "João", "111.111.111-11",'1234',"98999-9999","Rua Do Palmito");
 INSERT INTO Funcionarios (Cargo, Nome, CPF, Senha, Telefone, Endereco) values ("Caixa", "Janaína", "555.555.555-55",'1234',"99999-9999","Rua Do Limão");
 INSERT INTO Funcionarios (Cargo, Nome, CPF, Senha, Telefone, Endereco) values ("Cozinheiro", "ll", "455.555.555-55",'1234',"99999-9999","Rua Do Limão");
 
