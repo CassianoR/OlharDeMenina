@@ -113,6 +113,7 @@ SELECT * FROM vw_ExibeEstoque;
 -- Thiago: Alterei a Inserção de dados na tabela Estoque e EstoqueDetalhes
 -- Thiago: Adicionei dados na coluna Quantidade da tabela VendaDetalhes 
 -- Thiago: Fiz as alterações com objetivo de padronizar a coluna Endereco nas tabelas CLientes e Funcionarios
+-- Thiago: Testando fazer alterações no GitHub pela primeira vez
 
 
 ALTER TABLE Clientes CHANGE ID Codigo int unsigned not null auto_increment;
