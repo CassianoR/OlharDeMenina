@@ -1,4 +1,4 @@
-use OlhardeMenina_BD;
+use OlhardeMeninaBD;
 
 --Cada tabela está seguida de um exemplo para teste--
 --SQL Server utiliza do comando EXEC ou EXECUTAR --
