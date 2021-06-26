@@ -1,4 +1,4 @@
-USE OlharMeninaBDlimpo;
+USE OlharMeninaBD;
 
 CREATE TABLE Funcionarios (
 	ID INT not null IDENTITY (1,1),
