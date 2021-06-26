@@ -5,11 +5,11 @@ ON Venda
 FOR INSERT
 AS
 BEGIN
-	DECLARE @CodigoProduto int,
-			@QuantidadeVendida int
-	select  @CodigoProduto = FK_CodigoProduto, @QuantidadeVendida = QuantidadeVendida from inserted
-	update Estoque
-	set QuantidadeEstoque = QuantidadeEstoque - @QuantidadeVendida
-	where FK_CodigoProduto = @CodigoProduto;
-end
-go
+	DECLARE @CodigoProduto INT,
+		@QuantidadeVendida INT
+	SELECT  @CodigoProduto = FK_CodigoProduto, @QuantidadeVendida = QuantidadeVendida FROM INSERTED
+	UPTADE Estoque
+	SET QuantidadeEstoque = QuantidadeEstoque - @QuantidadeVendida
+	WHERE FK_CodigoProduto = @CodigoProduto;
+END
+GO
