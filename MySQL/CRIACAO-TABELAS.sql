@@ -1,72 +1,67 @@
-USE OlharMeninaBDlimpo;
+USE OlharMeninaBD;
 
 CREATE TABLE Funcionarios (
-	ID int unsigned not null auto_increment,
-	Cargo char(20) not null,
-	Nome char(50) not null,
-	CPF char(14) not null,
-	Senha int unsigned not null,
-	Telefone varchar(20) not null,
-	Endereco varchar(50) not null,
-	PRIMARY KEY (ID, CPF)
-);
+	ID INT not null IDENTITY (1,1),
+	Cargo VARCHAR (50) not null,
+	Nome VARCHAR (50) not null,
+	CPF CHAR (14) not null UNIQUE,
+	Senha INT not null,
+	Endereco VARCHAR (80) not null,
+	Telefone VARCHAR (20) not null,
+	PRIMARY KEY (ID)
+)
+GO
 
 CREATE TABLE Clientes (
-	ID int unsigned not null auto_increment,
-	Nome char(50) not null,
-	CPF char(14) not null,
-	Telefone varchar(20) not null,
-	Endereco varchar(50) not null, 
-    DataNasc date not null,
+	ID INT not null IDENTITY (1,1),
+	Nome VARCHAR (50) not null,
+	CPF CHAR (14) not null UNIQUE,
+	Endereco VARCHAR (80) not null,
+	Telefone VARCHAR (20) not null,
+	DataNasc DATE not null,
 	PRIMARY KEY (ID)
-);
+)
+GO
 
-CREATE TABLE Produto (
-	Codigo int unsigned not null auto_increment,
-    NomeProduto char(50) not null,
-    Marca char(100) not null,
-    Categoria char(1),
-    Descricao varchar(500),
-    Valor decimal(15,2) not null,
-    PRIMARY KEY (Codigo)
-);
+CREATE TABLE Produtos (
+	Codigo INT not null IDENTITY (1,1),
+	NomeProduto VARCHAR(50) not null,
+	Marca VARCHAR (100) not null,
+	Categoria CHAR (1)not null,
+	Descricao VARCHAR (100) not null,
+	Valor DECIMAL (15,2) not null,
+	PRIMARY KEY (Codigo)
+)
+GO
 
 CREATE TABLE Estoque (
-	NumLote INT UNSIGNED NOT NULL,
-    TotalProdutos INT NOT NULL,
-	Frete DECIMAL(15,2),
-    Fornecedor VARCHAR(100) NOT NULL,
-    DataCompra DATE NOT NULL,
-    PRIMARY KEY (NumLote)
-);
+	ID INT not null IDENTITY (1,1),
+	NumLote INT not null,
+	TotalProdutosLote INT not null,
+	Frete DECIMAL (15,2) not null,
+	Fornecedor VARCHAR (80) not null,
+	DataCompra DATE not null,
+	PrecoLote DECIMAL (15,2) not null,
+	QuantidadeEstoque INT not null,
+	Validade DATE,
+	FK_CodigoProduto INT not null,
+	CONSTRAINT FK_Estoque FOREIGN KEY (FK_CodigoProduto) REFERENCES Produtos (Codigo),
+	PRIMARY KEY (ID)
+)
+GO
 
-CREATE TABLE EstoqueDetalhe (
-    FK_NumLoteEstoque INT UNSIGNED NOT NULL,
-    FK_CodigoProduto INT UNSIGNED NOT NULL,
-    Quantidade INT NOT NULL,
-    PrecoCusto DECIMAL(15,2) NOT NULL,
-    Validade DATE NOT NULL,
-    PRIMARY KEY (FK_NumLoteEstoque, FK_CodigoProduto),
-    CONSTRAINT fk_estoqueDET FOREIGN KEY (FK_CodigoProduto) REFERENCES Produto(Codigo),
-    CONSTRAINT fK_estoqueDET2 FOREIGN KEY (FK_NumLoteEstoque) REFERENCES Estoque(NumLote)
-);
-
-CREATE TABLE Vendas (
-	Codigo int unsigned not null auto_increment,
-    FK_IDFuncionario int unsigned not null,
-    FK_IDCliente int unsigned not null,
-    Valor decimal(15,2) not null,
-    MetodoPagamento varchar(50) not null,
-    DataHora datetime not null,
-    PRIMARY KEY (Codigo, FK_IDFuncionario, FK_IDCliente),
-    CONSTRAINT fk_vendas FOREIGN KEY (FK_IDFuncionario) REFERENCES Funcionarios(ID),
-    CONSTRAINT fk_vendas1 FOREIGN KEY (FK_IDCliente) REFERENCES Clientes(ID)
-);
-
-CREATE TABLE VendasDetalhes (
-	FK_CodigoVendas int unsigned not null,
-    FK_CodigoProduto int unsigned not null,
-    Quantidade INT UNSIGNED NOT NULL,
-    CONSTRAINT fk_vDet FOREIGN KEY (FK_CodigoVendas) REFERENCES Vendas(Codigo),
-    CONSTRAINT fk_vDet1 FOREIGN KEY (FK_CodigoProduto) REFERENCES Produto(Codigo)
-);
+CREATE TABLE Venda (
+	CodigoVendas INT not null IDENTITY (1,1),
+	FK_IDFuncionario INT not null,
+	FK_IDCliente INT not null,
+	FK_CodigoProduto INT not null,
+	Valor DECIMAL (15,2) not null,
+	MetodoPagamento VARCHAR (50) not null,
+	DataHora DATETIME not null,
+	QuantidadeVendida INT not null,
+	CONSTRAINT FK_Venda  FOREIGN KEY (FK_IDFuncionario) REFERENCES Funcionarios (ID),
+	CONSTRAINT FK_Venda2 FOREIGN KEY (fK_IDCliente)		REFERENCES Clientes (ID),
+	CONSTRAINT FK_Venda3 FOREIGN KEY (FK_CodigoProduto) REFERENCES Produtos (Codigo),
+	PRIMARY KEY (CodigoVendas)
+)
+GO
