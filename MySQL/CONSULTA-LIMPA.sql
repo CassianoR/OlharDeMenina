@@ -50,7 +50,7 @@ CREATE TABLE Estoque (
 	QuantidadeEstoque INT not null,
 	Validade DATE,
 	FK_CodigoProduto INT not null,
-	CONSTRAINT FK_Estoque FOREIGN KEY (FK_CodigoProduto) REFERENCES Produtos (Codigo),
+	CONSTRAINT FK_Estoque FOREIGN KEY (FK_CodigoProduto) REFERENCES Produto (Codigo),
 	PRIMARY KEY (ID)
 )
 GO
