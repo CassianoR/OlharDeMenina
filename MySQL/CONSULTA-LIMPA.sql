@@ -88,14 +88,14 @@ INSERT INTO Clientes (Nome, CPF, Telefone, Endereco, DataNasc) values ('Gorete',
 INSERT INTO Clientes (Nome, CPF, Telefone, Endereco, DataNasc) values ('Shayene', '22222-2222', '1234', 'Rua Do Laranja', '2003-06-12');
 INSERT INTO Clientes (Nome, CPF, Telefone, Endereco, DataNasc) values ('Louise','99999-9999','1234', 'Rua Do sda', '1985-07-25');
 
-INSERT INTO Produtos (NomeProduto, Marca, Categoria, Descricao, Valor) values ('Batom', 'Marca x', 'p', 'aaaa', '15.50');
-INSERT INTO Produtos (NomeProduto, Marca, Categoria, Descricao, Valor) values ('Base', 'Marca y', 'o', 'bbbb', '16.90');
-INSERT INTO Produtos (NomeProduto, Marca, Categoria, Descricao, Valor) values ('Delineador', 'Marca z', 'b', 'cccc', '99.90');
+INSERT INTO Produto (NomeProduto, Marca, Categoria, Descricao, Valor) values ('Batom', 'Marca x', 'p', 'aaaa', '15.50');
+INSERT INTO Produto (NomeProduto, Marca, Categoria, Descricao, Valor) values ('Base', 'Marca y', 'o', 'bbbb', '16.90');
+INSERT INTO Produto (NomeProduto, Marca, Categoria, Descricao, Valor) values ('Delineador', 'Marca z', 'b', 'cccc', '99.90');
 
 INSERT INTO Estoque (FK_CodigoProduto, NumLote, TotalProdutosLote, Frete, Fornecedor, DataCompra, QuantidadeEstoque, PrecoLote, Validade) values (1, '1', '100', '155.50', 'Fornecedor X', '2021-06-12', 11,'123.11', '2022-01-01');
 INSERT INTO Estoque (FK_CodigoProduto, NumLote, TotalProdutosLote, Frete, Fornecedor, DataCompra, QuantidadeEstoque, PrecoLote, Validade) values (2, '2', '200', '455.60', 'Fornecedor Y', '2021-04-07', 14,'103.51', '2023-01-01');
 INSERT INTO Estoque (FK_CodigoProduto, NumLote, TotalProdutosLote, Frete, Fornecedor, DataCompra, QuantidadeEstoque, PrecoLote, Validade) values (3, '3', '300', '899.60', 'Fornecedor Z', '2021-07-04', 21,'153.11', '2024-01-01');
 
-INSERT INTO Venda (FK_IDFuncionario, FK_IDCliente,FK_CodigoProduto, Valor, MetodoPagamento, DataHora, QuantidadeVendida) values ('1', '1','1', '555.53', 'Cartão de Crédito', '2021-06-01 12:53:10', 14);
-INSERT INTO Venda (FK_IDFuncionario, FK_IDCliente,FK_CodigoProduto, Valor, MetodoPagamento, DataHora, QuantidadeVendida) values ('2', '3','2', '322.58', 'Cartão de Débito', '2021-06-02 11:30:10', 44);
-INSERT INTO Venda (FK_IDFuncionario, FK_IDCliente,FK_CodigoProduto, Valor, MetodoPagamento, DataHora, QuantidadeVendida) values ('3', '2','3', '80.50', 'Dinheiro', '2021-06-03 04:10:02', 23);
+INSERT INTO Vendas (FK_IDFuncionario, FK_IDCliente,FK_CodigoProduto, Valor, MetodoPagamento, DataHora, QuantidadeVendida) values ('1', '1','1', '555.53', 'Cartão de Crédito', '2021-06-01 12:53:10', 14);
+INSERT INTO Vendas (FK_IDFuncionario, FK_IDCliente,FK_CodigoProduto, Valor, MetodoPagamento, DataHora, QuantidadeVendida) values ('2', '3','2', '322.58', 'Cartão de Débito', '2021-06-02 11:30:10', 44);
+INSERT INTO Vendas (FK_IDFuncionario, FK_IDCliente,FK_CodigoProduto, Valor, MetodoPagamento, DataHora, QuantidadeVendida) values ('3', '2','3', '80.50', 'Dinheiro', '2021-06-03 04:10:02', 23);
