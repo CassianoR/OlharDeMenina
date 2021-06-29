@@ -66,7 +66,7 @@ CREATE TABLE Vendas (
 	QuantidadeVendida INT not null,
 	CONSTRAINT FK_Venda  FOREIGN KEY (FK_IDFuncionario) REFERENCES Funcionarios (ID),
 	CONSTRAINT FK_Venda2 FOREIGN KEY (fK_IDCliente)	REFERENCES Clientes (ID),
-	CONSTRAINT FK_Venda3 FOREIGN KEY (FK_CodigoProduto) REFERENCES Produtos (Codigo),
+	CONSTRAINT FK_Venda3 FOREIGN KEY (FK_CodigoProduto) REFERENCES Produto (Codigo),
 	PRIMARY KEY (CodigoVendas)
 )
 GO
